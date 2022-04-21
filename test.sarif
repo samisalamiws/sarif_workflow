@@ -62,7 +62,7 @@
                                 "text": "CVE-2020-14195"
                             },
                             "fullDescription": {
-                                "text": "FasterXML jackson-databind 2.x before 2.9.10.5 mishandles the interaction between serialization gadgets and typing, related to org.jsecurity.realm.jndi.JndiRealmFactory (aka org.jsecurity)."
+                                "text": "TEST TEST TEST TEST Salih FasterXML jackson-databind 2.x before 2.9.10.5 mishandles the interaction between serialization gadgets and typing, related to org.jsecurity.realm.jndi.JndiRealmFactory (aka org.jsecurity)."
                             },
                             "helpUri": "https://vuln.whitesourcesoftware.com/vulnerability/CVE-2020-14195",
                             "help": {
