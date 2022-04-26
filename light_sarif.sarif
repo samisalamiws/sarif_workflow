@@ -13,6 +13,7 @@
                     "name": "WhiteSource",
                     "rules":
                     [
+                        {
                           "id": "CVE-2022-23218",
                           "name": "OsPackageVulnerability",
                           "shortDescription": {
