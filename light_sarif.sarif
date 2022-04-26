@@ -103,32 +103,6 @@
                             }
                         }
                     ]
-                }, 
-                {
-                    "ruleId": "WS-2019-0379",
-                    "ruleIndex": 1,
-                    "level": "warning",
-                    "message":
-                    {
-                        "text": "Package: commons-codec\nInstalled Version: 1.7\nVulnerability WS-2019-0379\nSeverity: MEDIUM\nFixed Version: 1.13\nLink: [WS-2019-0379](https://github.com/apache/commons-codec/commit/48b615756d1d770091ea3322eefc08011ee8b113)"
-                    },
-                    "locations":
-                    [
-                        {
-                            "physicalLocation":
-                            {
-                                "artifactLocation":
-                                {
-                                    "uri": "usr/salih/Gradle/build.gradle",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region":
-                                {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
                 }
             ]
         }
