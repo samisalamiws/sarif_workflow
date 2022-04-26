@@ -55,10 +55,6 @@
                             "help":
                             {
                                 "text": "Vulnerability WS-2019-0379\nSeverity: MEDIUM\nPackage: commons-codec\nFixed Version: 1.13\nLink: [WS-2019-0379](https://github.com/apache/commons-codec/commit/48b615756d1d770091ea3322eefc08011ee8b113)\nApache commons-codec before version “commons-codec-1.13-RC1” is vulnerable to information disclosure due to Improper Input validation."
-                            },
-                            "properties":
-                            {
-                                "security-severity": 6.5
                             }
                         }
                     ],
