@@ -42,15 +42,16 @@
                         }, 
                         {
                             "id": "WS-2019-0379",
-                            "name": "LanguageSpecificPackageVulnerability",
+                            "name": "LangPackageVulnerability",
                             "shortDescription":
                             {
                                 "text": "WS-2019-0379"
                             },
                             "fullDescription":
                             {
-                                "text": "Apache commons-codec before version 'commons-codec-1.13-RC1' is vulnerable to information disclosure due to Improper Input validation."
+                                "text": "Apache commons-codec before version “commons-codec-1.13-RC1” is vulnerable to information disclosure due to Improper Input validation."
                             },
+                            "helpUri": "https://github.com/apache/commons-codec/commit/48b615756d1d770091ea3322eefc08011ee8b113",
                             "help":
                             {
                                 "text": "Vulnerability WS-2019-0379"
