@@ -55,6 +55,10 @@
                             "help":
                             {
                                 "text": "Vulnerability WS-2019-0379"
+                            },
+                            "properties":
+                            {
+                                "security-severity": 6.5
                             }
                         }
                     ],
