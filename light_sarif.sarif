@@ -10,34 +10,55 @@
                 {
                     "fullName": "WS Scanner",
                     "informationUri": "https://www.whitesourcesoftware.com",
-                    "name": "WhiteSource light",
+                    "name": "WhiteSource",
                     "rules":
                     [
+                          "id": "CVE-2022-23218",
+                          "name": "OsPackageVulnerability",
+                          "shortDescription": {
+                            "text": "CVE-2022-23218"
+                          },
+                          "fullDescription": {
+                            "text": "The deprecated compatibility function svcunix_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its path argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution."
+                          },
+                          "defaultConfiguration": {
+                            "level": "warning"
+                          },
+                          "helpUri": "https://avd.aquasec.com/nvd/cve-2022-23218",
+                          "help": {
+                            "text": "Vulnerability CVE-2022-23218\nSeverity: MEDIUM\nPackage: libcrypt\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23218](https://avd.aquasec.com/nvd/cve-2022-23218)\nThe deprecated compatibility function svcunix_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its path argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution.",
+                            "markdown": "**Vulnerability CVE-2022-23218**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|libcrypt|2.26-58.amzn2|[CVE-2022-23218](https://avd.aquasec.com/nvd/cve-2022-23218)|\n\nThe deprecated compatibility function svcunix_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its path argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution."
+                          },
+                          "properties": {
+                            "precision": "very-high",
+                            "security-severity": "5.5",
+                            "tags": [
+                              "vulnerability",
+                              "security",
+                              "MEDIUM"
+                            ]
+                          }
+                        }, 
                         {
-                            "id": "CVE-2022-23218",
-                            "name": "OsPackageVulnerability",
+                            "id": "WS-2019-0379",
+                            "name": "LangPackageVulnerability",
                             "shortDescription":
                             {
-                                "text": "CVE-2022-23218"
+                                "text": "WS-2019-0379"
                             },
                             "fullDescription":
                             {
-                                "text": "The deprecated compatibility function svcunix_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its path argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution."
+                                "text": "Apache commons-codec before version “commons-codec-1.13-RC1” is vulnerable to information disclosure due to Improper Input validation."
                             },
-                            "defaultConfiguration":
-                            {
-                                "level": "warning"
-                            },
-                            "helpUri": "https://avd.aquasec.com/nvd/cve-2022-23218",
+                            "helpUri": "https://github.com/apache/commons-codec/commit/48b615756d1d770091ea3322eefc08011ee8b113",
                             "help":
                             {
-                                "text": "Vulnerability CVE-2022-23218\nSeverity: MEDIUM\nPackage: libcrypt\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23218](https://avd.aquasec.com/nvd/cve-2022-23218)\nThe deprecated compatibility function svcunix_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its path argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution.",
-                                "markdown": "**Vulnerability CVE-2022-23218**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|libcrypt|2.26-58.amzn2|[CVE-2022-23218](https://avd.aquasec.com/nvd/cve-2022-23218)|\n\nThe deprecated compatibility function svcunix_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its path argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution."
+                                "text": "Vulnerability WS-2019-0379\nSeverity: MEDIUM\nPackage: commons-codec\nFixed Version: 1.13\nLink: [WS-2019-0379](https://github.com/apache/commons-codec/commit/48b615756d1d770091ea3322eefc08011ee8b113)\nApache commons-codec before version “commons-codec-1.13-RC1” is vulnerable to information disclosure due to Improper Input validation.",
+                                "markdown": "**Vulnerability WS-2019-0379**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|commons-codec|1.13|[WS-2019-0379](https://github.com/apache/commons-codec/commit/48b615756d1d770091ea3322eefc08011ee8b113)|\n\nApache commons-codec before version “commons-codec-1.13-RC1” is vulnerable to information disclosure due to Improper Input validation."
                             },
                             "properties":
                             {
-                                "precision": "very-high",
-                                "security-severity": "5.5",
+                                "security-severity": 6.5,
                                 "tags":
                                 [
                                     "vulnerability",
@@ -69,6 +90,32 @@
                                 {
                                     "uri": "testws/amazonlinux:v4",
                                     "uriBaseId": "ROOTPATH"
+                                },
+                                "region":
+                                {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                }, 
+                {
+                    "ruleId": "WS-2019-0379",
+                    "ruleIndex": 1,
+                    "level": "error",
+                    "message":
+                    {
+                        "text": "Package: commons-codec\nInstalled Version: 1.7\nVulnerability WS-2019-0379\nSeverity: MEDIUM\nFixed Version: 1.13\nLink: [WS-2019-0379](https://github.com/apache/commons-codec/commit/48b615756d1d770091ea3322eefc08011ee8b113)"
+                    },
+                    "locations":
+                    [
+                        {
+                            "physicalLocation":
+                            {
+                                "artifactLocation":
+                                {
+                                    "uri": "usr/salih/Gradle/build.gradle",
+                                    "uriBaseId": "SRCROOT"
                                 },
                                 "region":
                                 {
