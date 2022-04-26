@@ -39,38 +39,6 @@
                               "MEDIUM"
                             ]
                           }
-                        }, 
-                        {
-                            "id": "WS-2019-0379",
-                            "name": "LanguageSpecificPackageVulnerability",
-                            "shortDescription":
-                            {
-                                "text": "WS-2019-0379"
-                            },
-                            "fullDescription":
-                            {
-                                "text": "Apache commons-codec before version “commons-codec-1.13-RC1” is vulnerable to information disclosure due to Improper Input validation."
-                            },
-                            "defaultConfiguration": {
-                                "level": "warning"
-                            },
-                            "helpUri": "https://github.com/apache/commons-codec/commit/48b615756d1d770091ea3322eefc08011ee8b113",
-                            "help":
-                            {
-                                "text": "Vulnerability WS-2019-0379\nSeverity: MEDIUM\nPackage: commons-codec\nFixed Version: 1.13\nLink: [WS-2019-0379](https://github.com/apache/commons-codec/commit/48b615756d1d770091ea3322eefc08011ee8b113)\nApache commons-codec before version “commons-codec-1.13-RC1” is vulnerable to information disclosure due to Improper Input validation.",
-                                "markdown": "**Vulnerability WS-2019-0379**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|commons-codec|1.13|[WS-2019-0379](https://github.com/apache/commons-codec/commit/48b615756d1d770091ea3322eefc08011ee8b113)|\n\nApache commons-codec before version “commons-codec-1.13-RC1” is vulnerable to information disclosure due to Improper Input validation."
-                            },
-                            "properties":
-                            {
-                                "precision": "very-high",
-                                "security-severity": 6.5,
-                                "tags":
-                                [
-                                    "vulnerability",
-                                    "security",
-                                    "MEDIUM"
-                                ]
-                            }
                         }
                     ],
                     "version": "0.0.0-SNAPSHOT-5b2d2aa"
@@ -94,6 +62,32 @@
                                 "artifactLocation":
                                 {
                                     "uri": "testws/amazonlinux:v4",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region":
+                                {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                }, 
+                {
+                    "ruleId": "WS-2019-0379",
+                    "ruleIndex": 1,
+                    "level": "warning",
+                    "message":
+                    {
+                        "text": "Package: commons-codec\nInstalled Version: 1.7\nVulnerability WS-2019-0379\nSeverity: MEDIUM\nFixed Version: 1.13\nLink: [WS-2019-0379](https://github.com/apache/commons-codec/commit/48b615756d1d770091ea3322eefc08011ee8b113)"
+                    },
+                    "locations":
+                    [
+                        {
+                            "physicalLocation":
+                            {
+                                "artifactLocation":
+                                {
+                                    "uri": "usr/salih/Gradle/build.gradle",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region":
