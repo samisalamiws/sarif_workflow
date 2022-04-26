@@ -1756,7 +1756,34 @@
                                     "MEDIUM"
                                 ]
                             }
-                        }
+                        },
+                        {
+              "id": "CVE-2022-23219",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-23219"
+              },
+              "fullDescription": {
+                "text": "The deprecated compatibility function clnt_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its hostname argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-23219",
+              "help": {
+                "text": "Vulnerability CVE-2022-23219\nSeverity: MEDIUM\nPackage: libcrypt\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23219](https://avd.aquasec.com/nvd/cve-2022-23219)\nThe deprecated compatibility function clnt_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its hostname argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution.",
+                "markdown": "**Vulnerability CVE-2022-23219**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|libcrypt|2.26-58.amzn2|[CVE-2022-23219](https://avd.aquasec.com/nvd/cve-2022-23219)|\n\nThe deprecated compatibility function clnt_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its hostname argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            }
                     ],
                     "version": "0.0.0-SNAPSHOT-5b2d2aa"
                 }
@@ -3357,7 +3384,28 @@
                             }
                         }
                     ]
+                },
+                {
+          "ruleId": "CVE-2022-23219",
+          "ruleIndex": 76,
+          "level": "warning",
+          "message": {
+            "text": "Package: glibc\nInstalled Version: 2.26-57.amzn2\nVulnerability CVE-2022-23219\nSeverity: MEDIUM\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23219](https://avd.aquasec.com/nvd/cve-2022-23219)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
                 }
+              }
+            }
+          ]
+        }
             ]
         }
     ]
