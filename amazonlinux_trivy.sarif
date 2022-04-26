@@ -1,0 +1,1307 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "fullName": "Trivy Vulnerability Scanner",
+          "informationUri": "https://github.com/aquasecurity/trivy",
+          "name": "Trivy",
+          "rules": [
+            {
+              "id": "CVE-2022-23218",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-23218"
+              },
+              "fullDescription": {
+                "text": "The deprecated compatibility function svcunix_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its path argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-23218",
+              "help": {
+                "text": "Vulnerability CVE-2022-23218\nSeverity: MEDIUM\nPackage: libcrypt\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23218](https://avd.aquasec.com/nvd/cve-2022-23218)\nThe deprecated compatibility function svcunix_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its path argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution.",
+                "markdown": "**Vulnerability CVE-2022-23218**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|libcrypt|2.26-58.amzn2|[CVE-2022-23218](https://avd.aquasec.com/nvd/cve-2022-23218)|\n\nThe deprecated compatibility function svcunix_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its path argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-23219",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-23219"
+              },
+              "fullDescription": {
+                "text": "The deprecated compatibility function clnt_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its hostname argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-23219",
+              "help": {
+                "text": "Vulnerability CVE-2022-23219\nSeverity: MEDIUM\nPackage: libcrypt\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23219](https://avd.aquasec.com/nvd/cve-2022-23219)\nThe deprecated compatibility function clnt_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its hostname argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution.",
+                "markdown": "**Vulnerability CVE-2022-23219**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|libcrypt|2.26-58.amzn2|[CVE-2022-23219](https://avd.aquasec.com/nvd/cve-2022-23219)|\n\nThe deprecated compatibility function clnt_create in the sunrpc module of the GNU C Library (aka glibc) through 2.34 copies its hostname argument on the stack without validating its length, which may result in a buffer overflow, potentially resulting in a denial of service or (if an application is not built with a stack protector enabled) arbitrary code execution."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2021-33560",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2021-33560"
+              },
+              "fullDescription": {
+                "text": "Libgcrypt before 1.8.8 and 1.9.x before 1.9.3 mishandles ElGamal encryption because it lacks exponent blinding to address a side-channel attack against mpi_powm, and the window size is not chosen appropriately. This, for example, affects use of ElGamal in OpenPGP."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2021-33560",
+              "help": {
+                "text": "Vulnerability CVE-2021-33560\nSeverity: MEDIUM\nPackage: libgcrypt\nFixed Version: 1.5.3-14.amzn2.0.3\nLink: [CVE-2021-33560](https://avd.aquasec.com/nvd/cve-2021-33560)\nLibgcrypt before 1.8.8 and 1.9.x before 1.9.3 mishandles ElGamal encryption because it lacks exponent blinding to address a side-channel attack against mpi_powm, and the window size is not chosen appropriately. This, for example, affects use of ElGamal in OpenPGP.",
+                "markdown": "**Vulnerability CVE-2021-33560**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|libgcrypt|1.5.3-14.amzn2.0.3|[CVE-2021-33560](https://avd.aquasec.com/nvd/cve-2021-33560)|\n\nLibgcrypt before 1.8.8 and 1.9.x before 1.9.3 mishandles ElGamal encryption because it lacks exponent blinding to address a side-channel attack against mpi_powm, and the window size is not chosen appropriately. This, for example, affects use of ElGamal in OpenPGP."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2020-25709",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2020-25709"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in OpenLDAP. This flaw allows an attacker who can send a malicious packet to be processed by OpenLDAP’s slapd server, to trigger an assertion failure. The highest threat from this vulnerability is to system availability."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2020-25709",
+              "help": {
+                "text": "Vulnerability CVE-2020-25709\nSeverity: MEDIUM\nPackage: openldap\nFixed Version: 2.4.44-23.amzn2.0.3\nLink: [CVE-2020-25709](https://avd.aquasec.com/nvd/cve-2020-25709)\nA flaw was found in OpenLDAP. This flaw allows an attacker who can send a malicious packet to be processed by OpenLDAP’s slapd server, to trigger an assertion failure. The highest threat from this vulnerability is to system availability.",
+                "markdown": "**Vulnerability CVE-2020-25709**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|openldap|2.4.44-23.amzn2.0.3|[CVE-2020-25709](https://avd.aquasec.com/nvd/cve-2020-25709)|\n\nA flaw was found in OpenLDAP. This flaw allows an attacker who can send a malicious packet to be processed by OpenLDAP’s slapd server, to trigger an assertion failure. The highest threat from this vulnerability is to system availability."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2020-25710",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2020-25710"
+              },
+              "fullDescription": {
+                "text": "A flaw was found in OpenLDAP in versions before 2.4.56. This flaw allows an attacker who sends a malicious packet processed by OpenLDAP to force a failed assertion in csnNormalize23(). The highest threat from this vulnerability is to system availability."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2020-25710",
+              "help": {
+                "text": "Vulnerability CVE-2020-25710\nSeverity: MEDIUM\nPackage: openldap\nFixed Version: 2.4.44-23.amzn2.0.3\nLink: [CVE-2020-25710](https://avd.aquasec.com/nvd/cve-2020-25710)\nA flaw was found in OpenLDAP in versions before 2.4.56. This flaw allows an attacker who sends a malicious packet processed by OpenLDAP to force a failed assertion in csnNormalize23(). The highest threat from this vulnerability is to system availability.",
+                "markdown": "**Vulnerability CVE-2020-25710**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|openldap|2.4.44-23.amzn2.0.3|[CVE-2020-25710](https://avd.aquasec.com/nvd/cve-2020-25710)|\n\nA flaw was found in OpenLDAP in versions before 2.4.56. This flaw allows an attacker who sends a malicious packet processed by OpenLDAP to force a failed assertion in csnNormalize23(). The highest threat from this vulnerability is to system availability."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-0554",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-0554"
+              },
+              "fullDescription": {
+                "text": "Use of Out-of-range Pointer Offset in GitHub repository vim/vim prior to 8.2."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-0554",
+              "help": {
+                "text": "Vulnerability CVE-2022-0554\nSeverity: MEDIUM\nPackage: vim-minimal\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0554](https://avd.aquasec.com/nvd/cve-2022-0554)\nUse of Out-of-range Pointer Offset in GitHub repository vim/vim prior to 8.2.",
+                "markdown": "**Vulnerability CVE-2022-0554**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|vim-minimal|2:8.2.4428-1.amzn2.0.3|[CVE-2022-0554](https://avd.aquasec.com/nvd/cve-2022-0554)|\n\nUse of Out-of-range Pointer Offset in GitHub repository vim/vim prior to 8.2."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-0572",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-0572"
+              },
+              "fullDescription": {
+                "text": "Heap-based Buffer Overflow in GitHub repository vim/vim prior to 8.2."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-0572",
+              "help": {
+                "text": "Vulnerability CVE-2022-0572\nSeverity: MEDIUM\nPackage: vim-minimal\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0572](https://avd.aquasec.com/nvd/cve-2022-0572)\nHeap-based Buffer Overflow in GitHub repository vim/vim prior to 8.2.",
+                "markdown": "**Vulnerability CVE-2022-0572**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|vim-minimal|2:8.2.4428-1.amzn2.0.3|[CVE-2022-0572](https://avd.aquasec.com/nvd/cve-2022-0572)|\n\nHeap-based Buffer Overflow in GitHub repository vim/vim prior to 8.2."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-0629",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-0629"
+              },
+              "fullDescription": {
+                "text": "Stack-based Buffer Overflow in GitHub repository vim/vim prior to 8.2."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-0629",
+              "help": {
+                "text": "Vulnerability CVE-2022-0629\nSeverity: MEDIUM\nPackage: vim-minimal\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0629](https://avd.aquasec.com/nvd/cve-2022-0629)\nStack-based Buffer Overflow in GitHub repository vim/vim prior to 8.2.",
+                "markdown": "**Vulnerability CVE-2022-0629**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|vim-minimal|2:8.2.4428-1.amzn2.0.3|[CVE-2022-0629](https://avd.aquasec.com/nvd/cve-2022-0629)|\n\nStack-based Buffer Overflow in GitHub repository vim/vim prior to 8.2."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-0685",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-0685"
+              },
+              "fullDescription": {
+                "text": "Use of Out-of-range Pointer Offset in GitHub repository vim/vim prior to 8.2.4418."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-0685",
+              "help": {
+                "text": "Vulnerability CVE-2022-0685\nSeverity: MEDIUM\nPackage: vim-minimal\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0685](https://avd.aquasec.com/nvd/cve-2022-0685)\nUse of Out-of-range Pointer Offset in GitHub repository vim/vim prior to 8.2.4418.",
+                "markdown": "**Vulnerability CVE-2022-0685**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|vim-minimal|2:8.2.4428-1.amzn2.0.3|[CVE-2022-0685](https://avd.aquasec.com/nvd/cve-2022-0685)|\n\nUse of Out-of-range Pointer Offset in GitHub repository vim/vim prior to 8.2.4418."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-0696",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-0696"
+              },
+              "fullDescription": {
+                "text": "NULL Pointer Dereference in GitHub repository vim/vim prior to 8.2.4428."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-0696",
+              "help": {
+                "text": "Vulnerability CVE-2022-0696\nSeverity: MEDIUM\nPackage: vim-minimal\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0696](https://avd.aquasec.com/nvd/cve-2022-0696)\nNULL Pointer Dereference in GitHub repository vim/vim prior to 8.2.4428.",
+                "markdown": "**Vulnerability CVE-2022-0696**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|vim-minimal|2:8.2.4428-1.amzn2.0.3|[CVE-2022-0696](https://avd.aquasec.com/nvd/cve-2022-0696)|\n\nNULL Pointer Dereference in GitHub repository vim/vim prior to 8.2.4428."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2018-25032",
+              "name": "OsPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2018-25032"
+              },
+              "fullDescription": {
+                "text": "zlib before 1.2.12 allows memory corruption when deflating (i.e., when compressing) if the input has many distant matches."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2018-25032",
+              "help": {
+                "text": "Vulnerability CVE-2018-25032\nSeverity: HIGH\nPackage: zlib\nFixed Version: 1.2.7-19.amzn2.0.1\nLink: [CVE-2018-25032](https://avd.aquasec.com/nvd/cve-2018-25032)\nzlib before 1.2.12 allows memory corruption when deflating (i.e., when compressing) if the input has many distant matches.",
+                "markdown": "**Vulnerability CVE-2018-25032**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|zlib|1.2.7-19.amzn2.0.1|[CVE-2018-25032](https://avd.aquasec.com/nvd/cve-2018-25032)|\n\nzlib before 1.2.12 allows memory corruption when deflating (i.e., when compressing) if the input has many distant matches."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-10773",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-10773"
+              },
+              "fullDescription": {
+                "text": "In Yarn before 1.21.1, the package install functionality can be abused to generate arbitrary symlinks on the host filesystem by using specially crafted \u0026#34;bin\u0026#34; keys. Existing files could be overwritten depending on the current user permission set."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2019-10773",
+              "help": {
+                "text": "Vulnerability CVE-2019-10773\nSeverity: HIGH\nPackage: Yarn\nFixed Version: 1.22.0\nLink: [CVE-2019-10773](https://avd.aquasec.com/nvd/cve-2019-10773)\nIn Yarn before 1.21.1, the package install functionality can be abused to generate arbitrary symlinks on the host filesystem by using specially crafted \"bin\" keys. Existing files could be overwritten depending on the current user permission set.",
+                "markdown": "**Vulnerability CVE-2019-10773**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|Yarn|1.22.0|[CVE-2019-10773](https://avd.aquasec.com/nvd/cve-2019-10773)|\n\nIn Yarn before 1.21.1, the package install functionality can be abused to generate arbitrary symlinks on the host filesystem by using specially crafted \"bin\" keys. Existing files could be overwritten depending on the current user permission set."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-5448",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-5448"
+              },
+              "fullDescription": {
+                "text": "Yarn before 1.17.3 is vulnerable to Missing Encryption of Sensitive Data due to HTTP URLs in lockfile causing unencrypted authentication data to be sent over the network."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2019-5448",
+              "help": {
+                "text": "Vulnerability CVE-2019-5448\nSeverity: HIGH\nPackage: Yarn\nFixed Version: 1.17.3\nLink: [CVE-2019-5448](https://avd.aquasec.com/nvd/cve-2019-5448)\nYarn before 1.17.3 is vulnerable to Missing Encryption of Sensitive Data due to HTTP URLs in lockfile causing unencrypted authentication data to be sent over the network.",
+                "markdown": "**Vulnerability CVE-2019-5448**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|Yarn|1.17.3|[CVE-2019-5448](https://avd.aquasec.com/nvd/cve-2019-5448)|\n\nYarn before 1.17.3 is vulnerable to Missing Encryption of Sensitive Data due to HTTP URLs in lockfile causing unencrypted authentication data to be sent over the network."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2020-8131",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2020-8131"
+              },
+              "fullDescription": {
+                "text": "Arbitrary filesystem write vulnerability in Yarn before 1.22.0 allows attackers to write to any path on the filesystem and potentially lead to arbitrary code execution by forcing the user to install a malicious package."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2020-8131",
+              "help": {
+                "text": "Vulnerability CVE-2020-8131\nSeverity: HIGH\nPackage: Yarn\nFixed Version: 1.22.0\nLink: [CVE-2020-8131](https://avd.aquasec.com/nvd/cve-2020-8131)\nArbitrary filesystem write vulnerability in Yarn before 1.22.0 allows attackers to write to any path on the filesystem and potentially lead to arbitrary code execution by forcing the user to install a malicious package.",
+                "markdown": "**Vulnerability CVE-2020-8131**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|Yarn|1.22.0|[CVE-2020-8131](https://avd.aquasec.com/nvd/cve-2020-8131)|\n\nArbitrary filesystem write vulnerability in Yarn before 1.22.0 allows attackers to write to any path on the filesystem and potentially lead to arbitrary code execution by forcing the user to install a malicious package."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-15608",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-15608"
+              },
+              "fullDescription": {
+                "text": "The package integrity validation in yarn \u0026lt; 1.19.0 contains a TOCTOU vulnerability where the hash is computed before writing a package to cache. It\u0026#39;s not computed again when reading from the cache. This may lead to a cache pollution attack."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2019-15608",
+              "help": {
+                "text": "Vulnerability CVE-2019-15608\nSeverity: MEDIUM\nPackage: Yarn\nFixed Version: 1.19.0\nLink: [CVE-2019-15608](https://avd.aquasec.com/nvd/cve-2019-15608)\nThe package integrity validation in yarn \u003c 1.19.0 contains a TOCTOU vulnerability where the hash is computed before writing a package to cache. It's not computed again when reading from the cache. This may lead to a cache pollution attack.",
+                "markdown": "**Vulnerability CVE-2019-15608**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|Yarn|1.19.0|[CVE-2019-15608](https://avd.aquasec.com/nvd/cve-2019-15608)|\n\nThe package integrity validation in yarn \u003c 1.19.0 contains a TOCTOU vulnerability where the hash is computed before writing a package to cache. It's not computed again when reading from the cache. This may lead to a cache pollution attack."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-16775",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-16775"
+              },
+              "fullDescription": {
+                "text": "Versions of the npm CLI prior to 6.13.3 are vulnerable to an Arbitrary File Write. It is possible for packages to create symlinks to files outside of thenode_modules folder through the bin field upon installation. A properly constructed entry in the package.json bin field would allow a package publisher to create a symlink pointing to arbitrary files on a user\u0026#39;s system when the package is installed. This behavior is still possible through install scripts. This vulnerability bypasses a user using the --ignore-scripts install option."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2019-16775",
+              "help": {
+                "text": "Vulnerability CVE-2019-16775\nSeverity: HIGH\nPackage: npm\nFixed Version: 6.13.3\nLink: [CVE-2019-16775](https://avd.aquasec.com/nvd/cve-2019-16775)\nVersions of the npm CLI prior to 6.13.3 are vulnerable to an Arbitrary File Write. It is possible for packages to create symlinks to files outside of thenode_modules folder through the bin field upon installation. A properly constructed entry in the package.json bin field would allow a package publisher to create a symlink pointing to arbitrary files on a user's system when the package is installed. This behavior is still possible through install scripts. This vulnerability bypasses a user using the --ignore-scripts install option.",
+                "markdown": "**Vulnerability CVE-2019-16775**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|npm|6.13.3|[CVE-2019-16775](https://avd.aquasec.com/nvd/cve-2019-16775)|\n\nVersions of the npm CLI prior to 6.13.3 are vulnerable to an Arbitrary File Write. It is possible for packages to create symlinks to files outside of thenode_modules folder through the bin field upon installation. A properly constructed entry in the package.json bin field would allow a package publisher to create a symlink pointing to arbitrary files on a user's system when the package is installed. This behavior is still possible through install scripts. This vulnerability bypasses a user using the --ignore-scripts install option."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2016-3956",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2016-3956"
+              },
+              "fullDescription": {
+                "text": "The CLI in npm before 2.15.1 and 3.x before 3.8.3, as used in Node.js 0.10 before 0.10.44, 0.12 before 0.12.13, 4 before 4.4.2, and 5 before 5.10.0, includes bearer tokens with arbitrary requests, which allows remote HTTP servers to obtain sensitive information by reading Authorization headers."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2016-3956",
+              "help": {
+                "text": "Vulnerability CVE-2016-3956\nSeverity: MEDIUM\nPackage: npm\nFixed Version: \u003e= 2.15.1 \u003c= 3.0.0, \u003e= 3.8.3\nLink: [CVE-2016-3956](https://avd.aquasec.com/nvd/cve-2016-3956)\nThe CLI in npm before 2.15.1 and 3.x before 3.8.3, as used in Node.js 0.10 before 0.10.44, 0.12 before 0.12.13, 4 before 4.4.2, and 5 before 5.10.0, includes bearer tokens with arbitrary requests, which allows remote HTTP servers to obtain sensitive information by reading Authorization headers.",
+                "markdown": "**Vulnerability CVE-2016-3956**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|npm|\u003e= 2.15.1 \u003c= 3.0.0, \u003e= 3.8.3|[CVE-2016-3956](https://avd.aquasec.com/nvd/cve-2016-3956)|\n\nThe CLI in npm before 2.15.1 and 3.x before 3.8.3, as used in Node.js 0.10 before 0.10.44, 0.12 before 0.12.13, 4 before 4.4.2, and 5 before 5.10.0, includes bearer tokens with arbitrary requests, which allows remote HTTP servers to obtain sensitive information by reading Authorization headers."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2013-4116",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2013-4116"
+              },
+              "fullDescription": {
+                "text": "lib/npm.js in Node Packaged Modules (npm) before 1.3.3 allows local users to overwrite arbitrary files via a symlink attack on temporary files with predictable names that are created when unpacking archives."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2013-4116",
+              "help": {
+                "text": "Vulnerability CVE-2013-4116\nSeverity: LOW\nPackage: npm\nFixed Version: \u003e=1.3.3\nLink: [CVE-2013-4116](https://avd.aquasec.com/nvd/cve-2013-4116)\nlib/npm.js in Node Packaged Modules (npm) before 1.3.3 allows local users to overwrite arbitrary files via a symlink attack on temporary files with predictable names that are created when unpacking archives.",
+                "markdown": "**Vulnerability CVE-2013-4116**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|LOW|npm|\u003e=1.3.3|[CVE-2013-4116](https://avd.aquasec.com/nvd/cve-2013-4116)|\n\nlib/npm.js in Node Packaged Modules (npm) before 1.3.3 allows local users to overwrite arbitrary files via a symlink attack on temporary files with predictable names that are created when unpacking archives."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-16776",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-16776"
+              },
+              "fullDescription": {
+                "text": "Versions of the npm CLI prior to 6.13.3 are vulnerable to an Arbitrary File Write. It fails to prevent access to folders outside of the intended node_modules folder through the bin field. A properly constructed entry in the package.json bin field would allow a package publisher to modify and/or gain access to arbitrary files on a user\u0026#39;s system when the package is installed. This behavior is still possible through install scripts. This vulnerability bypasses a user using the --ignore-scripts install option."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2019-16776",
+              "help": {
+                "text": "Vulnerability CVE-2019-16776\nSeverity: LOW\nPackage: npm\nFixed Version: 6.13.3\nLink: [CVE-2019-16776](https://avd.aquasec.com/nvd/cve-2019-16776)\nVersions of the npm CLI prior to 6.13.3 are vulnerable to an Arbitrary File Write. It fails to prevent access to folders outside of the intended node_modules folder through the bin field. A properly constructed entry in the package.json bin field would allow a package publisher to modify and/or gain access to arbitrary files on a user's system when the package is installed. This behavior is still possible through install scripts. This vulnerability bypasses a user using the --ignore-scripts install option.",
+                "markdown": "**Vulnerability CVE-2019-16776**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|LOW|npm|6.13.3|[CVE-2019-16776](https://avd.aquasec.com/nvd/cve-2019-16776)|\n\nVersions of the npm CLI prior to 6.13.3 are vulnerable to an Arbitrary File Write. It fails to prevent access to folders outside of the intended node_modules folder through the bin field. A properly constructed entry in the package.json bin field would allow a package publisher to modify and/or gain access to arbitrary files on a user's system when the package is installed. This behavior is still possible through install scripts. This vulnerability bypasses a user using the --ignore-scripts install option."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-16777",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-16777"
+              },
+              "fullDescription": {
+                "text": "Versions of the npm CLI prior to 6.13.4 are vulnerable to an Arbitrary File Overwrite. It fails to prevent existing globally-installed binaries to be overwritten by other package installations. For example, if a package was installed globally and created a serve binary, any subsequent installs of packages that also create a serve binary would overwrite the previous serve binary. This behavior is still allowed in local installations and also through install scripts. This vulnerability bypasses a user using the --ignore-scripts install option."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2019-16777",
+              "help": {
+                "text": "Vulnerability CVE-2019-16777\nSeverity: LOW\nPackage: npm\nFixed Version: 6.13.4\nLink: [CVE-2019-16777](https://avd.aquasec.com/nvd/cve-2019-16777)\nVersions of the npm CLI prior to 6.13.4 are vulnerable to an Arbitrary File Overwrite. It fails to prevent existing globally-installed binaries to be overwritten by other package installations. For example, if a package was installed globally and created a serve binary, any subsequent installs of packages that also create a serve binary would overwrite the previous serve binary. This behavior is still allowed in local installations and also through install scripts. This vulnerability bypasses a user using the --ignore-scripts install option.",
+                "markdown": "**Vulnerability CVE-2019-16777**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|LOW|npm|6.13.4|[CVE-2019-16777](https://avd.aquasec.com/nvd/cve-2019-16777)|\n\nVersions of the npm CLI prior to 6.13.4 are vulnerable to an Arbitrary File Overwrite. It fails to prevent existing globally-installed binaries to be overwritten by other package installations. For example, if a package was installed globally and created a serve binary, any subsequent installs of packages that also create a serve binary would overwrite the previous serve binary. This behavior is still allowed in local installations and also through install scripts. This vulnerability bypasses a user using the --ignore-scripts install option."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2020-15095",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "CVE-2020-15095"
+              },
+              "fullDescription": {
+                "text": "Versions of the npm CLI prior to 6.14.6 are vulnerable to an information exposure vulnerability through log files. The CLI supports URLs like \u0026#34;\u0026lt;protocol\u0026gt;://[\u0026lt;user\u0026gt;[:\u0026lt;password\u0026gt;]@]\u0026lt;hostname\u0026gt;[:\u0026lt;port\u0026gt;][:][/]\u0026lt;path\u0026gt;\u0026#34;. The password value is not redacted and is printed to stdout and also to any generated log files."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2020-15095",
+              "help": {
+                "text": "Vulnerability CVE-2020-15095\nSeverity: LOW\nPackage: npm\nFixed Version: 6.14.6\nLink: [CVE-2020-15095](https://avd.aquasec.com/nvd/cve-2020-15095)\nVersions of the npm CLI prior to 6.14.6 are vulnerable to an information exposure vulnerability through log files. The CLI supports URLs like \"\u003cprotocol\u003e://[\u003cuser\u003e[:\u003cpassword\u003e]@]\u003chostname\u003e[:\u003cport\u003e][:][/]\u003cpath\u003e\". The password value is not redacted and is printed to stdout and also to any generated log files.",
+                "markdown": "**Vulnerability CVE-2020-15095**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|LOW|npm|6.14.6|[CVE-2020-15095](https://avd.aquasec.com/nvd/cve-2020-15095)|\n\nVersions of the npm CLI prior to 6.14.6 are vulnerable to an information exposure vulnerability through log files. The CLI supports URLs like \"\u003cprotocol\u003e://[\u003cuser\u003e[:\u003cpassword\u003e]@]\u003chostname\u003e[:\u003cport\u003e][:][/]\u003cpath\u003e\". The password value is not redacted and is printed to stdout and also to any generated log files."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "LOW"
+                ]
+              }
+            }
+          ],
+          "version": "0.23.0"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "CVE-2022-23218",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: glibc\nInstalled Version: 2.26-57.amzn2\nVulnerability CVE-2022-23218\nSeverity: MEDIUM\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23218](https://avd.aquasec.com/nvd/cve-2022-23218)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-23219",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: glibc\nInstalled Version: 2.26-57.amzn2\nVulnerability CVE-2022-23219\nSeverity: MEDIUM\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23219](https://avd.aquasec.com/nvd/cve-2022-23219)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-23218",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: glibc-common\nInstalled Version: 2.26-57.amzn2\nVulnerability CVE-2022-23218\nSeverity: MEDIUM\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23218](https://avd.aquasec.com/nvd/cve-2022-23218)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-23219",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: glibc-common\nInstalled Version: 2.26-57.amzn2\nVulnerability CVE-2022-23219\nSeverity: MEDIUM\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23219](https://avd.aquasec.com/nvd/cve-2022-23219)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-23218",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: glibc-langpack-en\nInstalled Version: 2.26-57.amzn2\nVulnerability CVE-2022-23218\nSeverity: MEDIUM\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23218](https://avd.aquasec.com/nvd/cve-2022-23218)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-23219",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: glibc-langpack-en\nInstalled Version: 2.26-57.amzn2\nVulnerability CVE-2022-23219\nSeverity: MEDIUM\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23219](https://avd.aquasec.com/nvd/cve-2022-23219)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-23218",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: glibc-minimal-langpack\nInstalled Version: 2.26-57.amzn2\nVulnerability CVE-2022-23218\nSeverity: MEDIUM\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23218](https://avd.aquasec.com/nvd/cve-2022-23218)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-23219",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: glibc-minimal-langpack\nInstalled Version: 2.26-57.amzn2\nVulnerability CVE-2022-23219\nSeverity: MEDIUM\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23219](https://avd.aquasec.com/nvd/cve-2022-23219)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-23218",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Package: libcrypt\nInstalled Version: 2.26-57.amzn2\nVulnerability CVE-2022-23218\nSeverity: MEDIUM\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23218](https://avd.aquasec.com/nvd/cve-2022-23218)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-23219",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: libcrypt\nInstalled Version: 2.26-57.amzn2\nVulnerability CVE-2022-23219\nSeverity: MEDIUM\nFixed Version: 2.26-58.amzn2\nLink: [CVE-2022-23219](https://avd.aquasec.com/nvd/cve-2022-23219)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2021-33560",
+          "ruleIndex": 2,
+          "level": "warning",
+          "message": {
+            "text": "Package: libgcrypt\nInstalled Version: 1.5.3-14.amzn2.0.2\nVulnerability CVE-2021-33560\nSeverity: MEDIUM\nFixed Version: 1.5.3-14.amzn2.0.3\nLink: [CVE-2021-33560](https://avd.aquasec.com/nvd/cve-2021-33560)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2020-25709",
+          "ruleIndex": 3,
+          "level": "warning",
+          "message": {
+            "text": "Package: openldap\nInstalled Version: 2.4.44-23.amzn2.0.2\nVulnerability CVE-2020-25709\nSeverity: MEDIUM\nFixed Version: 2.4.44-23.amzn2.0.3\nLink: [CVE-2020-25709](https://avd.aquasec.com/nvd/cve-2020-25709)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2020-25710",
+          "ruleIndex": 4,
+          "level": "warning",
+          "message": {
+            "text": "Package: openldap\nInstalled Version: 2.4.44-23.amzn2.0.2\nVulnerability CVE-2020-25710\nSeverity: MEDIUM\nFixed Version: 2.4.44-23.amzn2.0.3\nLink: [CVE-2020-25710](https://avd.aquasec.com/nvd/cve-2020-25710)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-0554",
+          "ruleIndex": 5,
+          "level": "warning",
+          "message": {
+            "text": "Package: vim-data\nInstalled Version: 2:8.2.4314-1.amzn2.0.1\nVulnerability CVE-2022-0554\nSeverity: MEDIUM\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0554](https://avd.aquasec.com/nvd/cve-2022-0554)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-0572",
+          "ruleIndex": 6,
+          "level": "warning",
+          "message": {
+            "text": "Package: vim-data\nInstalled Version: 2:8.2.4314-1.amzn2.0.1\nVulnerability CVE-2022-0572\nSeverity: MEDIUM\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0572](https://avd.aquasec.com/nvd/cve-2022-0572)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-0629",
+          "ruleIndex": 7,
+          "level": "warning",
+          "message": {
+            "text": "Package: vim-data\nInstalled Version: 2:8.2.4314-1.amzn2.0.1\nVulnerability CVE-2022-0629\nSeverity: MEDIUM\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0629](https://avd.aquasec.com/nvd/cve-2022-0629)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-0685",
+          "ruleIndex": 8,
+          "level": "warning",
+          "message": {
+            "text": "Package: vim-data\nInstalled Version: 2:8.2.4314-1.amzn2.0.1\nVulnerability CVE-2022-0685\nSeverity: MEDIUM\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0685](https://avd.aquasec.com/nvd/cve-2022-0685)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-0696",
+          "ruleIndex": 9,
+          "level": "warning",
+          "message": {
+            "text": "Package: vim-data\nInstalled Version: 2:8.2.4314-1.amzn2.0.1\nVulnerability CVE-2022-0696\nSeverity: MEDIUM\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0696](https://avd.aquasec.com/nvd/cve-2022-0696)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-0554",
+          "ruleIndex": 5,
+          "level": "warning",
+          "message": {
+            "text": "Package: vim-minimal\nInstalled Version: 2:8.2.4314-1.amzn2.0.1\nVulnerability CVE-2022-0554\nSeverity: MEDIUM\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0554](https://avd.aquasec.com/nvd/cve-2022-0554)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-0572",
+          "ruleIndex": 6,
+          "level": "warning",
+          "message": {
+            "text": "Package: vim-minimal\nInstalled Version: 2:8.2.4314-1.amzn2.0.1\nVulnerability CVE-2022-0572\nSeverity: MEDIUM\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0572](https://avd.aquasec.com/nvd/cve-2022-0572)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-0629",
+          "ruleIndex": 7,
+          "level": "warning",
+          "message": {
+            "text": "Package: vim-minimal\nInstalled Version: 2:8.2.4314-1.amzn2.0.1\nVulnerability CVE-2022-0629\nSeverity: MEDIUM\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0629](https://avd.aquasec.com/nvd/cve-2022-0629)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-0685",
+          "ruleIndex": 8,
+          "level": "warning",
+          "message": {
+            "text": "Package: vim-minimal\nInstalled Version: 2:8.2.4314-1.amzn2.0.1\nVulnerability CVE-2022-0685\nSeverity: MEDIUM\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0685](https://avd.aquasec.com/nvd/cve-2022-0685)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-0696",
+          "ruleIndex": 9,
+          "level": "warning",
+          "message": {
+            "text": "Package: vim-minimal\nInstalled Version: 2:8.2.4314-1.amzn2.0.1\nVulnerability CVE-2022-0696\nSeverity: MEDIUM\nFixed Version: 2:8.2.4428-1.amzn2.0.3\nLink: [CVE-2022-0696](https://avd.aquasec.com/nvd/cve-2022-0696)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2018-25032",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "Package: zlib\nInstalled Version: 1.2.7-18.amzn2\nVulnerability CVE-2018-25032\nSeverity: HIGH\nFixed Version: 1.2.7-19.amzn2.0.1\nLink: [CVE-2018-25032](https://avd.aquasec.com/nvd/cve-2018-25032)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "testws/amazonlinux:v4",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-10773",
+          "ruleIndex": 11,
+          "level": "error",
+          "message": {
+            "text": "Package: Yarn\nInstalled Version: 1.0.0\nVulnerability CVE-2019-10773\nSeverity: HIGH\nFixed Version: 1.22.0\nLink: [CVE-2019-10773](https://avd.aquasec.com/nvd/cve-2019-10773)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "usr/salih/Yarn/package.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-5448",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Package: Yarn\nInstalled Version: 1.0.0\nVulnerability CVE-2019-5448\nSeverity: HIGH\nFixed Version: 1.17.3\nLink: [CVE-2019-5448](https://avd.aquasec.com/nvd/cve-2019-5448)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "usr/salih/Yarn/package.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2020-8131",
+          "ruleIndex": 13,
+          "level": "error",
+          "message": {
+            "text": "Package: Yarn\nInstalled Version: 1.0.0\nVulnerability CVE-2020-8131\nSeverity: HIGH\nFixed Version: 1.22.0\nLink: [CVE-2020-8131](https://avd.aquasec.com/nvd/cve-2020-8131)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "usr/salih/Yarn/package.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-15608",
+          "ruleIndex": 14,
+          "level": "warning",
+          "message": {
+            "text": "Package: Yarn\nInstalled Version: 1.0.0\nVulnerability CVE-2019-15608\nSeverity: MEDIUM\nFixed Version: 1.19.0\nLink: [CVE-2019-15608](https://avd.aquasec.com/nvd/cve-2019-15608)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "usr/salih/Yarn/package.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-16775",
+          "ruleIndex": 15,
+          "level": "error",
+          "message": {
+            "text": "Package: npm\nInstalled Version: 1.0.0\nVulnerability CVE-2019-16775\nSeverity: HIGH\nFixed Version: 6.13.3\nLink: [CVE-2019-16775](https://avd.aquasec.com/nvd/cve-2019-16775)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "usr/salih/NPM/package.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2016-3956",
+          "ruleIndex": 16,
+          "level": "warning",
+          "message": {
+            "text": "Package: npm\nInstalled Version: 1.0.0\nVulnerability CVE-2016-3956\nSeverity: MEDIUM\nFixed Version: \u003e= 2.15.1 \u003c= 3.0.0, \u003e= 3.8.3\nLink: [CVE-2016-3956](https://avd.aquasec.com/nvd/cve-2016-3956)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "usr/salih/NPM/package.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2013-4116",
+          "ruleIndex": 17,
+          "level": "note",
+          "message": {
+            "text": "Package: npm\nInstalled Version: 1.0.0\nVulnerability CVE-2013-4116\nSeverity: LOW\nFixed Version: \u003e=1.3.3\nLink: [CVE-2013-4116](https://avd.aquasec.com/nvd/cve-2013-4116)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "usr/salih/NPM/package.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-16776",
+          "ruleIndex": 18,
+          "level": "note",
+          "message": {
+            "text": "Package: npm\nInstalled Version: 1.0.0\nVulnerability CVE-2019-16776\nSeverity: LOW\nFixed Version: 6.13.3\nLink: [CVE-2019-16776](https://avd.aquasec.com/nvd/cve-2019-16776)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "usr/salih/NPM/package.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-16777",
+          "ruleIndex": 19,
+          "level": "note",
+          "message": {
+            "text": "Package: npm\nInstalled Version: 1.0.0\nVulnerability CVE-2019-16777\nSeverity: LOW\nFixed Version: 6.13.4\nLink: [CVE-2019-16777](https://avd.aquasec.com/nvd/cve-2019-16777)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "usr/salih/NPM/package.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2020-15095",
+          "ruleIndex": 20,
+          "level": "note",
+          "message": {
+            "text": "Package: npm\nInstalled Version: 1.0.0\nVulnerability CVE-2020-15095\nSeverity: LOW\nFixed Version: 6.14.6\nLink: [CVE-2020-15095](https://avd.aquasec.com/nvd/cve-2020-15095)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "usr/salih/NPM/package.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "columnKind": "utf16CodeUnits",
+      "originalUriBaseIds": {
+        "ROOTPATH": {
+          "uri": "file:///"
+        }
+      }
+    }
+  ]
+}
