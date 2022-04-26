@@ -10,7 +10,7 @@
                 {
                     "fullName": "WS Scanner",
                     "informationUri": "https://www.whitesourcesoftware.com",
-                    "name": "WhiteSource",
+                    "name": "WhiteSource light",
                     "rules":
                     [
                         {
