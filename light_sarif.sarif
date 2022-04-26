@@ -60,7 +60,7 @@
                             "properties":
                             {
                                 "precision": "very-high",
-                                "security-severity": 6.5,
+                                "security-severity": "6.5",
                                 "tags":
                                 [
                                     "vulnerability",
