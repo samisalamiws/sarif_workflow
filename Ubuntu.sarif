@@ -6501,7 +6501,7 @@
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "ubuntu"
+                                    "uri": "testws/amazonlinux"
                                 }
                             }
                         }
