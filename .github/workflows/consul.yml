@@ -1,4 +1,4 @@
-name: "Upload SARIF WS"
+name: "Upload consul SARIF WS"
 # Run workflow each time code is pushed to your repository and on a schedule.
 # The scheduled workflow runs every at 00:00 on Sunday UTC time.
 on:
@@ -16,4 +16,4 @@ jobs:
       uses: github/codeql-action/upload-sarif@v1
       with:
         # Path to SARIF file relative to the root of the repository
-        sarif_file: nginx.sarif
+        sarif_file: consul.sarif
