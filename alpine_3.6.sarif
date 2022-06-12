@@ -7,7 +7,7 @@
                 "driver": {
                     "fullName": "WS Scanner",
                     "informationUri": "https://www.whitesourcesoftware.com",
-                    "name": "WhiteSource",
+                    "name": "WhiteSource alpine",
                     "rules": [
                         {
                             "id": "CVE-2019-14697",
