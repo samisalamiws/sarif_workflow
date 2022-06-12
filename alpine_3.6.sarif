@@ -1,0 +1,235 @@
+{
+    "version": "2.1.0",
+    "$schema": "https://json.schemastore.org/sarif-2.1.0-rtm.5.json",
+    "runs": [
+        {
+            "tool": {
+                "driver": {
+                    "fullName": "WS Scanner",
+                    "informationUri": "https://www.whitesourcesoftware.com",
+                    "name": "WhiteSource",
+                    "rules": [
+                        {
+                            "id": "CVE-2019-14697",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2019-14697"
+                            },
+                            "fullDescription": {
+                                "text": "musl libc through 1.1.23 has an x87 floating-point stack adjustment imbalance, related to the math/i386/ directory. In some cases, use of this library could introduce out-of-bounds writes that are not present in an application's source code."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://vuln.whitesourcesoftware.com/vulnerability/CVE-2019-14697",
+                            "help": {
+                                "text": "Vulnerability CVE-2019-14697\nSeverity: HIGH\nPackage: * musl\nFixed Version: \nLink: [CVE-2019-14697](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2019-14697)\nmusl libc through 1.1.23 has an x87 floating-point stack adjustment imbalance, related to the math/i386/ directory. In some cases, use of this library could introduce out-of-bounds writes that are not present in an application's source code.",
+                                "markdown": "**Vulnerability CVE-2019-14697**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|* musl||[CVE-2019-14697](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2019-14697)|\n\nmusl libc through 1.1.23 has an x87 floating-point stack adjustment imbalance, related to the math/i386/ directory. In some cases, use of this library could introduce out-of-bounds writes that are not present in an application's source code."
+                            },
+                            "properties": {
+                                "security-severity": "7.5",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "HIGH"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2019-5747",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2019-5747"
+                            },
+                            "fullDescription": {
+                                "text": "An issue was discovered in BusyBox through 1.30.0. An out of bounds read in udhcp components (consumed by the DHCP server, client, and/or relay) might allow a remote attacker to leak sensitive information from the stack by sending a crafted DHCP message. This is related to assurance of a 4-byte length when decoding DHCP_SUBNET. NOTE: this issue exists because of an incomplete fix for CVE-2018-20679."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://vuln.whitesourcesoftware.com/vulnerability/CVE-2019-5747",
+                            "help": {
+                                "text": "Vulnerability CVE-2019-5747\nSeverity: MEDIUM\nPackage: busybox\nFixed Version: \nLink: [CVE-2019-5747](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2019-5747)\nAn issue was discovered in BusyBox through 1.30.0. An out of bounds read in udhcp components (consumed by the DHCP server, client, and/or relay) might allow a remote attacker to leak sensitive information from the stack by sending a crafted DHCP message. This is related to assurance of a 4-byte length when decoding DHCP_SUBNET. NOTE: this issue exists because of an incomplete fix for CVE-2018-20679.",
+                                "markdown": "**Vulnerability CVE-2019-5747**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|busybox||[CVE-2019-5747](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2019-5747)|\n\nAn issue was discovered in BusyBox through 1.30.0. An out of bounds read in udhcp components (consumed by the DHCP server, client, and/or relay) might allow a remote attacker to leak sensitive information from the stack by sending a crafted DHCP message. This is related to assurance of a 4-byte length when decoding DHCP_SUBNET. NOTE: this issue exists because of an incomplete fix for CVE-2018-20679."
+                            },
+                            "properties": {
+                                "security-severity": "5",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "MEDIUM"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2017-16544",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2017-16544"
+                            },
+                            "fullDescription": {
+                                "text": "In the add_match function in libbb/lineedit.c in BusyBox through 1.27.2, the tab autocomplete feature of the shell, used to get a list of filenames in a directory, does not sanitize filenames and results in executing any escape sequence in the terminal. This could potentially result in code execution, arbitrary file writes, or other attacks."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://vuln.whitesourcesoftware.com/vulnerability/CVE-2017-16544",
+                            "help": {
+                                "text": "Vulnerability CVE-2017-16544\nSeverity: MEDIUM\nPackage: busybox\nFixed Version: \nLink: [CVE-2017-16544](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2017-16544)\nIn the add_match function in libbb/lineedit.c in BusyBox through 1.27.2, the tab autocomplete feature of the shell, used to get a list of filenames in a directory, does not sanitize filenames and results in executing any escape sequence in the terminal. This could potentially result in code execution, arbitrary file writes, or other attacks.",
+                                "markdown": "**Vulnerability CVE-2017-16544**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|busybox||[CVE-2017-16544](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2017-16544)|\n\nIn the add_match function in libbb/lineedit.c in BusyBox through 1.27.2, the tab autocomplete feature of the shell, used to get a list of filenames in a directory, does not sanitize filenames and results in executing any escape sequence in the terminal. This could potentially result in code execution, arbitrary file writes, or other attacks."
+                            },
+                            "properties": {
+                                "security-severity": "6.5",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "MEDIUM"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2018-1000500",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2018-1000500"
+                            },
+                            "fullDescription": {
+                                "text": "Busybox contains a Missing SSL certificate validation vulnerability in The \"busybox wget\" applet that can result in arbitrary code execution. This attack appear to be exploitable via Simply download any file over HTTPS using \"busybox wget https://compromised-domain.com/important-file\"."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://vuln.whitesourcesoftware.com/vulnerability/CVE-2018-1000500",
+                            "help": {
+                                "text": "Vulnerability CVE-2018-1000500\nSeverity: MEDIUM\nPackage: busybox\nFixed Version: \nLink: [CVE-2018-1000500](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2018-1000500)\nBusybox contains a Missing SSL certificate validation vulnerability in The \"busybox wget\" applet that can result in arbitrary code execution. This attack appear to be exploitable via Simply download any file over HTTPS using \"busybox wget https://compromised-domain.com/important-file\".",
+                                "markdown": "**Vulnerability CVE-2018-1000500**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|busybox||[CVE-2018-1000500](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2018-1000500)|\n\nBusybox contains a Missing SSL certificate validation vulnerability in The \"busybox wget\" applet that can result in arbitrary code execution. This attack appear to be exploitable via Simply download any file over HTTPS using \"busybox wget https://compromised-domain.com/important-file\"."
+                            },
+                            "properties": {
+                                "security-severity": "6.8",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "MEDIUM"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2018-20679",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2018-20679"
+                            },
+                            "fullDescription": {
+                                "text": "An issue was discovered in BusyBox before 1.30.0. An out of bounds read in udhcp components (consumed by the DHCP server, client, and relay) allows a remote attacker to leak sensitive information from the stack by sending a crafted DHCP message. This is related to verification in udhcp_get_option() in networking/udhcp/common.c that 4-byte options are indeed 4 bytes."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://vuln.whitesourcesoftware.com/vulnerability/CVE-2018-20679",
+                            "help": {
+                                "text": "Vulnerability CVE-2018-20679\nSeverity: MEDIUM\nPackage: busybox\nFixed Version: \nLink: [CVE-2018-20679](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2018-20679)\nAn issue was discovered in BusyBox before 1.30.0. An out of bounds read in udhcp components (consumed by the DHCP server, client, and relay) allows a remote attacker to leak sensitive information from the stack by sending a crafted DHCP message. This is related to verification in udhcp_get_option() in networking/udhcp/common.c that 4-byte options are indeed 4 bytes.",
+                                "markdown": "**Vulnerability CVE-2018-20679**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|busybox||[CVE-2018-20679](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2018-20679)|\n\nAn issue was discovered in BusyBox before 1.30.0. An out of bounds read in udhcp components (consumed by the DHCP server, client, and relay) allows a remote attacker to leak sensitive information from the stack by sending a crafted DHCP message. This is related to verification in udhcp_get_option() in networking/udhcp/common.c that 4-byte options are indeed 4 bytes."
+                            },
+                            "properties": {
+                                "security-severity": "5",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "MEDIUM"
+                                ]
+                            }
+                        }
+                    ],
+                    "version": "0.0.0-SNAPSHOT-b150b67"
+                }
+            },
+            "results": [
+                {
+                    "ruleId": "CVE-2019-14697",
+                    "ruleIndex": 0,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: * musl\nInstalled Version: 1.1.16-r15\nVulnerability CVE-2019-14697\nSeverity: HIGH\nFixed Version: \nLink: [CVE-2019-14697](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2019-14697)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2019-5747",
+                    "ruleIndex": 1,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: busybox\nInstalled Version: 1.26.2-r11\nVulnerability CVE-2019-5747\nSeverity: MEDIUM\nFixed Version: \nLink: [CVE-2019-5747](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2019-5747)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2017-16544",
+                    "ruleIndex": 2,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: busybox\nInstalled Version: 1.26.2-r11\nVulnerability CVE-2017-16544\nSeverity: MEDIUM\nFixed Version: \nLink: [CVE-2017-16544](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2017-16544)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2018-1000500",
+                    "ruleIndex": 3,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: busybox\nInstalled Version: 1.26.2-r11\nVulnerability CVE-2018-1000500\nSeverity: MEDIUM\nFixed Version: \nLink: [CVE-2018-1000500](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2018-1000500)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2018-20679",
+                    "ruleIndex": 4,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: busybox\nInstalled Version: 1.26.2-r11\nVulnerability CVE-2018-20679\nSeverity: MEDIUM\nFixed Version: \nLink: [CVE-2018-20679](https://vuln.whitesourcesoftware.com/vulnerability/CVE-2018-20679)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
