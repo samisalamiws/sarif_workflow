@@ -526,6 +526,66 @@
                             }
                         },
                         {
+                            "id": "GPL-2.0",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "GPL-2.0"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName alpine-baselayout\nLicense: GPL-2.0\n",
+                                "markdown": "**PackageName alpine-baselayout**\n| License |\n| --- | --- | --- |\n|GPL-2.0|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Zlib",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "Zlib"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName zlib\nLicense: Zlib\n",
+                                "markdown": "**PackageName zlib**\n| License |\n| --- | --- | --- |\n|Zlib|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MIT",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "MIT"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName alpine-keys\nLicense: MIT\n",
+                                "markdown": "**PackageName alpine-keys**\n| License |\n| --- | --- | --- |\n|MIT|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
                             "id": "Apache-2.0",
                             "name": "license_finding",
                             "shortDescription": {
@@ -555,68 +615,8 @@
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName libc-utils\nLicense: BSD-2-Clause\n",
-                                "markdown": "**PackageName libc-utils**\n| License |\n| --- | --- | --- |\n|BSD-2-Clause|"
-                            },
-                            "properties": {
-                                "tags": [
-                                    "license",
-                                    "security"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "BSD-3-Clause",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "BSD-3-Clause"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName libc-utils\nLicense: BSD-3-Clause\n",
-                                "markdown": "**PackageName libc-utils**\n| License |\n| --- | --- | --- |\n|BSD-3-Clause|"
-                            },
-                            "properties": {
-                                "tags": [
-                                    "license",
-                                    "security"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "GPL-2.0",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "GPL-2.0"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName alpine-baselayout-data\nLicense: GPL-2.0\n",
-                                "markdown": "**PackageName alpine-baselayout-data**\n| License |\n| --- | --- | --- |\n|GPL-2.0|"
-                            },
-                            "properties": {
-                                "tags": [
-                                    "license",
-                                    "security"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "MIT",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "MIT"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName alpine-keys\nLicense: MIT\n",
-                                "markdown": "**PackageName alpine-keys**\n| License |\n| --- | --- | --- |\n|MIT|"
+                                "text": "PackageName musl-utils\nLicense: BSD-2-Clause\n",
+                                "markdown": "**PackageName musl-utils**\n| License |\n| --- | --- | --- |\n|BSD-2-Clause|"
                             },
                             "properties": {
                                 "tags": [
@@ -666,17 +666,17 @@
                             }
                         },
                         {
-                            "id": "Zlib",
+                            "id": "BSD-3-Clause",
                             "name": "license_finding",
                             "shortDescription": {
-                                "text": "Zlib"
+                                "text": "BSD-3-Clause"
                             },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName zlib\nLicense: Zlib\n",
-                                "markdown": "**PackageName zlib**\n| License |\n| --- | --- | --- |\n|Zlib|"
+                                "text": "PackageName libc-utils\nLicense: BSD-3-Clause\n",
+                                "markdown": "**PackageName libc-utils**\n| License |\n| --- | --- | --- |\n|BSD-3-Clause|"
                             },
                             "properties": {
                                 "tags": [
@@ -1449,27 +1449,6 @@
                     "ruleIndex": 19,
                     "level": "error",
                     "message": {
-                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/id_rsa\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dorhayun/dor-alpine-secret",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "private-key",
-                    "ruleIndex": 19,
-                    "level": "error",
-                    "message": {
                         "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/my_ssh\n"
                     },
                     "locations": [
@@ -1491,7 +1470,7 @@
                     "ruleIndex": 19,
                     "level": "error",
                     "message": {
-                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/id_rsa_1\n"
+                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/id_rsa\n"
                     },
                     "locations": [
                         {
@@ -1533,6 +1512,27 @@
                     "ruleIndex": 19,
                     "level": "error",
                     "message": {
+                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/id_rsa_1\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "private-key",
+                    "ruleIndex": 19,
+                    "level": "error",
+                    "message": {
                         "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/alphabet.json\n"
                     },
                     "locations": [
@@ -1550,76 +1550,277 @@
                     ]
                 },
                 {
-                    "ruleId": "Apache-2.0",
+                    "ruleId": "GPL-2.0",
                     "ruleIndex": 20,
                     "level": "error",
                     "message": {
-                        "text": "Package: libcrypto3\nLicense: Apache-2.0\n"
-                    }
-                },
-                {
-                    "ruleId": "BSD-2-Clause",
-                    "ruleIndex": 21,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libc-utils\nLicense: BSD-2-Clause\n"
-                    }
-                },
-                {
-                    "ruleId": "BSD-3-Clause",
-                    "ruleIndex": 22,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libc-utils\nLicense: BSD-3-Clause\n"
-                    }
+                        "text": "Package: alpine-baselayout\nLicense: GPL-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
                 },
                 {
                     "ruleId": "GPL-2.0",
-                    "ruleIndex": 23,
+                    "ruleIndex": 20,
                     "level": "error",
                     "message": {
                         "text": "Package: alpine-baselayout-data\nLicense: GPL-2.0\n"
-                    }
-                },
-                {
-                    "ruleId": "MIT",
-                    "ruleIndex": 24,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: alpine-keys\nLicense: MIT\n"
-                    }
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
                 },
                 {
                     "ruleId": "GPL-2.0",
-                    "ruleIndex": 23,
+                    "ruleIndex": 20,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: busybox\nLicense: GPL-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 20,
                     "level": "error",
                     "message": {
                         "text": "Package: apk-tools\nLicense: GPL-2.0\n"
-                    }
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
                 },
                 {
                     "ruleId": "GPL-2.0",
-                    "ruleIndex": 23,
+                    "ruleIndex": 20,
                     "level": "error",
                     "message": {
                         "text": "Package: busybox-binsh\nLicense: GPL-2.0\n"
-                    }
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
                 },
                 {
-                    "ruleId": "MIT",
-                    "ruleIndex": 24,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: musl-utils\nLicense: MIT\n"
-                    }
-                },
-                {
-                    "ruleId": "BSD-2-Clause",
+                    "ruleId": "Zlib",
                     "ruleIndex": 21,
                     "level": "error",
                     "message": {
+                        "text": "Package: zlib\nLicense: Zlib\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 22,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: alpine-keys\nLicense: MIT\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "Apache-2.0",
+                    "ruleIndex": 23,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nLicense: Apache-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 20,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: ssl_client\nLicense: GPL-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 20,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: scanelf\nLicense: GPL-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "Apache-2.0",
+                    "ruleIndex": 23,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl3\nLicense: Apache-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 22,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl-utils\nLicense: MIT\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "BSD-2-Clause",
+                    "ruleIndex": 24,
+                    "level": "error",
+                    "message": {
                         "text": "Package: musl-utils\nLicense: BSD-2-Clause\n"
-                    }
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
                 },
                 {
                     "ruleId": "GPL-2.0+",
@@ -1627,7 +1828,41 @@
                     "level": "error",
                     "message": {
                         "text": "Package: musl-utils\nLicense: GPL-2.0+\n"
-                    }
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 22,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl\nLicense: MIT\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
                 },
                 {
                     "ruleId": "MPL-2.0",
@@ -1635,73 +1870,85 @@
                     "level": "error",
                     "message": {
                         "text": "Package: ca-certificates-bundle\nLicense: MPL-2.0\n"
-                    }
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
                 },
                 {
                     "ruleId": "MIT",
-                    "ruleIndex": 24,
+                    "ruleIndex": 22,
                     "level": "error",
                     "message": {
                         "text": "Package: ca-certificates-bundle\nLicense: MIT\n"
-                    }
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
                 },
                 {
-                    "ruleId": "GPL-2.0",
-                    "ruleIndex": 23,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: alpine-baselayout\nLicense: GPL-2.0\n"
-                    }
-                },
-                {
-                    "ruleId": "Apache-2.0",
-                    "ruleIndex": 20,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libssl3\nLicense: Apache-2.0\n"
-                    }
-                },
-                {
-                    "ruleId": "Zlib",
-                    "ruleIndex": 27,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: zlib\nLicense: Zlib\n"
-                    }
-                },
-                {
-                    "ruleId": "GPL-2.0",
-                    "ruleIndex": 23,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: scanelf\nLicense: GPL-2.0\n"
-                    }
-                },
-                {
-                    "ruleId": "GPL-2.0",
-                    "ruleIndex": 23,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: ssl_client\nLicense: GPL-2.0\n"
-                    }
-                },
-                {
-                    "ruleId": "GPL-2.0",
-                    "ruleIndex": 23,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: busybox\nLicense: GPL-2.0\n"
-                    }
-                },
-                {
-                    "ruleId": "MIT",
+                    "ruleId": "BSD-2-Clause",
                     "ruleIndex": 24,
                     "level": "error",
                     "message": {
-                        "text": "Package: musl\nLicense: MIT\n"
-                    }
+                        "text": "Package: libc-utils\nLicense: BSD-2-Clause\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "BSD-3-Clause",
+                    "ruleIndex": 27,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libc-utils\nLicense: BSD-3-Clause\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
                 }
             ]
         }
     ]
-}
+}2
