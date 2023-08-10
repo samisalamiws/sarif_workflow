@@ -27,7 +27,7 @@
                                 "markdown": "**Vulnerability CVE-2022-4203**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|* openssl|3.0.8-r0|[CVE-2022-4203](https://www.mend.io/vulnerability-database/CVE-2022-4203)|\n\nA read buffer overrun can be triggered in X.509 certificate verification, specifically in name constraint checking. Note that this occurs after certificate chain signature verification and requires either a CA to have signed the malicious certificate or for the application to continue certificate verification despite failure to construct a path to a trusted issuer. The read buffer overrun might result in a crash which could lead to a denial of service attack. In theory it could also result in the disclosure of private memory contents (such as private keys, or sensitive plaintext) although we are not aware of any working exploit leading to memory contents disclosure as of the time of release of this advisory. In a TLS client, this can be triggered by connecting to a malicious server. In a TLS server, this can be triggered if the server requests client authentication and a malicious client connects."
                             },
                             "properties": {
-                                "security-severity": "9.1",
+                                "security-severity": "4.9",
                                 "tags": [
                                     "vulnerability",
                                     "security",
@@ -224,15 +224,15 @@
                                 "text": "CVE-2023-0464"
                             },
                             "fullDescription": {
-                                "text": "A security vulnerability has been identified in all supported versions of OpenSSL related to the verification of X.509 certificate chains that include policy constraints. Attackers may be able to exploit this vulnerability by creating a malicious certificate chain that triggers exponential use of computational resources, leading to a denial-of-service (DoS) attack on affected systems. Policy processing is disabled by default but can be enabled by passing the `-policy' argument to the command line utilities or by calling the `X509_VERIFY_PARAM_set1_policies()' function."
+                                "text": "A security vulnerability has been identified in all supported versions\n\nof OpenSSL related to the verification of X.509 certificate chains\nthat include policy constraints.  Attackers may be able to exploit this\nvulnerability by creating a malicious certificate chain that triggers\nexponential use of computational resources, leading to a denial-of-service\n(DoS) attack on affected systems.\n\nPolicy processing is disabled by default but can be enabled by passing\nthe `-policy' argument to the command line utilities or by calling the\n`X509_VERIFY_PARAM_set1_policies()' function."
                             },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
                             "helpUri": "https://www.mend.io/vulnerability-database/CVE-2023-0464",
                             "help": {
-                                "text": "Vulnerability CVE-2023-0464\nSeverity: HIGH\nPackage: * openssl\nFixed Version: 3.0.8-r1\nLink: [CVE-2023-0464](https://www.mend.io/vulnerability-database/CVE-2023-0464)\nA security vulnerability has been identified in all supported versions of OpenSSL related to the verification of X.509 certificate chains that include policy constraints. Attackers may be able to exploit this vulnerability by creating a malicious certificate chain that triggers exponential use of computational resources, leading to a denial-of-service (DoS) attack on affected systems. Policy processing is disabled by default but can be enabled by passing the `-policy' argument to the command line utilities or by calling the `X509_VERIFY_PARAM_set1_policies()' function.",
-                                "markdown": "**Vulnerability CVE-2023-0464**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|* openssl|3.0.8-r1|[CVE-2023-0464](https://www.mend.io/vulnerability-database/CVE-2023-0464)|\n\nA security vulnerability has been identified in all supported versions of OpenSSL related to the verification of X.509 certificate chains that include policy constraints. Attackers may be able to exploit this vulnerability by creating a malicious certificate chain that triggers exponential use of computational resources, leading to a denial-of-service (DoS) attack on affected systems. Policy processing is disabled by default but can be enabled by passing the `-policy' argument to the command line utilities or by calling the `X509_VERIFY_PARAM_set1_policies()' function."
+                                "text": "Vulnerability CVE-2023-0464\nSeverity: HIGH\nPackage: * openssl\nFixed Version: 3.0.8-r1\nLink: [CVE-2023-0464](https://www.mend.io/vulnerability-database/CVE-2023-0464)\nA security vulnerability has been identified in all supported versions\n\nof OpenSSL related to the verification of X.509 certificate chains\nthat include policy constraints.  Attackers may be able to exploit this\nvulnerability by creating a malicious certificate chain that triggers\nexponential use of computational resources, leading to a denial-of-service\n(DoS) attack on affected systems.\n\nPolicy processing is disabled by default but can be enabled by passing\nthe `-policy' argument to the command line utilities or by calling the\n`X509_VERIFY_PARAM_set1_policies()' function.",
+                                "markdown": "**Vulnerability CVE-2023-0464**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|* openssl|3.0.8-r1|[CVE-2023-0464](https://www.mend.io/vulnerability-database/CVE-2023-0464)|\n\nA security vulnerability has been identified in all supported versions\n\nof OpenSSL related to the verification of X.509 certificate chains\nthat include policy constraints.  Attackers may be able to exploit this\nvulnerability by creating a malicious certificate chain that triggers\nexponential use of computational resources, leading to a denial-of-service\n(DoS) attack on affected systems.\n\nPolicy processing is disabled by default but can be enabled by passing\nthe `-policy' argument to the command line utilities or by calling the\n`X509_VERIFY_PARAM_set1_policies()' function."
                             },
                             "properties": {
                                 "security-severity": "7.5",
@@ -322,6 +322,110 @@
                             }
                         },
                         {
+                            "id": "CVE-2023-2650",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2023-2650"
+                            },
+                            "fullDescription": {
+                                "text": "Issue summary: Processing some specially crafted ASN.1 object identifiers or\ndata containing them may be very slow.\n\nImpact summary: Applications that use OBJ_obj2txt() directly, or use any of\nthe OpenSSL subsystems OCSP, PKCS7/SMIME, CMS, CMP/CRMF or TS with no message\nsize limit may experience notable to very long delays when processing those\nmessages, which may lead to a Denial of Service.\n\nAn OBJECT IDENTIFIER is composed of a series of numbers - sub-identifiers -\nmost of which have no size limit.  OBJ_obj2txt() may be used to translate\nan ASN.1 OBJECT IDENTIFIER given in DER encoding form (using the OpenSSL\ntype ASN1_OBJECT) to its canonical numeric text form, which are the\nsub-identifiers of the OBJECT IDENTIFIER in decimal form, separated by\nperiods.\n\nWhen one of the sub-identifiers in the OBJECT IDENTIFIER is very large\n(these are sizes that are seen as absurdly large, taking up tens or hundreds\nof KiBs), the translation to a decimal number in text may take a very long\ntime.  The time complexity is O(n^2) with 'n' being the size of the\nsub-identifiers in bytes (*).\n\nWith OpenSSL 3.0, support to fetch cryptographic algorithms using names /\nidentifiers in string form was introduced.  This includes using OBJECT\nIDENTIFIERs in canonical numeric text form as identifiers for fetching\nalgorithms.\n\nSuch OBJECT IDENTIFIERs may be received through the ASN.1 structure\nAlgorithmIdentifier, which is commonly used in multiple protocols to specify\nwhat cryptographic algorithm should be used to sign or verify, encrypt or\ndecrypt, or digest passed data.\n\nApplications that call OBJ_obj2txt() directly with untrusted data are\naffected, with any version of OpenSSL.  If the use is for the mere purpose\nof display, the severity is considered low.\n\nIn OpenSSL 3.0 and newer, this affects the subsystems OCSP, PKCS7/SMIME,\nCMS, CMP/CRMF or TS.  It also impacts anything that processes X.509\ncertificates, including simple things like verifying its signature.\n\nThe impact on TLS is relatively low, because all versions of OpenSSL have a\n100KiB limit on the peer's certificate chain.  Additionally, this only\nimpacts clients, or servers that have explicitly enabled client\nauthentication.\n\nIn OpenSSL 1.1.1 and 1.0.2, this only affects displaying diverse objects,\nsuch as X.509 certificates.  This is assumed to not happen in such a way\nthat it would cause a Denial of Service, so these versions are considered\nnot affected by this issue in such a way that it would be cause for concern,\nand the severity is therefore considered low."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2023-2650",
+                            "help": {
+                                "text": "Vulnerability CVE-2023-2650\nSeverity: HIGH\nPackage: * openssl\nFixed Version: 3.0.9-r0\nLink: [CVE-2023-2650](https://www.mend.io/vulnerability-database/CVE-2023-2650)\nIssue summary: Processing some specially crafted ASN.1 object identifiers or\ndata containing them may be very slow.\n\nImpact summary: Applications that use OBJ_obj2txt() directly, or use any of\nthe OpenSSL subsystems OCSP, PKCS7/SMIME, CMS, CMP/CRMF or TS with no message\nsize limit may experience notable to very long delays when processing those\nmessages, which may lead to a Denial of Service.\n\nAn OBJECT IDENTIFIER is composed of a series of numbers - sub-identifiers -\nmost of which have no size limit.  OBJ_obj2txt() may be used to translate\nan ASN.1 OBJECT IDENTIFIER given in DER encoding form (using the OpenSSL\ntype ASN1_OBJECT) to its canonical numeric text form, which are the\nsub-identifiers of the OBJECT IDENTIFIER in decimal form, separated by\nperiods.\n\nWhen one of the sub-identifiers in the OBJECT IDENTIFIER is very large\n(these are sizes that are seen as absurdly large, taking up tens or hundreds\nof KiBs), the translation to a decimal number in text may take a very long\ntime.  The time complexity is O(n^2) with 'n' being the size of the\nsub-identifiers in bytes (*).\n\nWith OpenSSL 3.0, support to fetch cryptographic algorithms using names /\nidentifiers in string form was introduced.  This includes using OBJECT\nIDENTIFIERs in canonical numeric text form as identifiers for fetching\nalgorithms.\n\nSuch OBJECT IDENTIFIERs may be received through the ASN.1 structure\nAlgorithmIdentifier, which is commonly used in multiple protocols to specify\nwhat cryptographic algorithm should be used to sign or verify, encrypt or\ndecrypt, or digest passed data.\n\nApplications that call OBJ_obj2txt() directly with untrusted data are\naffected, with any version of OpenSSL.  If the use is for the mere purpose\nof display, the severity is considered low.\n\nIn OpenSSL 3.0 and newer, this affects the subsystems OCSP, PKCS7/SMIME,\nCMS, CMP/CRMF or TS.  It also impacts anything that processes X.509\ncertificates, including simple things like verifying its signature.\n\nThe impact on TLS is relatively low, because all versions of OpenSSL have a\n100KiB limit on the peer's certificate chain.  Additionally, this only\nimpacts clients, or servers that have explicitly enabled client\nauthentication.\n\nIn OpenSSL 1.1.1 and 1.0.2, this only affects displaying diverse objects,\nsuch as X.509 certificates.  This is assumed to not happen in such a way\nthat it would cause a Denial of Service, so these versions are considered\nnot affected by this issue in such a way that it would be cause for concern,\nand the severity is therefore considered low.",
+                                "markdown": "**Vulnerability CVE-2023-2650**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|* openssl|3.0.9-r0|[CVE-2023-2650](https://www.mend.io/vulnerability-database/CVE-2023-2650)|\n\nIssue summary: Processing some specially crafted ASN.1 object identifiers or\ndata containing them may be very slow.\n\nImpact summary: Applications that use OBJ_obj2txt() directly, or use any of\nthe OpenSSL subsystems OCSP, PKCS7/SMIME, CMS, CMP/CRMF or TS with no message\nsize limit may experience notable to very long delays when processing those\nmessages, which may lead to a Denial of Service.\n\nAn OBJECT IDENTIFIER is composed of a series of numbers - sub-identifiers -\nmost of which have no size limit.  OBJ_obj2txt() may be used to translate\nan ASN.1 OBJECT IDENTIFIER given in DER encoding form (using the OpenSSL\ntype ASN1_OBJECT) to its canonical numeric text form, which are the\nsub-identifiers of the OBJECT IDENTIFIER in decimal form, separated by\nperiods.\n\nWhen one of the sub-identifiers in the OBJECT IDENTIFIER is very large\n(these are sizes that are seen as absurdly large, taking up tens or hundreds\nof KiBs), the translation to a decimal number in text may take a very long\ntime.  The time complexity is O(n^2) with 'n' being the size of the\nsub-identifiers in bytes (*).\n\nWith OpenSSL 3.0, support to fetch cryptographic algorithms using names /\nidentifiers in string form was introduced.  This includes using OBJECT\nIDENTIFIERs in canonical numeric text form as identifiers for fetching\nalgorithms.\n\nSuch OBJECT IDENTIFIERs may be received through the ASN.1 structure\nAlgorithmIdentifier, which is commonly used in multiple protocols to specify\nwhat cryptographic algorithm should be used to sign or verify, encrypt or\ndecrypt, or digest passed data.\n\nApplications that call OBJ_obj2txt() directly with untrusted data are\naffected, with any version of OpenSSL.  If the use is for the mere purpose\nof display, the severity is considered low.\n\nIn OpenSSL 3.0 and newer, this affects the subsystems OCSP, PKCS7/SMIME,\nCMS, CMP/CRMF or TS.  It also impacts anything that processes X.509\ncertificates, including simple things like verifying its signature.\n\nThe impact on TLS is relatively low, because all versions of OpenSSL have a\n100KiB limit on the peer's certificate chain.  Additionally, this only\nimpacts clients, or servers that have explicitly enabled client\nauthentication.\n\nIn OpenSSL 1.1.1 and 1.0.2, this only affects displaying diverse objects,\nsuch as X.509 certificates.  This is assumed to not happen in such a way\nthat it would cause a Denial of Service, so these versions are considered\nnot affected by this issue in such a way that it would be cause for concern,\nand the severity is therefore considered low."
+                            },
+                            "properties": {
+                                "security-severity": "7.5",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "HIGH"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2023-2975",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2023-2975"
+                            },
+                            "fullDescription": {
+                                "text": "Issue summary: The AES-SIV cipher implementation contains a bug that causes\nit to ignore empty associated data entries which are unauthenticated as\na consequence.\n\nImpact summary: Applications that use the AES-SIV algorithm and want to\nauthenticate empty data entries as associated data can be mislead by removing\nadding or reordering such empty entries as these are ignored by the OpenSSL\nimplementation. We are currently unaware of any such applications.\n\nThe AES-SIV algorithm allows for authentication of multiple associated\ndata entries along with the encryption. To authenticate empty data the\napplication has to call EVP_EncryptUpdate() (or EVP_CipherUpdate()) with\nNULL pointer as the output buffer and 0 as the input buffer length.\nThe AES-SIV implementation in OpenSSL just returns success for such a call\ninstead of performing the associated data authentication operation.\nThe empty data thus will not be authenticated.\n\nAs this issue does not affect non-empty associated data authentication and\nwe expect it to be rare for an application to use empty associated data\nentries this is qualified as Low severity issue."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2023-2975",
+                            "help": {
+                                "text": "Vulnerability CVE-2023-2975\nSeverity: MEDIUM\nPackage: * openssl\nFixed Version: 3.0.9-r2\nLink: [CVE-2023-2975](https://www.mend.io/vulnerability-database/CVE-2023-2975)\nIssue summary: The AES-SIV cipher implementation contains a bug that causes\nit to ignore empty associated data entries which are unauthenticated as\na consequence.\n\nImpact summary: Applications that use the AES-SIV algorithm and want to\nauthenticate empty data entries as associated data can be mislead by removing\nadding or reordering such empty entries as these are ignored by the OpenSSL\nimplementation. We are currently unaware of any such applications.\n\nThe AES-SIV algorithm allows for authentication of multiple associated\ndata entries along with the encryption. To authenticate empty data the\napplication has to call EVP_EncryptUpdate() (or EVP_CipherUpdate()) with\nNULL pointer as the output buffer and 0 as the input buffer length.\nThe AES-SIV implementation in OpenSSL just returns success for such a call\ninstead of performing the associated data authentication operation.\nThe empty data thus will not be authenticated.\n\nAs this issue does not affect non-empty associated data authentication and\nwe expect it to be rare for an application to use empty associated data\nentries this is qualified as Low severity issue.",
+                                "markdown": "**Vulnerability CVE-2023-2975**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|* openssl|3.0.9-r2|[CVE-2023-2975](https://www.mend.io/vulnerability-database/CVE-2023-2975)|\n\nIssue summary: The AES-SIV cipher implementation contains a bug that causes\nit to ignore empty associated data entries which are unauthenticated as\na consequence.\n\nImpact summary: Applications that use the AES-SIV algorithm and want to\nauthenticate empty data entries as associated data can be mislead by removing\nadding or reordering such empty entries as these are ignored by the OpenSSL\nimplementation. We are currently unaware of any such applications.\n\nThe AES-SIV algorithm allows for authentication of multiple associated\ndata entries along with the encryption. To authenticate empty data the\napplication has to call EVP_EncryptUpdate() (or EVP_CipherUpdate()) with\nNULL pointer as the output buffer and 0 as the input buffer length.\nThe AES-SIV implementation in OpenSSL just returns success for such a call\ninstead of performing the associated data authentication operation.\nThe empty data thus will not be authenticated.\n\nAs this issue does not affect non-empty associated data authentication and\nwe expect it to be rare for an application to use empty associated data\nentries this is qualified as Low severity issue."
+                            },
+                            "properties": {
+                                "security-severity": "5.3",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "MEDIUM"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2023-3446",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2023-3446"
+                            },
+                            "fullDescription": {
+                                "text": "Issue summary: Checking excessively long DH keys or parameters may be very slow.\n\nImpact summary: Applications that use the functions DH_check(), DH_check_ex()\nor EVP_PKEY_param_check() to check a DH key or DH parameters may experience long\ndelays. Where the key or parameters that are being checked have been obtained\nfrom an untrusted source this may lead to a Denial of Service.\n\nThe function DH_check() performs various checks on DH parameters. One of those\nchecks confirms that the modulus ('p' parameter) is not too large. Trying to use\na very large modulus is slow and OpenSSL will not normally use a modulus which\nis over 10,000 bits in length.\n\nHowever the DH_check() function checks numerous aspects of the key or parameters\nthat have been supplied. Some of those checks use the supplied modulus value\neven if it has already been found to be too large.\n\nAn application that calls DH_check() and supplies a key or parameters obtained\nfrom an untrusted source could be vulernable to a Denial of Service attack.\n\nThe function DH_check() is itself called by a number of other OpenSSL functions.\nAn application calling any of those other functions may similarly be affected.\nThe other functions affected by this are DH_check_ex() and\nEVP_PKEY_param_check().\n\nAlso vulnerable are the OpenSSL dhparam and pkeyparam command line applications\nwhen using the '-check' option.\n\nThe OpenSSL SSL/TLS implementation is not affected by this issue.\nThe OpenSSL 3.0 and 3.1 FIPS providers are not affected by this issue."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2023-3446",
+                            "help": {
+                                "text": "Vulnerability CVE-2023-3446\nSeverity: MEDIUM\nPackage: * openssl\nFixed Version: 3.0.9-r3\nLink: [CVE-2023-3446](https://www.mend.io/vulnerability-database/CVE-2023-3446)\nIssue summary: Checking excessively long DH keys or parameters may be very slow.\n\nImpact summary: Applications that use the functions DH_check(), DH_check_ex()\nor EVP_PKEY_param_check() to check a DH key or DH parameters may experience long\ndelays. Where the key or parameters that are being checked have been obtained\nfrom an untrusted source this may lead to a Denial of Service.\n\nThe function DH_check() performs various checks on DH parameters. One of those\nchecks confirms that the modulus ('p' parameter) is not too large. Trying to use\na very large modulus is slow and OpenSSL will not normally use a modulus which\nis over 10,000 bits in length.\n\nHowever the DH_check() function checks numerous aspects of the key or parameters\nthat have been supplied. Some of those checks use the supplied modulus value\neven if it has already been found to be too large.\n\nAn application that calls DH_check() and supplies a key or parameters obtained\nfrom an untrusted source could be vulernable to a Denial of Service attack.\n\nThe function DH_check() is itself called by a number of other OpenSSL functions.\nAn application calling any of those other functions may similarly be affected.\nThe other functions affected by this are DH_check_ex() and\nEVP_PKEY_param_check().\n\nAlso vulnerable are the OpenSSL dhparam and pkeyparam command line applications\nwhen using the '-check' option.\n\nThe OpenSSL SSL/TLS implementation is not affected by this issue.\nThe OpenSSL 3.0 and 3.1 FIPS providers are not affected by this issue.",
+                                "markdown": "**Vulnerability CVE-2023-3446**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|* openssl|3.0.9-r3|[CVE-2023-3446](https://www.mend.io/vulnerability-database/CVE-2023-3446)|\n\nIssue summary: Checking excessively long DH keys or parameters may be very slow.\n\nImpact summary: Applications that use the functions DH_check(), DH_check_ex()\nor EVP_PKEY_param_check() to check a DH key or DH parameters may experience long\ndelays. Where the key or parameters that are being checked have been obtained\nfrom an untrusted source this may lead to a Denial of Service.\n\nThe function DH_check() performs various checks on DH parameters. One of those\nchecks confirms that the modulus ('p' parameter) is not too large. Trying to use\na very large modulus is slow and OpenSSL will not normally use a modulus which\nis over 10,000 bits in length.\n\nHowever the DH_check() function checks numerous aspects of the key or parameters\nthat have been supplied. Some of those checks use the supplied modulus value\neven if it has already been found to be too large.\n\nAn application that calls DH_check() and supplies a key or parameters obtained\nfrom an untrusted source could be vulernable to a Denial of Service attack.\n\nThe function DH_check() is itself called by a number of other OpenSSL functions.\nAn application calling any of those other functions may similarly be affected.\nThe other functions affected by this are DH_check_ex() and\nEVP_PKEY_param_check().\n\nAlso vulnerable are the OpenSSL dhparam and pkeyparam command line applications\nwhen using the '-check' option.\n\nThe OpenSSL SSL/TLS implementation is not affected by this issue.\nThe OpenSSL 3.0 and 3.1 FIPS providers are not affected by this issue."
+                            },
+                            "properties": {
+                                "security-severity": "5.3",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "MEDIUM"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2023-3817",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2023-3817"
+                            },
+                            "fullDescription": {
+                                "text": "Issue summary: Checking excessively long DH keys or parameters may be very slow.\n\nImpact summary: Applications that use the functions DH_check(), DH_check_ex()\nor EVP_PKEY_param_check() to check a DH key or DH parameters may experience long\ndelays. Where the key or parameters that are being checked have been obtained\nfrom an untrusted source this may lead to a Denial of Service.\n\nThe function DH_check() performs various checks on DH parameters. After fixing\nCVE-2023-3446 it was discovered that a large q parameter value can also trigger\nan overly long computation during some of these checks. A correct q value,\nif present, cannot be larger than the modulus p parameter, thus it is\nunnecessary to perform these checks if q is larger than p.\n\nAn application that calls DH_check() and supplies a key or parameters obtained\nfrom an untrusted source could be vulnerable to a Denial of Service attack.\n\nThe function DH_check() is itself called by a number of other OpenSSL functions.\nAn application calling any of those other functions may similarly be affected.\nThe other functions affected by this are DH_check_ex() and\nEVP_PKEY_param_check().\n\nAlso vulnerable are the OpenSSL dhparam and pkeyparam command line applications\nwhen using the \"-check\" option.\n\nThe OpenSSL SSL/TLS implementation is not affected by this issue.\n\nThe OpenSSL 3.0 and 3.1 FIPS providers are not affected by this issue."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2023-3817",
+                            "help": {
+                                "text": "Vulnerability CVE-2023-3817\nSeverity: MEDIUM\nPackage: * openssl\nFixed Version: 3.0.10-r0\nLink: [CVE-2023-3817](https://www.mend.io/vulnerability-database/CVE-2023-3817)\nIssue summary: Checking excessively long DH keys or parameters may be very slow.\n\nImpact summary: Applications that use the functions DH_check(), DH_check_ex()\nor EVP_PKEY_param_check() to check a DH key or DH parameters may experience long\ndelays. Where the key or parameters that are being checked have been obtained\nfrom an untrusted source this may lead to a Denial of Service.\n\nThe function DH_check() performs various checks on DH parameters. After fixing\nCVE-2023-3446 it was discovered that a large q parameter value can also trigger\nan overly long computation during some of these checks. A correct q value,\nif present, cannot be larger than the modulus p parameter, thus it is\nunnecessary to perform these checks if q is larger than p.\n\nAn application that calls DH_check() and supplies a key or parameters obtained\nfrom an untrusted source could be vulnerable to a Denial of Service attack.\n\nThe function DH_check() is itself called by a number of other OpenSSL functions.\nAn application calling any of those other functions may similarly be affected.\nThe other functions affected by this are DH_check_ex() and\nEVP_PKEY_param_check().\n\nAlso vulnerable are the OpenSSL dhparam and pkeyparam command line applications\nwhen using the \"-check\" option.\n\nThe OpenSSL SSL/TLS implementation is not affected by this issue.\n\nThe OpenSSL 3.0 and 3.1 FIPS providers are not affected by this issue.",
+                                "markdown": "**Vulnerability CVE-2023-3817**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|* openssl|3.0.10-r0|[CVE-2023-3817](https://www.mend.io/vulnerability-database/CVE-2023-3817)|\n\nIssue summary: Checking excessively long DH keys or parameters may be very slow.\n\nImpact summary: Applications that use the functions DH_check(), DH_check_ex()\nor EVP_PKEY_param_check() to check a DH key or DH parameters may experience long\ndelays. Where the key or parameters that are being checked have been obtained\nfrom an untrusted source this may lead to a Denial of Service.\n\nThe function DH_check() performs various checks on DH parameters. After fixing\nCVE-2023-3446 it was discovered that a large q parameter value can also trigger\nan overly long computation during some of these checks. A correct q value,\nif present, cannot be larger than the modulus p parameter, thus it is\nunnecessary to perform these checks if q is larger than p.\n\nAn application that calls DH_check() and supplies a key or parameters obtained\nfrom an untrusted source could be vulnerable to a Denial of Service attack.\n\nThe function DH_check() is itself called by a number of other OpenSSL functions.\nAn application calling any of those other functions may similarly be affected.\nThe other functions affected by this are DH_check_ex() and\nEVP_PKEY_param_check().\n\nAlso vulnerable are the OpenSSL dhparam and pkeyparam command line applications\nwhen using the \"-check\" option.\n\nThe OpenSSL SSL/TLS implementation is not affected by this issue.\n\nThe OpenSSL 3.0 and 3.1 FIPS providers are not affected by this issue."
+                            },
+                            "properties": {
+                                "security-severity": "5.3",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "MEDIUM"
+                                ]
+                            }
+                        },
+                        {
                             "id": "gcp-service-account",
                             "name": "secret_finding",
                             "shortDescription": {
@@ -334,8 +438,8 @@
                                 "level": "error"
                             },
                             "help": {
-                                "text": "Secret gcp-service-account\nSeverity: CRITICAL\nDescription: Google (GCP) Service-account\nFile Path: alphabet.json\n",
-                                "markdown": "**Secret gcp-service-account**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|CRITICAL|Google (GCP) Service-account|alphabet.json|"
+                                "text": "Secret gcp-service-account\nSeverity: CRITICAL\nDescription: Google (GCP) Service-account\nFile Path: tmp/alphabet.json\n",
+                                "markdown": "**Secret gcp-service-account**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|CRITICAL|Google (GCP) Service-account|tmp/alphabet.json|"
                             },
                             "properties": {
                                 "security-severity": "4",
@@ -359,108 +463,8 @@
                                 "level": "error"
                             },
                             "help": {
-                                "text": "Secret aws-access-key-id\nSeverity: CRITICAL\nDescription: AWS Access Key ID\nFile Path: secret.cs\n",
-                                "markdown": "**Secret aws-access-key-id**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|CRITICAL|AWS Access Key ID|secret.cs|"
-                            },
-                            "properties": {
-                                "security-severity": "4",
-                                "tags": [
-                                    "secret",
-                                    "security",
-                                    "CRITICAL"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "aws-access-key-id",
-                            "name": "secret_finding",
-                            "shortDescription": {
-                                "text": "aws-access-key-id"
-                            },
-                            "fullDescription": {
-                                "text": "AWS Access Key ID"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "Secret aws-access-key-id\nSeverity: CRITICAL\nDescription: AWS Access Key ID\nFile Path: secret.php\n",
-                                "markdown": "**Secret aws-access-key-id**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|CRITICAL|AWS Access Key ID|secret.php|"
-                            },
-                            "properties": {
-                                "security-severity": "4",
-                                "tags": [
-                                    "secret",
-                                    "security",
-                                    "CRITICAL"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "aws-access-key-id",
-                            "name": "secret_finding",
-                            "shortDescription": {
-                                "text": "aws-access-key-id"
-                            },
-                            "fullDescription": {
-                                "text": "AWS Access Key ID"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "Secret aws-access-key-id\nSeverity: CRITICAL\nDescription: AWS Access Key ID\nFile Path: secret.py\n",
-                                "markdown": "**Secret aws-access-key-id**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|CRITICAL|AWS Access Key ID|secret.py|"
-                            },
-                            "properties": {
-                                "security-severity": "4",
-                                "tags": [
-                                    "secret",
-                                    "security",
-                                    "CRITICAL"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "aws-access-key-id",
-                            "name": "secret_finding",
-                            "shortDescription": {
-                                "text": "aws-access-key-id"
-                            },
-                            "fullDescription": {
-                                "text": "AWS Access Key ID"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "Secret aws-access-key-id\nSeverity: CRITICAL\nDescription: AWS Access Key ID\nFile Path: secret.js\n",
-                                "markdown": "**Secret aws-access-key-id**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|CRITICAL|AWS Access Key ID|secret.js|"
-                            },
-                            "properties": {
-                                "security-severity": "4",
-                                "tags": [
-                                    "secret",
-                                    "security",
-                                    "CRITICAL"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "aws-access-key-id",
-                            "name": "secret_finding",
-                            "shortDescription": {
-                                "text": "aws-access-key-id"
-                            },
-                            "fullDescription": {
-                                "text": "AWS Access Key ID"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "Secret aws-access-key-id\nSeverity: CRITICAL\nDescription: AWS Access Key ID\nFile Path: secret.c\n",
-                                "markdown": "**Secret aws-access-key-id**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|CRITICAL|AWS Access Key ID|secret.c|"
+                                "text": "Secret aws-access-key-id\nSeverity: CRITICAL\nDescription: AWS Access Key ID\nFile Path: tmp/secret.cs\n",
+                                "markdown": "**Secret aws-access-key-id**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|CRITICAL|AWS Access Key ID|tmp/secret.cs|"
                             },
                             "properties": {
                                 "security-severity": "4",
@@ -484,58 +488,8 @@
                                 "level": "error"
                             },
                             "help": {
-                                "text": "Secret github-pat\nSeverity: CRITICAL\nDescription: GitHub Personal Access Token\nFile Path: gh\n",
-                                "markdown": "**Secret github-pat**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|CRITICAL|GitHub Personal Access Token|gh|"
-                            },
-                            "properties": {
-                                "security-severity": "4",
-                                "tags": [
-                                    "secret",
-                                    "security",
-                                    "CRITICAL"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "github-pat",
-                            "name": "secret_finding",
-                            "shortDescription": {
-                                "text": "github-pat"
-                            },
-                            "fullDescription": {
-                                "text": "GitHub Personal Access Token"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "Secret github-pat\nSeverity: CRITICAL\nDescription: GitHub Personal Access Token\nFile Path: gh_l\n",
-                                "markdown": "**Secret github-pat**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|CRITICAL|GitHub Personal Access Token|gh_l|"
-                            },
-                            "properties": {
-                                "security-severity": "4",
-                                "tags": [
-                                    "secret",
-                                    "security",
-                                    "CRITICAL"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "aws-access-key-id",
-                            "name": "secret_finding",
-                            "shortDescription": {
-                                "text": "aws-access-key-id"
-                            },
-                            "fullDescription": {
-                                "text": "AWS Access Key ID"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "Secret aws-access-key-id\nSeverity: CRITICAL\nDescription: AWS Access Key ID\nFile Path: secret.go\n",
-                                "markdown": "**Secret aws-access-key-id**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|CRITICAL|AWS Access Key ID|secret.go|"
+                                "text": "Secret github-pat\nSeverity: CRITICAL\nDescription: GitHub Personal Access Token\nFile Path: tmp/gh\n",
+                                "markdown": "**Secret github-pat**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|CRITICAL|GitHub Personal Access Token|tmp/gh|"
                             },
                             "properties": {
                                 "security-severity": "4",
@@ -559,263 +513,13 @@
                                 "level": "error"
                             },
                             "help": {
-                                "text": "Secret private-key\nSeverity: HIGH\nDescription: Asymmetric Private Key\nFile Path: ec.pem\n",
-                                "markdown": "**Secret private-key**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|HIGH|Asymmetric Private Key|ec.pem|"
+                                "text": "Secret private-key\nSeverity: HIGH\nDescription: Asymmetric Private Key\nFile Path: tmp/ec.pem\n",
+                                "markdown": "**Secret private-key**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|HIGH|Asymmetric Private Key|tmp/ec.pem|"
                             },
                             "properties": {
                                 "security-severity": "3",
                                 "tags": [
                                     "secret",
-                                    "security",
-                                    "HIGH"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "private-key",
-                            "name": "secret_finding",
-                            "shortDescription": {
-                                "text": "private-key"
-                            },
-                            "fullDescription": {
-                                "text": "Asymmetric Private Key"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "Secret private-key\nSeverity: HIGH\nDescription: Asymmetric Private Key\nFile Path: my_ssh\n",
-                                "markdown": "**Secret private-key**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|HIGH|Asymmetric Private Key|my_ssh|"
-                            },
-                            "properties": {
-                                "security-severity": "3",
-                                "tags": [
-                                    "secret",
-                                    "security",
-                                    "HIGH"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "private-key",
-                            "name": "secret_finding",
-                            "shortDescription": {
-                                "text": "private-key"
-                            },
-                            "fullDescription": {
-                                "text": "Asymmetric Private Key"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "Secret private-key\nSeverity: HIGH\nDescription: Asymmetric Private Key\nFile Path: id_rsa\n",
-                                "markdown": "**Secret private-key**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|HIGH|Asymmetric Private Key|id_rsa|"
-                            },
-                            "properties": {
-                                "security-severity": "3",
-                                "tags": [
-                                    "secret",
-                                    "security",
-                                    "HIGH"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "private-key",
-                            "name": "secret_finding",
-                            "shortDescription": {
-                                "text": "private-key"
-                            },
-                            "fullDescription": {
-                                "text": "Asymmetric Private Key"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "Secret private-key\nSeverity: HIGH\nDescription: Asymmetric Private Key\nFile Path: id_rsa_1\n",
-                                "markdown": "**Secret private-key**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|HIGH|Asymmetric Private Key|id_rsa_1|"
-                            },
-                            "properties": {
-                                "security-severity": "3",
-                                "tags": [
-                                    "secret",
-                                    "security",
-                                    "HIGH"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "private-key",
-                            "name": "secret_finding",
-                            "shortDescription": {
-                                "text": "private-key"
-                            },
-                            "fullDescription": {
-                                "text": "Asymmetric Private Key"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "Secret private-key\nSeverity: HIGH\nDescription: Asymmetric Private Key\nFile Path: my_key.private\n",
-                                "markdown": "**Secret private-key**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|HIGH|Asymmetric Private Key|my_key.private|"
-                            },
-                            "properties": {
-                                "security-severity": "3",
-                                "tags": [
-                                    "secret",
-                                    "security",
-                                    "HIGH"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "private-key",
-                            "name": "secret_finding",
-                            "shortDescription": {
-                                "text": "private-key"
-                            },
-                            "fullDescription": {
-                                "text": "Asymmetric Private Key"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "Secret private-key\nSeverity: HIGH\nDescription: Asymmetric Private Key\nFile Path: alphabet.json\n",
-                                "markdown": "**Secret private-key**\n| Severity | Description | File Path |\n| --- | --- | --- |\n|HIGH|Asymmetric Private Key|alphabet.json|"
-                            },
-                            "properties": {
-                                "security-severity": "3",
-                                "tags": [
-                                    "secret",
-                                    "security",
-                                    "HIGH"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "GPL-2.0",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "GPL-2.0"
-                            },
-                            "fullDescription": {
-                                "text": "restricted"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName alpine-baselayout\nLicense: GPL-2.0\nClassification: restricted\n Severity: HIGH\n",
-                                "markdown": "**PackageName alpine-baselayout**\n| License | Classification | Severity |\n| --- | --- | --- |\n|HIGH|restricted|HIGH|"
-                            },
-                            "properties": {
-                                "security-severity": "3",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "HIGH"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "GPL-2.0",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "GPL-2.0"
-                            },
-                            "fullDescription": {
-                                "text": "restricted"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName scanelf\nLicense: GPL-2.0\nClassification: restricted\n Severity: HIGH\n",
-                                "markdown": "**PackageName scanelf**\n| License | Classification | Severity |\n| --- | --- | --- |\n|HIGH|restricted|HIGH|"
-                            },
-                            "properties": {
-                                "security-severity": "3",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "HIGH"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "GPL-2.0",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "GPL-2.0"
-                            },
-                            "fullDescription": {
-                                "text": "restricted"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName apk-tools\nLicense: GPL-2.0\nClassification: restricted\n Severity: HIGH\n",
-                                "markdown": "**PackageName apk-tools**\n| License | Classification | Severity |\n| --- | --- | --- |\n|HIGH|restricted|HIGH|"
-                            },
-                            "properties": {
-                                "security-severity": "3",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "HIGH"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "MIT",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "MIT"
-                            },
-                            "fullDescription": {
-                                "text": "notice"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName alpine-keys\nLicense: MIT\nClassification: notice\n Severity: LOW\n",
-                                "markdown": "**PackageName alpine-keys**\n| License | Classification | Severity |\n| --- | --- | --- |\n|LOW|notice|LOW|"
-                            },
-                            "properties": {
-                                "security-severity": "1",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "LOW"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "GPL-2.0",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "GPL-2.0"
-                            },
-                            "fullDescription": {
-                                "text": "restricted"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName busybox-binsh\nLicense: GPL-2.0\nClassification: restricted\n Severity: HIGH\n",
-                                "markdown": "**PackageName busybox-binsh**\n| License | Classification | Severity |\n| --- | --- | --- |\n|HIGH|restricted|HIGH|"
-                            },
-                            "properties": {
-                                "security-severity": "3",
-                                "tags": [
-                                    "license",
                                     "security",
                                     "HIGH"
                                 ]
@@ -827,47 +531,17 @@
                             "shortDescription": {
                                 "text": "Apache-2.0"
                             },
-                            "fullDescription": {
-                                "text": "notice"
-                            },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName libssl3\nLicense: Apache-2.0\nClassification: notice\n Severity: LOW\n",
-                                "markdown": "**PackageName libssl3**\n| License | Classification | Severity |\n| --- | --- | --- |\n|LOW|notice|LOW|"
+                                "text": "PackageName libcrypto3\nLicense: Apache-2.0\n",
+                                "markdown": "**PackageName libcrypto3**\n| License |\n| --- | --- | --- |\n|Apache-2.0|"
                             },
                             "properties": {
-                                "security-severity": "1",
                                 "tags": [
                                     "license",
-                                    "security",
-                                    "LOW"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "MIT",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "MIT"
-                            },
-                            "fullDescription": {
-                                "text": "notice"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName musl-utils\nLicense: MIT\nClassification: notice\n Severity: LOW\n",
-                                "markdown": "**PackageName musl-utils**\n| License | Classification | Severity |\n| --- | --- | --- |\n|LOW|notice|LOW|"
-                            },
-                            "properties": {
-                                "security-severity": "1",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "LOW"
+                                    "security"
                                 ]
                             }
                         },
@@ -877,272 +551,17 @@
                             "shortDescription": {
                                 "text": "BSD-2-Clause"
                             },
-                            "fullDescription": {
-                                "text": "notice"
-                            },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName musl-utils\nLicense: BSD-2-Clause\nClassification: notice\n Severity: LOW\n",
-                                "markdown": "**PackageName musl-utils**\n| License | Classification | Severity |\n| --- | --- | --- |\n|LOW|notice|LOW|"
+                                "text": "PackageName libc-utils\nLicense: BSD-2-Clause\n",
+                                "markdown": "**PackageName libc-utils**\n| License |\n| --- | --- | --- |\n|BSD-2-Clause|"
                             },
                             "properties": {
-                                "security-severity": "1",
                                 "tags": [
                                     "license",
-                                    "security",
-                                    "LOW"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "GPL-2.0",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "GPL-2.0"
-                            },
-                            "fullDescription": {
-                                "text": "restricted"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName musl-utils\nLicense: GPL-2.0\nClassification: restricted\n Severity: HIGH\n",
-                                "markdown": "**PackageName musl-utils**\n| License | Classification | Severity |\n| --- | --- | --- |\n|HIGH|restricted|HIGH|"
-                            },
-                            "properties": {
-                                "security-severity": "3",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "HIGH"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "GPL-2.0",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "GPL-2.0"
-                            },
-                            "fullDescription": {
-                                "text": "restricted"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName alpine-baselayout-data\nLicense: GPL-2.0\nClassification: restricted\n Severity: HIGH\n",
-                                "markdown": "**PackageName alpine-baselayout-data**\n| License | Classification | Severity |\n| --- | --- | --- |\n|HIGH|restricted|HIGH|"
-                            },
-                            "properties": {
-                                "security-severity": "3",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "HIGH"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "MIT",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "MIT"
-                            },
-                            "fullDescription": {
-                                "text": "notice"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName musl\nLicense: MIT\nClassification: notice\n Severity: LOW\n",
-                                "markdown": "**PackageName musl**\n| License | Classification | Severity |\n| --- | --- | --- |\n|LOW|notice|LOW|"
-                            },
-                            "properties": {
-                                "security-severity": "1",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "LOW"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "Apache-2.0",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "Apache-2.0"
-                            },
-                            "fullDescription": {
-                                "text": "notice"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName libcrypto3\nLicense: Apache-2.0\nClassification: notice\n Severity: LOW\n",
-                                "markdown": "**PackageName libcrypto3**\n| License | Classification | Severity |\n| --- | --- | --- |\n|LOW|notice|LOW|"
-                            },
-                            "properties": {
-                                "security-severity": "1",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "LOW"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "GPL-2.0",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "GPL-2.0"
-                            },
-                            "fullDescription": {
-                                "text": "restricted"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName busybox\nLicense: GPL-2.0\nClassification: restricted\n Severity: HIGH\n",
-                                "markdown": "**PackageName busybox**\n| License | Classification | Severity |\n| --- | --- | --- |\n|HIGH|restricted|HIGH|"
-                            },
-                            "properties": {
-                                "security-severity": "3",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "HIGH"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "MPL-2.0",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "MPL-2.0"
-                            },
-                            "fullDescription": {
-                                "text": "reciprocal"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName ca-certificates-bundle\nLicense: MPL-2.0\nClassification: reciprocal\n Severity: MEDIUM\n",
-                                "markdown": "**PackageName ca-certificates-bundle**\n| License | Classification | Severity |\n| --- | --- | --- |\n|MEDIUM|reciprocal|MEDIUM|"
-                            },
-                            "properties": {
-                                "security-severity": "2",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "MEDIUM"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "MIT",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "MIT"
-                            },
-                            "fullDescription": {
-                                "text": "notice"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName ca-certificates-bundle\nLicense: MIT\nClassification: notice\n Severity: LOW\n",
-                                "markdown": "**PackageName ca-certificates-bundle**\n| License | Classification | Severity |\n| --- | --- | --- |\n|LOW|notice|LOW|"
-                            },
-                            "properties": {
-                                "security-severity": "1",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "LOW"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "Zlib",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "Zlib"
-                            },
-                            "fullDescription": {
-                                "text": "notice"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName zlib\nLicense: Zlib\nClassification: notice\n Severity: LOW\n",
-                                "markdown": "**PackageName zlib**\n| License | Classification | Severity |\n| --- | --- | --- |\n|LOW|notice|LOW|"
-                            },
-                            "properties": {
-                                "security-severity": "1",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "LOW"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "GPL-2.0",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "GPL-2.0"
-                            },
-                            "fullDescription": {
-                                "text": "restricted"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName ssl_client\nLicense: GPL-2.0\nClassification: restricted\n Severity: HIGH\n",
-                                "markdown": "**PackageName ssl_client**\n| License | Classification | Severity |\n| --- | --- | --- |\n|HIGH|restricted|HIGH|"
-                            },
-                            "properties": {
-                                "security-severity": "3",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "HIGH"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "BSD-2-Clause",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "BSD-2-Clause"
-                            },
-                            "fullDescription": {
-                                "text": "notice"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName libc-utils\nLicense: BSD-2-Clause\nClassification: notice\n Severity: LOW\n",
-                                "markdown": "**PackageName libc-utils**\n| License | Classification | Severity |\n| --- | --- | --- |\n|LOW|notice|LOW|"
-                            },
-                            "properties": {
-                                "security-severity": "1",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "LOW"
+                                    "security"
                                 ]
                             }
                         },
@@ -1152,22 +571,117 @@
                             "shortDescription": {
                                 "text": "BSD-3-Clause"
                             },
-                            "fullDescription": {
-                                "text": "notice"
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName libc-utils\nLicense: BSD-3-Clause\n",
+                                "markdown": "**PackageName libc-utils**\n| License |\n| --- | --- | --- |\n|BSD-3-Clause|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "GPL-2.0",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "GPL-2.0"
                             },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName libc-utils\nLicense: BSD-3-Clause\nClassification: notice\n Severity: LOW\n",
-                                "markdown": "**PackageName libc-utils**\n| License | Classification | Severity |\n| --- | --- | --- |\n|LOW|notice|LOW|"
+                                "text": "PackageName alpine-baselayout-data\nLicense: GPL-2.0\n",
+                                "markdown": "**PackageName alpine-baselayout-data**\n| License |\n| --- | --- | --- |\n|GPL-2.0|"
                             },
                             "properties": {
-                                "security-severity": "1",
                                 "tags": [
                                     "license",
-                                    "security",
-                                    "LOW"
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MIT",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "MIT"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName alpine-keys\nLicense: MIT\n",
+                                "markdown": "**PackageName alpine-keys**\n| License |\n| --- | --- | --- |\n|MIT|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "GPL-2.0+",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "GPL-2.0+"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName musl-utils\nLicense: GPL-2.0+\n",
+                                "markdown": "**PackageName musl-utils**\n| License |\n| --- | --- | --- |\n|GPL-2.0+|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MPL-2.0",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "MPL-2.0"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName ca-certificates-bundle\nLicense: MPL-2.0\n",
+                                "markdown": "**PackageName ca-certificates-bundle**\n| License |\n| --- | --- | --- |\n|MPL-2.0|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Zlib",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "Zlib"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName zlib\nLicense: Zlib\n",
+                                "markdown": "**PackageName zlib**\n| License |\n| --- | --- | --- |\n|Zlib|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
                                 ]
                             }
                         }
@@ -1181,177 +695,14 @@
                     "ruleIndex": 0,
                     "level": "error",
                     "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4203\nSeverity: MEDIUM\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4203](https://www.mend.io/vulnerability-database/CVE-2022-4203)"
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4203\nSeverity: MEDIUM\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4203](https://www.mend.io/vulnerability-database/CVE-2022-4203)"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
-                                "artifactLocation": {}
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "CVE-2022-4304",
-                    "ruleIndex": 1,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4304\nSeverity: MEDIUM\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4304](https://www.mend.io/vulnerability-database/CVE-2022-4304)"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {}
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "CVE-2022-4450",
-                    "ruleIndex": 2,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4450\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4450](https://www.mend.io/vulnerability-database/CVE-2022-4450)"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {}
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "CVE-2023-0215",
-                    "ruleIndex": 3,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0215\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0215](https://www.mend.io/vulnerability-database/CVE-2023-0215)"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {}
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "CVE-2023-0216",
-                    "ruleIndex": 4,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0216\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0216](https://www.mend.io/vulnerability-database/CVE-2023-0216)"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {}
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "CVE-2023-0217",
-                    "ruleIndex": 5,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0217\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0217](https://www.mend.io/vulnerability-database/CVE-2023-0217)"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {}
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "CVE-2023-0286",
-                    "ruleIndex": 6,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0286\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0286](https://www.mend.io/vulnerability-database/CVE-2023-0286)"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {}
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "CVE-2023-0401",
-                    "ruleIndex": 7,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0401\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0401](https://www.mend.io/vulnerability-database/CVE-2023-0401)"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {}
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "CVE-2023-0464",
-                    "ruleIndex": 8,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0464\nSeverity: HIGH\nFixed Version: 3.0.8-r1\nLink: [CVE-2023-0464](https://www.mend.io/vulnerability-database/CVE-2023-0464)"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {}
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "CVE-2023-0465",
-                    "ruleIndex": 9,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0465\nSeverity: MEDIUM\nFixed Version: 3.0.8-r2\nLink: [CVE-2023-0465](https://www.mend.io/vulnerability-database/CVE-2023-0465)"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {}
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "CVE-2023-0466",
-                    "ruleIndex": 10,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0466\nSeverity: MEDIUM\nFixed Version: 3.0.8-r3\nLink: [CVE-2023-0466](https://www.mend.io/vulnerability-database/CVE-2023-0466)"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {}
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "CVE-2023-1255",
-                    "ruleIndex": 11,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-1255\nSeverity: MEDIUM\nFixed Version: 3.0.8-r4\nLink: [CVE-2023-1255](https://www.mend.io/vulnerability-database/CVE-2023-1255)"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {}
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
                             }
                         }
                     ]
@@ -1361,12 +712,14 @@
                     "ruleIndex": 0,
                     "level": "error",
                     "message": {
-                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4203\nSeverity: MEDIUM\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4203](https://www.mend.io/vulnerability-database/CVE-2022-4203)"
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4203\nSeverity: MEDIUM\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4203](https://www.mend.io/vulnerability-database/CVE-2022-4203)"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
-                                "artifactLocation": {}
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
                             }
                         }
                     ]
@@ -1381,7 +734,26 @@
                     "locations": [
                         {
                             "physicalLocation": {
-                                "artifactLocation": {}
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2022-4304",
+                    "ruleIndex": 1,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4304\nSeverity: MEDIUM\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4304](https://www.mend.io/vulnerability-database/CVE-2022-4304)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
                             }
                         }
                     ]
@@ -1396,7 +768,26 @@
                     "locations": [
                         {
                             "physicalLocation": {
-                                "artifactLocation": {}
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2022-4450",
+                    "ruleIndex": 2,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4450\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4450](https://www.mend.io/vulnerability-database/CVE-2022-4450)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
                             }
                         }
                     ]
@@ -1411,7 +802,26 @@
                     "locations": [
                         {
                             "physicalLocation": {
-                                "artifactLocation": {}
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-0215",
+                    "ruleIndex": 3,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0215\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0215](https://www.mend.io/vulnerability-database/CVE-2023-0215)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
                             }
                         }
                     ]
@@ -1426,7 +836,43 @@
                     "locations": [
                         {
                             "physicalLocation": {
-                                "artifactLocation": {}
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-0216",
+                    "ruleIndex": 4,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0216\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0216](https://www.mend.io/vulnerability-database/CVE-2023-0216)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-0217",
+                    "ruleIndex": 5,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0217\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0217](https://www.mend.io/vulnerability-database/CVE-2023-0217)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
                             }
                         }
                     ]
@@ -1441,7 +887,26 @@
                     "locations": [
                         {
                             "physicalLocation": {
-                                "artifactLocation": {}
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-0286",
+                    "ruleIndex": 6,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0286\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0286](https://www.mend.io/vulnerability-database/CVE-2023-0286)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
                             }
                         }
                     ]
@@ -1456,7 +921,26 @@
                     "locations": [
                         {
                             "physicalLocation": {
-                                "artifactLocation": {}
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-0401",
+                    "ruleIndex": 7,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0401\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0401](https://www.mend.io/vulnerability-database/CVE-2023-0401)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
                             }
                         }
                     ]
@@ -1471,7 +955,9 @@
                     "locations": [
                         {
                             "physicalLocation": {
-                                "artifactLocation": {}
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
                             }
                         }
                     ]
@@ -1486,7 +972,26 @@
                     "locations": [
                         {
                             "physicalLocation": {
-                                "artifactLocation": {}
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-0464",
+                    "ruleIndex": 8,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0464\nSeverity: HIGH\nFixed Version: 3.0.8-r1\nLink: [CVE-2023-0464](https://www.mend.io/vulnerability-database/CVE-2023-0464)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
                             }
                         }
                     ]
@@ -1501,7 +1006,43 @@
                     "locations": [
                         {
                             "physicalLocation": {
-                                "artifactLocation": {}
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-0465",
+                    "ruleIndex": 9,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0465\nSeverity: MEDIUM\nFixed Version: 3.0.8-r2\nLink: [CVE-2023-0465](https://www.mend.io/vulnerability-database/CVE-2023-0465)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-0466",
+                    "ruleIndex": 10,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0466\nSeverity: MEDIUM\nFixed Version: 3.0.8-r3\nLink: [CVE-2023-0466](https://www.mend.io/vulnerability-database/CVE-2023-0466)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
                             }
                         }
                     ]
@@ -1516,7 +1057,9 @@
                     "locations": [
                         {
                             "physicalLocation": {
-                                "artifactLocation": {}
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
                             }
                         }
                     ]
@@ -1531,22 +1074,178 @@
                     "locations": [
                         {
                             "physicalLocation": {
-                                "artifactLocation": {}
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-1255",
+                    "ruleIndex": 11,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-1255\nSeverity: MEDIUM\nFixed Version: 3.0.8-r4\nLink: [CVE-2023-1255](https://www.mend.io/vulnerability-database/CVE-2023-1255)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-2650",
+                    "ruleIndex": 12,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-2650\nSeverity: HIGH\nFixed Version: 3.0.9-r0\nLink: [CVE-2023-2650](https://www.mend.io/vulnerability-database/CVE-2023-2650)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-2650",
+                    "ruleIndex": 12,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-2650\nSeverity: HIGH\nFixed Version: 3.0.9-r0\nLink: [CVE-2023-2650](https://www.mend.io/vulnerability-database/CVE-2023-2650)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-2975",
+                    "ruleIndex": 13,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-2975\nSeverity: MEDIUM\nFixed Version: 3.0.9-r2\nLink: [CVE-2023-2975](https://www.mend.io/vulnerability-database/CVE-2023-2975)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-2975",
+                    "ruleIndex": 13,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-2975\nSeverity: MEDIUM\nFixed Version: 3.0.9-r2\nLink: [CVE-2023-2975](https://www.mend.io/vulnerability-database/CVE-2023-2975)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-3446",
+                    "ruleIndex": 14,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-3446\nSeverity: MEDIUM\nFixed Version: 3.0.9-r3\nLink: [CVE-2023-3446](https://www.mend.io/vulnerability-database/CVE-2023-3446)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-3446",
+                    "ruleIndex": 14,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-3446\nSeverity: MEDIUM\nFixed Version: 3.0.9-r3\nLink: [CVE-2023-3446](https://www.mend.io/vulnerability-database/CVE-2023-3446)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-3817",
+                    "ruleIndex": 15,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-3817\nSeverity: MEDIUM\nFixed Version: 3.0.10-r0\nLink: [CVE-2023-3817](https://www.mend.io/vulnerability-database/CVE-2023-3817)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-3817",
+                    "ruleIndex": 15,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-3817\nSeverity: MEDIUM\nFixed Version: 3.0.10-r0\nLink: [CVE-2023-3817](https://www.mend.io/vulnerability-database/CVE-2023-3817)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
                             }
                         }
                     ]
                 },
                 {
                     "ruleId": "gcp-service-account",
-                    "ruleIndex": 12,
+                    "ruleIndex": 16,
                     "level": "error",
                     "message": {
-                        "text": "Secret: gcp-service-account\nSeverity: CRITICAL\nFile Path: alphabet.json\n"
+                        "text": "Secret: gcp-service-account\nSeverity: CRITICAL\nFile Path: tmp/alphabet.json\n"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
@@ -1558,15 +1257,16 @@
                 },
                 {
                     "ruleId": "aws-access-key-id",
-                    "ruleIndex": 20,
+                    "ruleIndex": 17,
                     "level": "error",
                     "message": {
-                        "text": "Secret: aws-access-key-id\nSeverity: CRITICAL\nFile Path: secret.cs\n"
+                        "text": "Secret: aws-access-key-id\nSeverity: CRITICAL\nFile Path: tmp/secret.cs\n"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
@@ -1578,15 +1278,16 @@
                 },
                 {
                     "ruleId": "aws-access-key-id",
-                    "ruleIndex": 20,
+                    "ruleIndex": 17,
                     "level": "error",
                     "message": {
-                        "text": "Secret: aws-access-key-id\nSeverity: CRITICAL\nFile Path: secret.php\n"
+                        "text": "Secret: aws-access-key-id\nSeverity: CRITICAL\nFile Path: tmp/secret.php\n"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
@@ -1598,15 +1299,16 @@
                 },
                 {
                     "ruleId": "aws-access-key-id",
-                    "ruleIndex": 20,
+                    "ruleIndex": 17,
                     "level": "error",
                     "message": {
-                        "text": "Secret: aws-access-key-id\nSeverity: CRITICAL\nFile Path: secret.py\n"
+                        "text": "Secret: aws-access-key-id\nSeverity: CRITICAL\nFile Path: tmp/secret.py\n"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
@@ -1618,15 +1320,16 @@
                 },
                 {
                     "ruleId": "aws-access-key-id",
-                    "ruleIndex": 20,
+                    "ruleIndex": 17,
                     "level": "error",
                     "message": {
-                        "text": "Secret: aws-access-key-id\nSeverity: CRITICAL\nFile Path: secret.js\n"
+                        "text": "Secret: aws-access-key-id\nSeverity: CRITICAL\nFile Path: tmp/secret.js\n"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
@@ -1638,15 +1341,16 @@
                 },
                 {
                     "ruleId": "aws-access-key-id",
-                    "ruleIndex": 20,
+                    "ruleIndex": 17,
                     "level": "error",
                     "message": {
-                        "text": "Secret: aws-access-key-id\nSeverity: CRITICAL\nFile Path: secret.c\n"
+                        "text": "Secret: aws-access-key-id\nSeverity: CRITICAL\nFile Path: tmp/secret.c\n"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
@@ -1658,15 +1362,16 @@
                 },
                 {
                     "ruleId": "github-pat",
-                    "ruleIndex": 19,
+                    "ruleIndex": 18,
                     "level": "error",
                     "message": {
-                        "text": "Secret: github-pat\nSeverity: CRITICAL\nFile Path: gh\n"
+                        "text": "Secret: github-pat\nSeverity: CRITICAL\nFile Path: tmp/gh\n"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
@@ -1678,15 +1383,16 @@
                 },
                 {
                     "ruleId": "github-pat",
-                    "ruleIndex": 19,
+                    "ruleIndex": 18,
                     "level": "error",
                     "message": {
-                        "text": "Secret: github-pat\nSeverity: CRITICAL\nFile Path: gh_l\n"
+                        "text": "Secret: github-pat\nSeverity: CRITICAL\nFile Path: tmp/gh_l\n"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
@@ -1698,524 +1404,304 @@
                 },
                 {
                     "ruleId": "aws-access-key-id",
+                    "ruleIndex": 17,
+                    "level": "error",
+                    "message": {
+                        "text": "Secret: aws-access-key-id\nSeverity: CRITICAL\nFile Path: tmp/secret.go\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "private-key",
+                    "ruleIndex": 19,
+                    "level": "error",
+                    "message": {
+                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/ec.pem\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "private-key",
+                    "ruleIndex": 19,
+                    "level": "error",
+                    "message": {
+                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/id_rsa\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "private-key",
+                    "ruleIndex": 19,
+                    "level": "error",
+                    "message": {
+                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/my_ssh\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "private-key",
+                    "ruleIndex": 19,
+                    "level": "error",
+                    "message": {
+                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/id_rsa_1\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "private-key",
+                    "ruleIndex": 19,
+                    "level": "error",
+                    "message": {
+                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/my_key.private\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "private-key",
+                    "ruleIndex": 19,
+                    "level": "error",
+                    "message": {
+                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/alphabet.json\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "Apache-2.0",
                     "ruleIndex": 20,
                     "level": "error",
                     "message": {
-                        "text": "Secret: aws-access-key-id\nSeverity: CRITICAL\nFile Path: secret.go\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
+                        "text": "Package: libcrypto3\nLicense: Apache-2.0\n"
+                    }
                 },
                 {
-                    "ruleId": "private-key",
+                    "ruleId": "BSD-2-Clause",
+                    "ruleIndex": 21,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libc-utils\nLicense: BSD-2-Clause\n"
+                    }
+                },
+                {
+                    "ruleId": "BSD-3-Clause",
+                    "ruleIndex": 22,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libc-utils\nLicense: BSD-3-Clause\n"
+                    }
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 23,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: alpine-baselayout-data\nLicense: GPL-2.0\n"
+                    }
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 24,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: alpine-keys\nLicense: MIT\n"
+                    }
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 23,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: apk-tools\nLicense: GPL-2.0\n"
+                    }
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 23,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: busybox-binsh\nLicense: GPL-2.0\n"
+                    }
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 24,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl-utils\nLicense: MIT\n"
+                    }
+                },
+                {
+                    "ruleId": "BSD-2-Clause",
+                    "ruleIndex": 21,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl-utils\nLicense: BSD-2-Clause\n"
+                    }
+                },
+                {
+                    "ruleId": "GPL-2.0+",
+                    "ruleIndex": 25,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl-utils\nLicense: GPL-2.0+\n"
+                    }
+                },
+                {
+                    "ruleId": "MPL-2.0",
                     "ruleIndex": 26,
                     "level": "error",
                     "message": {
-                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: ec.pem\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
+                        "text": "Package: ca-certificates-bundle\nLicense: MPL-2.0\n"
+                    }
                 },
                 {
-                    "ruleId": "private-key",
-                    "ruleIndex": 26,
+                    "ruleId": "MIT",
+                    "ruleIndex": 24,
                     "level": "error",
                     "message": {
-                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: my_ssh\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
+                        "text": "Package: ca-certificates-bundle\nLicense: MIT\n"
+                    }
                 },
                 {
-                    "ruleId": "private-key",
-                    "ruleIndex": 26,
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 23,
                     "level": "error",
                     "message": {
-                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: id_rsa\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
+                        "text": "Package: alpine-baselayout\nLicense: GPL-2.0\n"
+                    }
                 },
                 {
-                    "ruleId": "private-key",
-                    "ruleIndex": 26,
+                    "ruleId": "Apache-2.0",
+                    "ruleIndex": 20,
                     "level": "error",
                     "message": {
-                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: id_rsa_1\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
+                        "text": "Package: libssl3\nLicense: Apache-2.0\n"
+                    }
                 },
                 {
-                    "ruleId": "private-key",
-                    "ruleIndex": 26,
+                    "ruleId": "Zlib",
+                    "ruleIndex": 27,
                     "level": "error",
                     "message": {
-                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: my_key.private\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
+                        "text": "Package: zlib\nLicense: Zlib\n"
+                    }
                 },
                 {
-                    "ruleId": "private-key",
-                    "ruleIndex": 26,
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 23,
                     "level": "error",
                     "message": {
-                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: alphabet.json\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
+                        "text": "Package: scanelf\nLicense: GPL-2.0\n"
+                    }
                 },
                 {
-                    "ruleId": "restricted",
-                    "ruleIndex": 43,
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 23,
                     "level": "error",
                     "message": {
-                        "text": "Package: alpine-baselayout\nLicense: GPL-2.0\nClassification: restricted\nSeverity: HIGH\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
+                        "text": "Package: ssl_client\nLicense: GPL-2.0\n"
+                    }
                 },
                 {
-                    "ruleId": "restricted",
-                    "ruleIndex": 43,
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 23,
                     "level": "error",
                     "message": {
-                        "text": "Package: scanelf\nLicense: GPL-2.0\nClassification: restricted\nSeverity: HIGH\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
+                        "text": "Package: busybox\nLicense: GPL-2.0\n"
+                    }
                 },
                 {
-                    "ruleId": "restricted",
-                    "ruleIndex": 43,
+                    "ruleId": "MIT",
+                    "ruleIndex": 24,
                     "level": "error",
                     "message": {
-                        "text": "Package: apk-tools\nLicense: GPL-2.0\nClassification: restricted\nSeverity: HIGH\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "notice",
-                    "ruleIndex": 41,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: alpine-keys\nLicense: MIT\nClassification: notice\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "restricted",
-                    "ruleIndex": 43,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: busybox-binsh\nLicense: GPL-2.0\nClassification: restricted\nSeverity: HIGH\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "notice",
-                    "ruleIndex": 38,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libssl3\nLicense: Apache-2.0\nClassification: notice\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "notice",
-                    "ruleIndex": 41,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: musl-utils\nLicense: MIT\nClassification: notice\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "notice",
-                    "ruleIndex": 44,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: musl-utils\nLicense: BSD-2-Clause\nClassification: notice\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "restricted",
-                    "ruleIndex": 43,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: musl-utils\nLicense: GPL-2.0\nClassification: restricted\nSeverity: HIGH\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "restricted",
-                    "ruleIndex": 43,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: alpine-baselayout-data\nLicense: GPL-2.0\nClassification: restricted\nSeverity: HIGH\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "notice",
-                    "ruleIndex": 41,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: musl\nLicense: MIT\nClassification: notice\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "notice",
-                    "ruleIndex": 38,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libcrypto3\nLicense: Apache-2.0\nClassification: notice\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "restricted",
-                    "ruleIndex": 43,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: busybox\nLicense: GPL-2.0\nClassification: restricted\nSeverity: HIGH\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "reciprocal",
-                    "ruleIndex": 40,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: ca-certificates-bundle\nLicense: MPL-2.0\nClassification: reciprocal\nSeverity: MEDIUM\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "notice",
-                    "ruleIndex": 41,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: ca-certificates-bundle\nLicense: MIT\nClassification: notice\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "notice",
-                    "ruleIndex": 42,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: zlib\nLicense: Zlib\nClassification: notice\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "restricted",
-                    "ruleIndex": 43,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: ssl_client\nLicense: GPL-2.0\nClassification: restricted\nSeverity: HIGH\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "notice",
-                    "ruleIndex": 44,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libc-utils\nLicense: BSD-2-Clause\nClassification: notice\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "notice",
-                    "ruleIndex": 45,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libc-utils\nLicense: BSD-3-Clause\nClassification: notice\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
+                        "text": "Package: musl\nLicense: MIT\n"
+                    }
                 }
             ]
         }
     ]
+}
