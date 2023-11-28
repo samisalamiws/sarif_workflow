@@ -561,48 +561,8 @@
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName: musl-utils\nLicense: MIT\n",
-                                "markdown": "**PackageName musl-utils**\n| PackageName | License |\n| --- | --- |\n|musl-utils|MIT|"
-                            },
-                            "properties": {
-                                "tags": [
-                                    "license",
-                                    "security"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "BSD-2-Clause",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "BSD-2-Clause"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName: musl-utils\nLicense: BSD-2-Clause\n",
-                                "markdown": "**PackageName musl-utils**\n| PackageName | License |\n| --- | --- |\n|musl-utils|BSD-2-Clause|"
-                            },
-                            "properties": {
-                                "tags": [
-                                    "license",
-                                    "security"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "GPL-2.0+",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "GPL-2.0+"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName: musl-utils\nLicense: GPL-2.0+\n",
-                                "markdown": "**PackageName musl-utils**\n| PackageName | License |\n| --- | --- |\n|musl-utils|GPL-2.0+|"
+                                "text": "PackageName: alpine-keys\nLicense: MIT\n",
+                                "markdown": "**PackageName alpine-keys**\n| PackageName | License |\n| --- | --- |\n|alpine-keys|MIT|"
                             },
                             "properties": {
                                 "tags": [
@@ -621,8 +581,8 @@
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName: alpine-baselayout\nLicense: GPL-2.0\n",
-                                "markdown": "**PackageName alpine-baselayout**\n| PackageName | License |\n| --- | --- |\n|alpine-baselayout|GPL-2.0|"
+                                "text": "PackageName: busybox\nLicense: GPL-2.0\n",
+                                "markdown": "**PackageName busybox**\n| PackageName | License |\n| --- | --- |\n|busybox|GPL-2.0|"
                             },
                             "properties": {
                                 "tags": [
@@ -641,8 +601,28 @@
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName: libssl3\nLicense: Apache-2.0\n",
-                                "markdown": "**PackageName libssl3**\n| PackageName | License |\n| --- | --- |\n|libssl3|Apache-2.0|"
+                                "text": "PackageName: libcrypto3\nLicense: Apache-2.0\n",
+                                "markdown": "**PackageName libcrypto3**\n| PackageName | License |\n| --- | --- |\n|libcrypto3|Apache-2.0|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MPL-2.0",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "MPL-2.0"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName: ca-certificates-bundle\nLicense: MPL-2.0\n",
+                                "markdown": "**PackageName ca-certificates-bundle**\n| PackageName | License |\n| --- | --- |\n|ca-certificates-bundle|MPL-2.0|"
                             },
                             "properties": {
                                 "tags": [
@@ -672,6 +652,26 @@
                             }
                         },
                         {
+                            "id": "BSD-2-Clause",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "BSD-2-Clause"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName: libc-utils\nLicense: BSD-2-Clause\n",
+                                "markdown": "**PackageName libc-utils**\n| PackageName | License |\n| --- | --- |\n|libc-utils|BSD-2-Clause|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
                             "id": "BSD-3-Clause",
                             "name": "license_finding",
                             "shortDescription": {
@@ -692,17 +692,17 @@
                             }
                         },
                         {
-                            "id": "MPL-2.0",
+                            "id": "GPL-2.0+",
                             "name": "license_finding",
                             "shortDescription": {
-                                "text": "MPL-2.0"
+                                "text": "GPL-2.0+"
                             },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName: ca-certificates-bundle\nLicense: MPL-2.0\n",
-                                "markdown": "**PackageName ca-certificates-bundle**\n| PackageName | License |\n| --- | --- |\n|ca-certificates-bundle|MPL-2.0|"
+                                "text": "PackageName: musl-utils\nLicense: GPL-2.0+\n",
+                                "markdown": "**PackageName musl-utils**\n| PackageName | License |\n| --- | --- |\n|musl-utils|GPL-2.0+|"
                             },
                             "properties": {
                                 "tags": [
@@ -721,7 +721,7 @@
                     "ruleIndex": 0,
                     "level": "error",
                     "message": {
-                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4203\nSeverity: MEDIUM\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4203](https://www.mend.io/vulnerability-database/CVE-2022-4203)"
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4203\nSeverity: MEDIUM\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4203](https://www.mend.io/vulnerability-database/CVE-2022-4203)"
                     },
                     "locations": [
                         {
@@ -738,24 +738,7 @@
                     "ruleIndex": 0,
                     "level": "error",
                     "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4203\nSeverity: MEDIUM\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4203](https://www.mend.io/vulnerability-database/CVE-2022-4203)"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dorhayun/dor-alpine-secret"
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "CVE-2022-4304",
-                    "ruleIndex": 1,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4304\nSeverity: MEDIUM\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4304](https://www.mend.io/vulnerability-database/CVE-2022-4304)"
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4203\nSeverity: MEDIUM\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4203](https://www.mend.io/vulnerability-database/CVE-2022-4203)"
                     },
                     "locations": [
                         {
@@ -785,11 +768,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2022-4450",
-                    "ruleIndex": 2,
+                    "ruleId": "CVE-2022-4304",
+                    "ruleIndex": 1,
                     "level": "error",
                     "message": {
-                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4450\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4450](https://www.mend.io/vulnerability-database/CVE-2022-4450)"
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4304\nSeverity: MEDIUM\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4304](https://www.mend.io/vulnerability-database/CVE-2022-4304)"
                     },
                     "locations": [
                         {
@@ -819,11 +802,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2023-0215",
-                    "ruleIndex": 3,
+                    "ruleId": "CVE-2022-4450",
+                    "ruleIndex": 2,
                     "level": "error",
                     "message": {
-                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0215\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0215](https://www.mend.io/vulnerability-database/CVE-2023-0215)"
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2022-4450\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2022-4450](https://www.mend.io/vulnerability-database/CVE-2022-4450)"
                     },
                     "locations": [
                         {
@@ -853,11 +836,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2023-0216",
-                    "ruleIndex": 4,
+                    "ruleId": "CVE-2023-0215",
+                    "ruleIndex": 3,
                     "level": "error",
                     "message": {
-                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0216\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0216](https://www.mend.io/vulnerability-database/CVE-2023-0216)"
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0215\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0215](https://www.mend.io/vulnerability-database/CVE-2023-0215)"
                     },
                     "locations": [
                         {
@@ -887,11 +870,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2023-0217",
-                    "ruleIndex": 5,
+                    "ruleId": "CVE-2023-0216",
+                    "ruleIndex": 4,
                     "level": "error",
                     "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0217\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0217](https://www.mend.io/vulnerability-database/CVE-2023-0217)"
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0216\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0216](https://www.mend.io/vulnerability-database/CVE-2023-0216)"
                     },
                     "locations": [
                         {
@@ -921,11 +904,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2023-0286",
-                    "ruleIndex": 6,
+                    "ruleId": "CVE-2023-0217",
+                    "ruleIndex": 5,
                     "level": "error",
                     "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0286\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0286](https://www.mend.io/vulnerability-database/CVE-2023-0286)"
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0217\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0217](https://www.mend.io/vulnerability-database/CVE-2023-0217)"
                     },
                     "locations": [
                         {
@@ -955,11 +938,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2023-0401",
-                    "ruleIndex": 7,
+                    "ruleId": "CVE-2023-0286",
+                    "ruleIndex": 6,
                     "level": "error",
                     "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0401\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0401](https://www.mend.io/vulnerability-database/CVE-2023-0401)"
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0286\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0286](https://www.mend.io/vulnerability-database/CVE-2023-0286)"
                     },
                     "locations": [
                         {
@@ -989,11 +972,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2023-0464",
-                    "ruleIndex": 8,
+                    "ruleId": "CVE-2023-0401",
+                    "ruleIndex": 7,
                     "level": "error",
                     "message": {
-                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0464\nSeverity: HIGH\nFixed Version: 3.0.8-r1\nLink: [CVE-2023-0464](https://www.mend.io/vulnerability-database/CVE-2023-0464)"
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0401\nSeverity: HIGH\nFixed Version: 3.0.8-r0\nLink: [CVE-2023-0401](https://www.mend.io/vulnerability-database/CVE-2023-0401)"
                     },
                     "locations": [
                         {
@@ -1023,11 +1006,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2023-0465",
-                    "ruleIndex": 9,
+                    "ruleId": "CVE-2023-0464",
+                    "ruleIndex": 8,
                     "level": "error",
                     "message": {
-                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0465\nSeverity: MEDIUM\nFixed Version: 3.0.8-r2\nLink: [CVE-2023-0465](https://www.mend.io/vulnerability-database/CVE-2023-0465)"
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0464\nSeverity: HIGH\nFixed Version: 3.0.8-r1\nLink: [CVE-2023-0464](https://www.mend.io/vulnerability-database/CVE-2023-0464)"
                     },
                     "locations": [
                         {
@@ -1057,11 +1040,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2023-0466",
-                    "ruleIndex": 10,
+                    "ruleId": "CVE-2023-0465",
+                    "ruleIndex": 9,
                     "level": "error",
                     "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0466\nSeverity: MEDIUM\nFixed Version: 3.0.8-r3\nLink: [CVE-2023-0466](https://www.mend.io/vulnerability-database/CVE-2023-0466)"
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0465\nSeverity: MEDIUM\nFixed Version: 3.0.8-r2\nLink: [CVE-2023-0465](https://www.mend.io/vulnerability-database/CVE-2023-0465)"
                     },
                     "locations": [
                         {
@@ -1091,11 +1074,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2023-1255",
-                    "ruleIndex": 11,
+                    "ruleId": "CVE-2023-0466",
+                    "ruleIndex": 10,
                     "level": "error",
                     "message": {
-                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-1255\nSeverity: MEDIUM\nFixed Version: 3.0.8-r4\nLink: [CVE-2023-1255](https://www.mend.io/vulnerability-database/CVE-2023-1255)"
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-0466\nSeverity: MEDIUM\nFixed Version: 3.0.8-r3\nLink: [CVE-2023-0466](https://www.mend.io/vulnerability-database/CVE-2023-0466)"
                     },
                     "locations": [
                         {
@@ -1125,11 +1108,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2023-2650",
-                    "ruleIndex": 12,
+                    "ruleId": "CVE-2023-1255",
+                    "ruleIndex": 11,
                     "level": "error",
                     "message": {
-                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-2650\nSeverity: MEDIUM\nFixed Version: 3.0.9-r0\nLink: [CVE-2023-2650](https://www.mend.io/vulnerability-database/CVE-2023-2650)"
+                        "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-1255\nSeverity: MEDIUM\nFixed Version: 3.0.8-r4\nLink: [CVE-2023-1255](https://www.mend.io/vulnerability-database/CVE-2023-1255)"
                     },
                     "locations": [
                         {
@@ -1159,11 +1142,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2023-2975",
-                    "ruleIndex": 13,
+                    "ruleId": "CVE-2023-2650",
+                    "ruleIndex": 12,
                     "level": "error",
                     "message": {
-                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-2975\nSeverity: MEDIUM\nFixed Version: 3.0.9-r2\nLink: [CVE-2023-2975](https://www.mend.io/vulnerability-database/CVE-2023-2975)"
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-2650\nSeverity: MEDIUM\nFixed Version: 3.0.9-r0\nLink: [CVE-2023-2650](https://www.mend.io/vulnerability-database/CVE-2023-2650)"
                     },
                     "locations": [
                         {
@@ -1193,11 +1176,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2023-3446",
-                    "ruleIndex": 14,
+                    "ruleId": "CVE-2023-2975",
+                    "ruleIndex": 13,
                     "level": "error",
                     "message": {
-                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-3446\nSeverity: MEDIUM\nFixed Version: 3.0.9-r3\nLink: [CVE-2023-3446](https://www.mend.io/vulnerability-database/CVE-2023-3446)"
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-2975\nSeverity: MEDIUM\nFixed Version: 3.0.9-r2\nLink: [CVE-2023-2975](https://www.mend.io/vulnerability-database/CVE-2023-2975)"
                     },
                     "locations": [
                         {
@@ -1227,11 +1210,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2023-3817",
-                    "ruleIndex": 15,
+                    "ruleId": "CVE-2023-3446",
+                    "ruleIndex": 14,
                     "level": "error",
                     "message": {
-                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-3817\nSeverity: MEDIUM\nFixed Version: 3.0.10-r0\nLink: [CVE-2023-3817](https://www.mend.io/vulnerability-database/CVE-2023-3817)"
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-3446\nSeverity: MEDIUM\nFixed Version: 3.0.9-r3\nLink: [CVE-2023-3446](https://www.mend.io/vulnerability-database/CVE-2023-3446)"
                     },
                     "locations": [
                         {
@@ -1261,11 +1244,11 @@
                     ]
                 },
                 {
-                    "ruleId": "CVE-2023-5363",
-                    "ruleIndex": 16,
+                    "ruleId": "CVE-2023-3817",
+                    "ruleIndex": 15,
                     "level": "error",
                     "message": {
-                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-5363\nSeverity: HIGH\nFixed Version: 3.0.12-r0\nLink: [CVE-2023-5363](https://www.mend.io/vulnerability-database/CVE-2023-5363)"
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-3817\nSeverity: MEDIUM\nFixed Version: 3.0.10-r0\nLink: [CVE-2023-3817](https://www.mend.io/vulnerability-database/CVE-2023-3817)"
                     },
                     "locations": [
                         {
@@ -1283,6 +1266,23 @@
                     "level": "error",
                     "message": {
                         "text": "Package: libcrypto3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-5363\nSeverity: HIGH\nFixed Version: 3.0.12-r0\nLink: [CVE-2023-5363](https://www.mend.io/vulnerability-database/CVE-2023-5363)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2023-5363",
+                    "ruleIndex": 16,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl3\nInstalled Version: 3.0.7-r2\nVulnerability CVE-2023-5363\nSeverity: HIGH\nFixed Version: 3.0.12-r0\nLink: [CVE-2023-5363](https://www.mend.io/vulnerability-database/CVE-2023-5363)"
                     },
                     "locations": [
                         {
@@ -1509,7 +1509,7 @@
                     "ruleIndex": 20,
                     "level": "error",
                     "message": {
-                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/my_ssh\n"
+                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/id_rsa\n"
                     },
                     "locations": [
                         {
@@ -1530,7 +1530,7 @@
                     "ruleIndex": 20,
                     "level": "error",
                     "message": {
-                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/id_rsa\n"
+                        "text": "Secret: private-key\nSeverity: HIGH\nFile Path: tmp/my_ssh\n"
                     },
                     "locations": [
                         {
@@ -1614,7 +1614,7 @@
                     "ruleIndex": 21,
                     "level": "error",
                     "message": {
-                        "text": "Package: musl-utils\nLicense: MIT\n"
+                        "text": "Package: alpine-keys\nLicense: MIT\n"
                     },
                     "locations": [
                         {
@@ -1631,92 +1631,8 @@
                     ]
                 },
                 {
-                    "ruleId": "BSD-2-Clause",
+                    "ruleId": "GPL-2.0",
                     "ruleIndex": 22,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: musl-utils\nLicense: BSD-2-Clause\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dorhayun/dor-alpine-secret",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "GPL-2.0+",
-                    "ruleIndex": 23,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: musl-utils\nLicense: GPL-2.0+\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dorhayun/dor-alpine-secret",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "GPL-2.0",
-                    "ruleIndex": 24,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: alpine-baselayout\nLicense: GPL-2.0\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dorhayun/dor-alpine-secret",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "Apache-2.0",
-                    "ruleIndex": 25,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libssl3\nLicense: Apache-2.0\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dorhayun/dor-alpine-secret",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "GPL-2.0",
-                    "ruleIndex": 24,
                     "level": "error",
                     "message": {
                         "text": "Package: busybox\nLicense: GPL-2.0\n"
@@ -1737,52 +1653,10 @@
                 },
                 {
                     "ruleId": "GPL-2.0",
-                    "ruleIndex": 24,
+                    "ruleIndex": 22,
                     "level": "error",
                     "message": {
-                        "text": "Package: busybox-binsh\nLicense: GPL-2.0\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dorhayun/dor-alpine-secret",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "GPL-2.0",
-                    "ruleIndex": 24,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: alpine-baselayout-data\nLicense: GPL-2.0\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dorhayun/dor-alpine-secret",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "Zlib",
-                    "ruleIndex": 26,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: zlib\nLicense: Zlib\n"
+                        "text": "Package: alpine-baselayout\nLicense: GPL-2.0\n"
                     },
                     "locations": [
                         {
@@ -1800,7 +1674,7 @@
                 },
                 {
                     "ruleId": "Apache-2.0",
-                    "ruleIndex": 25,
+                    "ruleIndex": 23,
                     "level": "error",
                     "message": {
                         "text": "Package: libcrypto3\nLicense: Apache-2.0\n"
@@ -1821,7 +1695,7 @@
                 },
                 {
                     "ruleId": "GPL-2.0",
-                    "ruleIndex": 24,
+                    "ruleIndex": 22,
                     "level": "error",
                     "message": {
                         "text": "Package: ssl_client\nLicense: GPL-2.0\n"
@@ -1841,53 +1715,11 @@
                     ]
                 },
                 {
-                    "ruleId": "BSD-2-Clause",
+                    "ruleId": "GPL-2.0",
                     "ruleIndex": 22,
                     "level": "error",
                     "message": {
-                        "text": "Package: libc-utils\nLicense: BSD-2-Clause\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dorhayun/dor-alpine-secret",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "BSD-3-Clause",
-                    "ruleIndex": 27,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: libc-utils\nLicense: BSD-3-Clause\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dorhayun/dor-alpine-secret",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "MIT",
-                    "ruleIndex": 21,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: alpine-keys\nLicense: MIT\n"
+                        "text": "Package: busybox-binsh\nLicense: GPL-2.0\n"
                     },
                     "locations": [
                         {
@@ -1905,7 +1737,7 @@
                 },
                 {
                     "ruleId": "MPL-2.0",
-                    "ruleIndex": 28,
+                    "ruleIndex": 24,
                     "level": "error",
                     "message": {
                         "text": "Package: ca-certificates-bundle\nLicense: MPL-2.0\n"
@@ -1947,10 +1779,199 @@
                 },
                 {
                     "ruleId": "GPL-2.0",
-                    "ruleIndex": 24,
+                    "ruleIndex": 22,
                     "level": "error",
                     "message": {
                         "text": "Package: scanelf\nLicense: GPL-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "Zlib",
+                    "ruleIndex": 25,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: zlib\nLicense: Zlib\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "BSD-2-Clause",
+                    "ruleIndex": 26,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libc-utils\nLicense: BSD-2-Clause\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "BSD-3-Clause",
+                    "ruleIndex": 27,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libc-utils\nLicense: BSD-3-Clause\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 22,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: apk-tools\nLicense: GPL-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 22,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: alpine-baselayout-data\nLicense: GPL-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "Apache-2.0",
+                    "ruleIndex": 23,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl3\nLicense: Apache-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 21,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl-utils\nLicense: MIT\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "BSD-2-Clause",
+                    "ruleIndex": 26,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl-utils\nLicense: BSD-2-Clause\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dorhayun/dor-alpine-secret",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0+",
+                    "ruleIndex": 28,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl-utils\nLicense: GPL-2.0+\n"
                     },
                     "locations": [
                         {
@@ -1972,27 +1993,6 @@
                     "level": "error",
                     "message": {
                         "text": "Package: musl\nLicense: MIT\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dorhayun/dor-alpine-secret",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "GPL-2.0",
-                    "ruleIndex": 24,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: apk-tools\nLicense: GPL-2.0\n"
                     },
                     "locations": [
                         {
