@@ -27,7 +27,7 @@
                             },
                             "properties": {
                                 "tags": [
-                                    "IaC",
+                                    "iac",
                                     "misconfiguration"
                                 ]
                             }
@@ -50,30 +50,7 @@
                             },
                             "properties": {
                                 "tags": [
-                                    "IaC",
-                                    "misconfiguration"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "Specify at least 1 USER command in Dockerfile with non-root user as argument",
-                            "name": "misconfiguration_finding",
-                            "shortDescription": {
-                                "text": "Specify at least 1 USER command in Dockerfile with non-root user as argument"
-                            },
-                            "fullDescription": {
-                                "text": "Specify at least 1 USER command in Dockerfile with non-root user as argument"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n",
-                                "markdown": "**File modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|Dockerfile|general|HIGH|Specify at least 1 USER command in Dockerfile with non-root user as argument|"
-                            },
-                            "properties": {
-                                "tags": [
-                                    "IaC",
+                                    "iac",
                                     "misconfiguration"
                                 ]
                             }
@@ -96,7 +73,30 @@
                             },
                             "properties": {
                                 "tags": [
-                                    "IaC",
+                                    "iac",
+                                    "misconfiguration"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Specify at least 1 USER command in Dockerfile with non-root user as argument",
+                            "name": "misconfiguration_finding",
+                            "shortDescription": {
+                                "text": "Specify at least 1 USER command in Dockerfile with non-root user as argument"
+                            },
+                            "fullDescription": {
+                                "text": "Specify at least 1 USER command in Dockerfile with non-root user as argument"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n",
+                                "markdown": "**File modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|Dockerfile|general|HIGH|Specify at least 1 USER command in Dockerfile with non-root user as argument|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "iac",
                                     "misconfiguration"
                                 ]
                             }
@@ -129,7 +129,7 @@
                 },
                 {
                     "ruleId": "Security group rule allows ingress from public internet.",
-                    "ruleIndex": 1,
+                    "ruleIndex": 0,
                     "level": "error",
                     "message": {
                         "text": "File: modules/scanner/usecase/iac/testfiles/dummy.tf\nProvider: AWS\nService: ec2\nSeverity: CRITICAL\nDetails: Security group rule allows ingress from public internet.\n"
@@ -149,11 +149,11 @@
                     ]
                 },
                 {
-                    "ruleId": "Specify at least 1 USER command in Dockerfile with non-root user as argument",
-                    "ruleIndex": 2,
+                    "ruleId": "Add HEALTHCHECK instruction in your Dockerfile",
+                    "ruleIndex": 0,
                     "level": "error",
                     "message": {
-                        "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n"
+                        "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: LOW\nDetails: Add HEALTHCHECK instruction in your Dockerfile\n"
                     },
                     "locations": [
                         {
@@ -170,11 +170,11 @@
                     ]
                 },
                 {
-                    "ruleId": "Add HEALTHCHECK instruction in your Dockerfile",
-                    "ruleIndex": 3,
+                    "ruleId": "Specify at least 1 USER command in Dockerfile with non-root user as argument",
+                    "ruleIndex": 0,
                     "level": "error",
                     "message": {
-                        "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: LOW\nDetails: Add HEALTHCHECK instruction in your Dockerfile\n"
+                        "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n"
                     },
                     "locations": [
                         {
