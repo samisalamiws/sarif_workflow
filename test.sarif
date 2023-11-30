@@ -56,29 +56,6 @@
                             }
                         },
                         {
-                            "id": "AVD-DS-0002",
-                            "name": "misconfiguration_finding",
-                            "shortDescription": {
-                                "text": "AVD-DS-0002"
-                            },
-                            "fullDescription": {
-                                "text": "Specify at least 1 USER command in Dockerfile with non-root user as argument"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n",
-                                "markdown": "**File modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|Dockerfile|general|HIGH|Specify at least 1 USER command in Dockerfile with non-root user as argument|"
-                            },
-                            "properties": {
-                                "tags": [
-                                    "IaC",
-                                    "misconfiguration"
-                                ]
-                            }
-                        },
-                        {
                             "id": "AVD-DS-0026",
                             "name": "misconfiguration_finding",
                             "shortDescription": {
@@ -93,6 +70,29 @@
                             "help": {
                                 "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: LOW\nDetails: Add HEALTHCHECK instruction in your Dockerfile\n",
                                 "markdown": "**File modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|Dockerfile|general|LOW|Add HEALTHCHECK instruction in your Dockerfile|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "IaC",
+                                    "misconfiguration"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "AVD-DS-0002",
+                            "name": "misconfiguration_finding",
+                            "shortDescription": {
+                                "text": "AVD-DS-0002"
+                            },
+                            "fullDescription": {
+                                "text": "Specify at least 1 USER command in Dockerfile with non-root user as argument"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n",
+                                "markdown": "**File modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|Dockerfile|general|HIGH|Specify at least 1 USER command in Dockerfile with non-root user as argument|"
                             },
                             "properties": {
                                 "tags": [
@@ -117,6 +117,7 @@
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
+                                    "uri": "modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
@@ -137,26 +138,7 @@
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "AVD-DS-0002",
-                    "ruleIndex": 2,
-                    "level": "error",
-                    "message": {
-                        "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
+                                    "uri": "modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
@@ -168,7 +150,7 @@
                 },
                 {
                     "ruleId": "AVD-DS-0026",
-                    "ruleIndex": 3,
+                    "ruleIndex": 2,
                     "level": "error",
                     "message": {
                         "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: LOW\nDetails: Add HEALTHCHECK instruction in your Dockerfile\n"
@@ -177,6 +159,28 @@
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
+                                    "uri": "modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "AVD-DS-0002",
+                    "ruleIndex": 3,
+                    "level": "error",
+                    "message": {
+                        "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
