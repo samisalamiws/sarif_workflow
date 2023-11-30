@@ -10,90 +10,578 @@
                     "name": "Mend",
                     "rules": [
                         {
-                            "id": "AVD-AWS-0124",
+                            "id": "CVE-2019-14697",
+                            "name": "OsPackageVulnerability",
                             "shortDescription": {
-                                "text": "AVD-AWS-0124"
+                                "text": "CVE-2019-14697"
                             },
                             "fullDescription": {
-                                "text": "Security group rule does not have a description."
+                                "text": "musl libc through 1.1.23 has an x87 floating-point stack adjustment imbalance, related to the math/i386/ directory. In some cases, use of this library could introduce out-of-bounds writes that are not present in an application's source code."
                             },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2019-14697",
                             "help": {
-                                "text": "File: modules/scanner/usecase/iac/testfiles/dummy.tf\nProvider: AWS\nService: ec2\nSeverity: LOW\nDetails: Security group rule does not have a description.\n",
-                                "markdown": "**File modules/scanner/usecase/iac/testfiles/dummy.tf**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|AWS|ec2|LOW|Security group rule does not have a description.|"
+                                "text": "Vulnerability: CVE-2019-14697\nSeverity: CRITICAL\nPackage: * musl\nFixed Version: 1.1.22-r3\nLink: [CVE-2019-14697](https://www.mend.io/vulnerability-database/CVE-2019-14697)\nmusl libc through 1.1.23 has an x87 floating-point stack adjustment imbalance, related to the math/i386/ directory. In some cases, use of this library could introduce out-of-bounds writes that are not present in an application's source code.",
+                                "markdown": "**Vulnerability CVE-2019-14697**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|* musl|1.1.22-r3|[CVE-2019-14697](https://www.mend.io/vulnerability-database/CVE-2019-14697)|\n\nmusl libc through 1.1.23 has an x87 floating-point stack adjustment imbalance, related to the math/i386/ directory. In some cases, use of this library could introduce out-of-bounds writes that are not present in an application's source code."
                             },
                             "properties": {
+                                "security-severity": "9.8",
                                 "tags": [
-                                    "IaC",
-                                    "misconfiguration"
+                                    "vulnerability",
+                                    "security",
+                                    "CRITICAL"
                                 ]
                             }
                         },
                         {
-                            "id": "AVD-AWS-0107",
+                            "id": "CVE-2019-1547",
+                            "name": "OsPackageVulnerability",
                             "shortDescription": {
-                                "text": "AVD-AWS-0107"
+                                "text": "CVE-2019-1547"
                             },
                             "fullDescription": {
-                                "text": "Security group rule allows ingress from public internet."
+                                "text": "Normally in OpenSSL EC groups always have a co-factor present and this is used in side channel resistant code paths. However, in some cases, it is possible to construct a group using explicit parameters (instead of using a named curve). In those cases it is possible that such a group does not have the cofactor present. This can occur even where all the parameters match a known named curve. If such a curve is used then OpenSSL falls back to non-side channel resistant code paths which may result in full key recovery during an ECDSA signature operation. In order to be vulnerable an attacker would have to have the ability to time the creation of a large number of signatures where explicit parameters with no co-factor present are in use by an application using libcrypto. For the avoidance of doubt libssl is not vulnerable because explicit parameters are never used. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c). Fixed in OpenSSL 1.1.0l (Affected 1.1.0-1.1.0k). Fixed in OpenSSL 1.0.2t (Affected 1.0.2-1.0.2s)."
                             },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2019-1547",
                             "help": {
-                                "text": "File: modules/scanner/usecase/iac/testfiles/dummy.tf\nProvider: AWS\nService: ec2\nSeverity: CRITICAL\nDetails: Security group rule allows ingress from public internet.\n",
-                                "markdown": "**File modules/scanner/usecase/iac/testfiles/dummy.tf**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|AWS|ec2|CRITICAL|Security group rule allows ingress from public internet.|"
+                                "text": "Vulnerability: CVE-2019-1547\nSeverity: MEDIUM\nPackage: * openssl\nFixed Version: 1.1.1d-r0\nLink: [CVE-2019-1547](https://www.mend.io/vulnerability-database/CVE-2019-1547)\nNormally in OpenSSL EC groups always have a co-factor present and this is used in side channel resistant code paths. However, in some cases, it is possible to construct a group using explicit parameters (instead of using a named curve). In those cases it is possible that such a group does not have the cofactor present. This can occur even where all the parameters match a known named curve. If such a curve is used then OpenSSL falls back to non-side channel resistant code paths which may result in full key recovery during an ECDSA signature operation. In order to be vulnerable an attacker would have to have the ability to time the creation of a large number of signatures where explicit parameters with no co-factor present are in use by an application using libcrypto. For the avoidance of doubt libssl is not vulnerable because explicit parameters are never used. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c). Fixed in OpenSSL 1.1.0l (Affected 1.1.0-1.1.0k). Fixed in OpenSSL 1.0.2t (Affected 1.0.2-1.0.2s).",
+                                "markdown": "**Vulnerability CVE-2019-1547**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|* openssl|1.1.1d-r0|[CVE-2019-1547](https://www.mend.io/vulnerability-database/CVE-2019-1547)|\n\nNormally in OpenSSL EC groups always have a co-factor present and this is used in side channel resistant code paths. However, in some cases, it is possible to construct a group using explicit parameters (instead of using a named curve). In those cases it is possible that such a group does not have the cofactor present. This can occur even where all the parameters match a known named curve. If such a curve is used then OpenSSL falls back to non-side channel resistant code paths which may result in full key recovery during an ECDSA signature operation. In order to be vulnerable an attacker would have to have the ability to time the creation of a large number of signatures where explicit parameters with no co-factor present are in use by an application using libcrypto. For the avoidance of doubt libssl is not vulnerable because explicit parameters are never used. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c). Fixed in OpenSSL 1.1.0l (Affected 1.1.0-1.1.0k). Fixed in OpenSSL 1.0.2t (Affected 1.0.2-1.0.2s)."
                             },
                             "properties": {
+                                "security-severity": "4.7",
                                 "tags": [
-                                    "IaC",
-                                    "misconfiguration"
+                                    "vulnerability",
+                                    "security",
+                                    "MEDIUM"
                                 ]
                             }
                         },
                         {
-                            "id": "AVD-DS-0026",
+                            "id": "CVE-2019-1549",
+                            "name": "OsPackageVulnerability",
                             "shortDescription": {
-                                "text": "AVD-DS-0026"
+                                "text": "CVE-2019-1549"
                             },
                             "fullDescription": {
-                                "text": "Add HEALTHCHECK instruction in your Dockerfile"
+                                "text": "OpenSSL 1.1.1 introduced a rewritten random number generator (RNG). This was intended to include protection in the event of a fork() system call in order to ensure that the parent and child processes did not share the same RNG state. However this protection was not being used in the default case. A partial mitigation for this issue is that the output from a high precision timer is mixed into the RNG state so the likelihood of a parent and child process sharing state is significantly reduced. If an application already calls OPENSSL_init_crypto() explicitly using OPENSSL_INIT_ATFORK then this problem does not occur at all. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c)."
                             },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2019-1549",
                             "help": {
-                                "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: LOW\nDetails: Add HEALTHCHECK instruction in your Dockerfile\n",
-                                "markdown": "**File modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|Dockerfile|general|LOW|Add HEALTHCHECK instruction in your Dockerfile|"
+                                "text": "Vulnerability: CVE-2019-1549\nSeverity: MEDIUM\nPackage: * openssl\nFixed Version: 1.1.1d-r0\nLink: [CVE-2019-1549](https://www.mend.io/vulnerability-database/CVE-2019-1549)\nOpenSSL 1.1.1 introduced a rewritten random number generator (RNG). This was intended to include protection in the event of a fork() system call in order to ensure that the parent and child processes did not share the same RNG state. However this protection was not being used in the default case. A partial mitigation for this issue is that the output from a high precision timer is mixed into the RNG state so the likelihood of a parent and child process sharing state is significantly reduced. If an application already calls OPENSSL_init_crypto() explicitly using OPENSSL_INIT_ATFORK then this problem does not occur at all. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c).",
+                                "markdown": "**Vulnerability CVE-2019-1549**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|* openssl|1.1.1d-r0|[CVE-2019-1549](https://www.mend.io/vulnerability-database/CVE-2019-1549)|\n\nOpenSSL 1.1.1 introduced a rewritten random number generator (RNG). This was intended to include protection in the event of a fork() system call in order to ensure that the parent and child processes did not share the same RNG state. However this protection was not being used in the default case. A partial mitigation for this issue is that the output from a high precision timer is mixed into the RNG state so the likelihood of a parent and child process sharing state is significantly reduced. If an application already calls OPENSSL_init_crypto() explicitly using OPENSSL_INIT_ATFORK then this problem does not occur at all. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c)."
                             },
                             "properties": {
+                                "security-severity": "5.3",
                                 "tags": [
-                                    "IaC",
-                                    "misconfiguration"
+                                    "vulnerability",
+                                    "security",
+                                    "MEDIUM"
                                 ]
                             }
                         },
                         {
-                            "id": "AVD-DS-0002",
+                            "id": "CVE-2019-1551",
+                            "name": "OsPackageVulnerability",
                             "shortDescription": {
-                                "text": "AVD-DS-0002"
+                                "text": "CVE-2019-1551"
                             },
                             "fullDescription": {
-                                "text": "Specify at least 1 USER command in Dockerfile with non-root user as argument"
+                                "text": "There is an overflow bug in the x64_64 Montgomery squaring procedure used in exponentiation with 512-bit moduli. No EC algorithms are affected. Analysis suggests that attacks against 2-prime RSA1024, 3-prime RSA1536, and DSA1024 as a result of this defect would be very difficult to perform and are not believed likely. Attacks against DH512 are considered just feasible. However, for an attack the target would have to re-use the DH512 private key, which is not recommended anyway. Also applications directly using the low level API BN_mod_exp may be affected if they use BN_FLG_CONSTTIME. Fixed in OpenSSL 1.1.1e (Affected 1.1.1-1.1.1d). Fixed in OpenSSL 1.0.2u (Affected 1.0.2-1.0.2t)."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2019-1551",
+                            "help": {
+                                "text": "Vulnerability: CVE-2019-1551\nSeverity: MEDIUM\nPackage: * openssl\nFixed Version: 1.1.1d-r2\nLink: [CVE-2019-1551](https://www.mend.io/vulnerability-database/CVE-2019-1551)\nThere is an overflow bug in the x64_64 Montgomery squaring procedure used in exponentiation with 512-bit moduli. No EC algorithms are affected. Analysis suggests that attacks against 2-prime RSA1024, 3-prime RSA1536, and DSA1024 as a result of this defect would be very difficult to perform and are not believed likely. Attacks against DH512 are considered just feasible. However, for an attack the target would have to re-use the DH512 private key, which is not recommended anyway. Also applications directly using the low level API BN_mod_exp may be affected if they use BN_FLG_CONSTTIME. Fixed in OpenSSL 1.1.1e (Affected 1.1.1-1.1.1d). Fixed in OpenSSL 1.0.2u (Affected 1.0.2-1.0.2t).",
+                                "markdown": "**Vulnerability CVE-2019-1551**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|* openssl|1.1.1d-r2|[CVE-2019-1551](https://www.mend.io/vulnerability-database/CVE-2019-1551)|\n\nThere is an overflow bug in the x64_64 Montgomery squaring procedure used in exponentiation with 512-bit moduli. No EC algorithms are affected. Analysis suggests that attacks against 2-prime RSA1024, 3-prime RSA1536, and DSA1024 as a result of this defect would be very difficult to perform and are not believed likely. Attacks against DH512 are considered just feasible. However, for an attack the target would have to re-use the DH512 private key, which is not recommended anyway. Also applications directly using the low level API BN_mod_exp may be affected if they use BN_FLG_CONSTTIME. Fixed in OpenSSL 1.1.1e (Affected 1.1.1-1.1.1d). Fixed in OpenSSL 1.0.2u (Affected 1.0.2-1.0.2t)."
+                            },
+                            "properties": {
+                                "security-severity": "5.3",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "MEDIUM"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2019-1563",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2019-1563"
+                            },
+                            "fullDescription": {
+                                "text": "In situations where an attacker receives automated notification of the success or failure of a decryption attempt an attacker, after sending a very large number of messages to be decrypted, can recover a CMS/PKCS7 transported encryption key or decrypt any RSA encrypted message that was encrypted with the public RSA key, using a Bleichenbacher padding oracle attack. Applications are not affected if they use a certificate together with the private RSA key to the CMS_decrypt or PKCS7_decrypt functions to select the correct recipient info to decrypt. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c). Fixed in OpenSSL 1.1.0l (Affected 1.1.0-1.1.0k). Fixed in OpenSSL 1.0.2t (Affected 1.0.2-1.0.2s)."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2019-1563",
+                            "help": {
+                                "text": "Vulnerability: CVE-2019-1563\nSeverity: LOW\nPackage: * openssl\nFixed Version: 1.1.1d-r0\nLink: [CVE-2019-1563](https://www.mend.io/vulnerability-database/CVE-2019-1563)\nIn situations where an attacker receives automated notification of the success or failure of a decryption attempt an attacker, after sending a very large number of messages to be decrypted, can recover a CMS/PKCS7 transported encryption key or decrypt any RSA encrypted message that was encrypted with the public RSA key, using a Bleichenbacher padding oracle attack. Applications are not affected if they use a certificate together with the private RSA key to the CMS_decrypt or PKCS7_decrypt functions to select the correct recipient info to decrypt. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c). Fixed in OpenSSL 1.1.0l (Affected 1.1.0-1.1.0k). Fixed in OpenSSL 1.0.2t (Affected 1.0.2-1.0.2s).",
+                                "markdown": "**Vulnerability CVE-2019-1563**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|LOW|* openssl|1.1.1d-r0|[CVE-2019-1563](https://www.mend.io/vulnerability-database/CVE-2019-1563)|\n\nIn situations where an attacker receives automated notification of the success or failure of a decryption attempt an attacker, after sending a very large number of messages to be decrypted, can recover a CMS/PKCS7 transported encryption key or decrypt any RSA encrypted message that was encrypted with the public RSA key, using a Bleichenbacher padding oracle attack. Applications are not affected if they use a certificate together with the private RSA key to the CMS_decrypt or PKCS7_decrypt functions to select the correct recipient info to decrypt. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c). Fixed in OpenSSL 1.1.0l (Affected 1.1.0-1.1.0k). Fixed in OpenSSL 1.0.2t (Affected 1.0.2-1.0.2s)."
+                            },
+                            "properties": {
+                                "security-severity": "3.7",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "LOW"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2020-1967",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2020-1967"
+                            },
+                            "fullDescription": {
+                                "text": "Server or client applications that call the SSL_check_chain() function during or after a TLS 1.3 handshake may crash due to a NULL pointer dereference as a result of incorrect handling of the \"signature_algorithms_cert\" TLS extension. The crash occurs if an invalid or unrecognised signature algorithm is received from the peer. This could be exploited by a malicious peer in a Denial of Service attack. OpenSSL version 1.1.1d, 1.1.1e, and 1.1.1f are affected by this issue. This issue did not affect OpenSSL versions prior to 1.1.1d. Fixed in OpenSSL 1.1.1g (Affected 1.1.1d-1.1.1f)."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2020-1967",
+                            "help": {
+                                "text": "Vulnerability: CVE-2020-1967\nSeverity: HIGH\nPackage: * openssl\nFixed Version: 1.1.1g-r0\nLink: [CVE-2020-1967](https://www.mend.io/vulnerability-database/CVE-2020-1967)\nServer or client applications that call the SSL_check_chain() function during or after a TLS 1.3 handshake may crash due to a NULL pointer dereference as a result of incorrect handling of the \"signature_algorithms_cert\" TLS extension. The crash occurs if an invalid or unrecognised signature algorithm is received from the peer. This could be exploited by a malicious peer in a Denial of Service attack. OpenSSL version 1.1.1d, 1.1.1e, and 1.1.1f are affected by this issue. This issue did not affect OpenSSL versions prior to 1.1.1d. Fixed in OpenSSL 1.1.1g (Affected 1.1.1d-1.1.1f).",
+                                "markdown": "**Vulnerability CVE-2020-1967**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|* openssl|1.1.1g-r0|[CVE-2020-1967](https://www.mend.io/vulnerability-database/CVE-2020-1967)|\n\nServer or client applications that call the SSL_check_chain() function during or after a TLS 1.3 handshake may crash due to a NULL pointer dereference as a result of incorrect handling of the \"signature_algorithms_cert\" TLS extension. The crash occurs if an invalid or unrecognised signature algorithm is received from the peer. This could be exploited by a malicious peer in a Denial of Service attack. OpenSSL version 1.1.1d, 1.1.1e, and 1.1.1f are affected by this issue. This issue did not affect OpenSSL versions prior to 1.1.1d. Fixed in OpenSSL 1.1.1g (Affected 1.1.1d-1.1.1f)."
+                            },
+                            "properties": {
+                                "security-severity": "7.5",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "HIGH"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2020-1971",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2020-1971"
+                            },
+                            "fullDescription": {
+                                "text": "The X.509 GeneralName type is a generic type for representing different types of names. One of those name types is known as EDIPartyName. OpenSSL provides a function GENERAL_NAME_cmp which compares different instances of a GENERAL_NAME to see if they are equal or not. This function behaves incorrectly when both GENERAL_NAMEs contain an EDIPARTYNAME. A NULL pointer dereference and a crash may occur leading to a possible denial of service attack. OpenSSL itself uses the GENERAL_NAME_cmp function for two purposes: 1) Comparing CRL distribution point names between an available CRL and a CRL distribution point embedded in an X509 certificate 2) When verifying that a timestamp response token signer matches the timestamp authority name (exposed via the API functions TS_RESP_verify_response and TS_RESP_verify_token) If an attacker can control both items being compared then that attacker could trigger a crash. For example if the attacker can trick a client or server into checking a malicious certificate against a malicious CRL then this may occur. Note that some applications automatically download CRLs based on a URL embedded in a certificate. This checking happens prior to the signatures on the certificate and CRL being verified. OpenSSL's s_server, s_client and verify tools have support for the \"-crl_download\" option which implements automatic CRL downloading and this attack has been demonstrated to work against those tools. Note that an unrelated bug means that affected versions of OpenSSL cannot parse or construct correct encodings of EDIPARTYNAME. However it is possible to construct a malformed EDIPARTYNAME that OpenSSL's parser will accept and hence trigger this attack. All OpenSSL 1.1.1 and 1.0.2 versions are affected by this issue. Other OpenSSL releases are out of support and have not been checked. Fixed in OpenSSL 1.1.1i (Affected 1.1.1-1.1.1h). Fixed in OpenSSL 1.0.2x (Affected 1.0.2-1.0.2w)."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2020-1971",
+                            "help": {
+                                "text": "Vulnerability: CVE-2020-1971\nSeverity: MEDIUM\nPackage: * openssl\nFixed Version: 1.1.1i-r0\nLink: [CVE-2020-1971](https://www.mend.io/vulnerability-database/CVE-2020-1971)\nThe X.509 GeneralName type is a generic type for representing different types of names. One of those name types is known as EDIPartyName. OpenSSL provides a function GENERAL_NAME_cmp which compares different instances of a GENERAL_NAME to see if they are equal or not. This function behaves incorrectly when both GENERAL_NAMEs contain an EDIPARTYNAME. A NULL pointer dereference and a crash may occur leading to a possible denial of service attack. OpenSSL itself uses the GENERAL_NAME_cmp function for two purposes: 1) Comparing CRL distribution point names between an available CRL and a CRL distribution point embedded in an X509 certificate 2) When verifying that a timestamp response token signer matches the timestamp authority name (exposed via the API functions TS_RESP_verify_response and TS_RESP_verify_token) If an attacker can control both items being compared then that attacker could trigger a crash. For example if the attacker can trick a client or server into checking a malicious certificate against a malicious CRL then this may occur. Note that some applications automatically download CRLs based on a URL embedded in a certificate. This checking happens prior to the signatures on the certificate and CRL being verified. OpenSSL's s_server, s_client and verify tools have support for the \"-crl_download\" option which implements automatic CRL downloading and this attack has been demonstrated to work against those tools. Note that an unrelated bug means that affected versions of OpenSSL cannot parse or construct correct encodings of EDIPARTYNAME. However it is possible to construct a malformed EDIPARTYNAME that OpenSSL's parser will accept and hence trigger this attack. All OpenSSL 1.1.1 and 1.0.2 versions are affected by this issue. Other OpenSSL releases are out of support and have not been checked. Fixed in OpenSSL 1.1.1i (Affected 1.1.1-1.1.1h). Fixed in OpenSSL 1.0.2x (Affected 1.0.2-1.0.2w).",
+                                "markdown": "**Vulnerability CVE-2020-1971**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|* openssl|1.1.1i-r0|[CVE-2020-1971](https://www.mend.io/vulnerability-database/CVE-2020-1971)|\n\nThe X.509 GeneralName type is a generic type for representing different types of names. One of those name types is known as EDIPartyName. OpenSSL provides a function GENERAL_NAME_cmp which compares different instances of a GENERAL_NAME to see if they are equal or not. This function behaves incorrectly when both GENERAL_NAMEs contain an EDIPARTYNAME. A NULL pointer dereference and a crash may occur leading to a possible denial of service attack. OpenSSL itself uses the GENERAL_NAME_cmp function for two purposes: 1) Comparing CRL distribution point names between an available CRL and a CRL distribution point embedded in an X509 certificate 2) When verifying that a timestamp response token signer matches the timestamp authority name (exposed via the API functions TS_RESP_verify_response and TS_RESP_verify_token) If an attacker can control both items being compared then that attacker could trigger a crash. For example if the attacker can trick a client or server into checking a malicious certificate against a malicious CRL then this may occur. Note that some applications automatically download CRLs based on a URL embedded in a certificate. This checking happens prior to the signatures on the certificate and CRL being verified. OpenSSL's s_server, s_client and verify tools have support for the \"-crl_download\" option which implements automatic CRL downloading and this attack has been demonstrated to work against those tools. Note that an unrelated bug means that affected versions of OpenSSL cannot parse or construct correct encodings of EDIPARTYNAME. However it is possible to construct a malformed EDIPARTYNAME that OpenSSL's parser will accept and hence trigger this attack. All OpenSSL 1.1.1 and 1.0.2 versions are affected by this issue. Other OpenSSL releases are out of support and have not been checked. Fixed in OpenSSL 1.1.1i (Affected 1.1.1-1.1.1h). Fixed in OpenSSL 1.0.2x (Affected 1.0.2-1.0.2w)."
+                            },
+                            "properties": {
+                                "security-severity": "5.9",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "MEDIUM"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2020-28928",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2020-28928"
+                            },
+                            "fullDescription": {
+                                "text": "In musl libc through 1.2.1, wcsnrtombs mishandles particular combinations of destination buffer size and source character limit, as demonstrated by an invalid write access (buffer overflow)."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2020-28928",
+                            "help": {
+                                "text": "Vulnerability: CVE-2020-28928\nSeverity: MEDIUM\nPackage: * musl\nFixed Version: 1.1.22-r4\nLink: [CVE-2020-28928](https://www.mend.io/vulnerability-database/CVE-2020-28928)\nIn musl libc through 1.2.1, wcsnrtombs mishandles particular combinations of destination buffer size and source character limit, as demonstrated by an invalid write access (buffer overflow).",
+                                "markdown": "**Vulnerability CVE-2020-28928**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|* musl|1.1.22-r4|[CVE-2020-28928](https://www.mend.io/vulnerability-database/CVE-2020-28928)|\n\nIn musl libc through 1.2.1, wcsnrtombs mishandles particular combinations of destination buffer size and source character limit, as demonstrated by an invalid write access (buffer overflow)."
+                            },
+                            "properties": {
+                                "security-severity": "5.5",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "MEDIUM"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2021-23839",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2021-23839"
+                            },
+                            "fullDescription": {
+                                "text": "OpenSSL 1.0.2 supports SSLv2. If a client attempts to negotiate SSLv2 with a server that is configured to support both SSLv2 and more recent SSL and TLS versions then a check is made for a version rollback attack when unpadding an RSA signature. Clients that support SSL or TLS versions greater than SSLv2 are supposed to use a special form of padding. A server that supports greater than SSLv2 is supposed to reject connection attempts from a client where this special form of padding is present, because this indicates that a version rollback has occurred (i.e. both client and server support greater than SSLv2, and yet this is the version that is being requested). The implementation of this padding check inverted the logic so that the connection attempt is accepted if the padding is present, and rejected if it is absent. This means that such as server will accept a connection if a version rollback attack has occurred. Further the server will erroneously reject a connection if a normal SSLv2 connection attempt is made. Only OpenSSL 1.0.2 servers from version 1.0.2s to 1.0.2x are affected by this issue. In order to be vulnerable a 1.0.2 server must: 1) have configured SSLv2 support at compile time (this is off by default), 2) have configured SSLv2 support at runtime (this is off by default), 3) have configured SSLv2 ciphersuites (these are not in the default ciphersuite list) OpenSSL 1.1.1 does not have SSLv2 support and therefore is not vulnerable to this issue. The underlying error is in the implementation of the RSA_padding_check_SSLv23() function. This also affects the RSA_SSLV23_PADDING padding mode used by various other functions. Although 1.1.1 does not support SSLv2 the RSA_padding_check_SSLv23() function still exists, as does the RSA_SSLV23_PADDING padding mode. Applications that directly call that function or use that padding mode will encounter this issue. However since there is no support for the SSLv2 protocol in 1.1.1 this is considered a bug and not a security issue in that version. OpenSSL 1.0.2 is out of support and no longer receiving public updates. Premium support customers of OpenSSL 1.0.2 should upgrade to 1.0.2y. Other users should upgrade to 1.1.1j. Fixed in OpenSSL 1.0.2y (Affected 1.0.2s-1.0.2x)."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2021-23839",
+                            "help": {
+                                "text": "Vulnerability: CVE-2021-23839\nSeverity: LOW\nPackage: * openssl\nFixed Version: 1.1.1j-r0\nLink: [CVE-2021-23839](https://www.mend.io/vulnerability-database/CVE-2021-23839)\nOpenSSL 1.0.2 supports SSLv2. If a client attempts to negotiate SSLv2 with a server that is configured to support both SSLv2 and more recent SSL and TLS versions then a check is made for a version rollback attack when unpadding an RSA signature. Clients that support SSL or TLS versions greater than SSLv2 are supposed to use a special form of padding. A server that supports greater than SSLv2 is supposed to reject connection attempts from a client where this special form of padding is present, because this indicates that a version rollback has occurred (i.e. both client and server support greater than SSLv2, and yet this is the version that is being requested). The implementation of this padding check inverted the logic so that the connection attempt is accepted if the padding is present, and rejected if it is absent. This means that such as server will accept a connection if a version rollback attack has occurred. Further the server will erroneously reject a connection if a normal SSLv2 connection attempt is made. Only OpenSSL 1.0.2 servers from version 1.0.2s to 1.0.2x are affected by this issue. In order to be vulnerable a 1.0.2 server must: 1) have configured SSLv2 support at compile time (this is off by default), 2) have configured SSLv2 support at runtime (this is off by default), 3) have configured SSLv2 ciphersuites (these are not in the default ciphersuite list) OpenSSL 1.1.1 does not have SSLv2 support and therefore is not vulnerable to this issue. The underlying error is in the implementation of the RSA_padding_check_SSLv23() function. This also affects the RSA_SSLV23_PADDING padding mode used by various other functions. Although 1.1.1 does not support SSLv2 the RSA_padding_check_SSLv23() function still exists, as does the RSA_SSLV23_PADDING padding mode. Applications that directly call that function or use that padding mode will encounter this issue. However since there is no support for the SSLv2 protocol in 1.1.1 this is considered a bug and not a security issue in that version. OpenSSL 1.0.2 is out of support and no longer receiving public updates. Premium support customers of OpenSSL 1.0.2 should upgrade to 1.0.2y. Other users should upgrade to 1.1.1j. Fixed in OpenSSL 1.0.2y (Affected 1.0.2s-1.0.2x).",
+                                "markdown": "**Vulnerability CVE-2021-23839**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|LOW|* openssl|1.1.1j-r0|[CVE-2021-23839](https://www.mend.io/vulnerability-database/CVE-2021-23839)|\n\nOpenSSL 1.0.2 supports SSLv2. If a client attempts to negotiate SSLv2 with a server that is configured to support both SSLv2 and more recent SSL and TLS versions then a check is made for a version rollback attack when unpadding an RSA signature. Clients that support SSL or TLS versions greater than SSLv2 are supposed to use a special form of padding. A server that supports greater than SSLv2 is supposed to reject connection attempts from a client where this special form of padding is present, because this indicates that a version rollback has occurred (i.e. both client and server support greater than SSLv2, and yet this is the version that is being requested). The implementation of this padding check inverted the logic so that the connection attempt is accepted if the padding is present, and rejected if it is absent. This means that such as server will accept a connection if a version rollback attack has occurred. Further the server will erroneously reject a connection if a normal SSLv2 connection attempt is made. Only OpenSSL 1.0.2 servers from version 1.0.2s to 1.0.2x are affected by this issue. In order to be vulnerable a 1.0.2 server must: 1) have configured SSLv2 support at compile time (this is off by default), 2) have configured SSLv2 support at runtime (this is off by default), 3) have configured SSLv2 ciphersuites (these are not in the default ciphersuite list) OpenSSL 1.1.1 does not have SSLv2 support and therefore is not vulnerable to this issue. The underlying error is in the implementation of the RSA_padding_check_SSLv23() function. This also affects the RSA_SSLV23_PADDING padding mode used by various other functions. Although 1.1.1 does not support SSLv2 the RSA_padding_check_SSLv23() function still exists, as does the RSA_SSLV23_PADDING padding mode. Applications that directly call that function or use that padding mode will encounter this issue. However since there is no support for the SSLv2 protocol in 1.1.1 this is considered a bug and not a security issue in that version. OpenSSL 1.0.2 is out of support and no longer receiving public updates. Premium support customers of OpenSSL 1.0.2 should upgrade to 1.0.2y. Other users should upgrade to 1.1.1j. Fixed in OpenSSL 1.0.2y (Affected 1.0.2s-1.0.2x)."
+                            },
+                            "properties": {
+                                "security-severity": "3.7",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "LOW"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2021-23840",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2021-23840"
+                            },
+                            "fullDescription": {
+                                "text": "Calls to EVP_CipherUpdate, EVP_EncryptUpdate and EVP_DecryptUpdate may overflow the output length argument in some cases where the input length is close to the maximum permissable length for an integer on the platform. In such cases the return value from the function call will be 1 (indicating success), but the output length value will be negative. This could cause applications to behave incorrectly or crash. OpenSSL versions 1.1.1i and below are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1j. OpenSSL versions 1.0.2x and below are affected by this issue. However OpenSSL 1.0.2 is out of support and no longer receiving public updates. Premium support customers of OpenSSL 1.0.2 should upgrade to 1.0.2y. Other users should upgrade to 1.1.1j. Fixed in OpenSSL 1.1.1j (Affected 1.1.1-1.1.1i). Fixed in OpenSSL 1.0.2y (Affected 1.0.2-1.0.2x)."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2021-23840",
+                            "help": {
+                                "text": "Vulnerability: CVE-2021-23840\nSeverity: HIGH\nPackage: * openssl\nFixed Version: 1.1.1j-r0\nLink: [CVE-2021-23840](https://www.mend.io/vulnerability-database/CVE-2021-23840)\nCalls to EVP_CipherUpdate, EVP_EncryptUpdate and EVP_DecryptUpdate may overflow the output length argument in some cases where the input length is close to the maximum permissable length for an integer on the platform. In such cases the return value from the function call will be 1 (indicating success), but the output length value will be negative. This could cause applications to behave incorrectly or crash. OpenSSL versions 1.1.1i and below are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1j. OpenSSL versions 1.0.2x and below are affected by this issue. However OpenSSL 1.0.2 is out of support and no longer receiving public updates. Premium support customers of OpenSSL 1.0.2 should upgrade to 1.0.2y. Other users should upgrade to 1.1.1j. Fixed in OpenSSL 1.1.1j (Affected 1.1.1-1.1.1i). Fixed in OpenSSL 1.0.2y (Affected 1.0.2-1.0.2x).",
+                                "markdown": "**Vulnerability CVE-2021-23840**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|* openssl|1.1.1j-r0|[CVE-2021-23840](https://www.mend.io/vulnerability-database/CVE-2021-23840)|\n\nCalls to EVP_CipherUpdate, EVP_EncryptUpdate and EVP_DecryptUpdate may overflow the output length argument in some cases where the input length is close to the maximum permissable length for an integer on the platform. In such cases the return value from the function call will be 1 (indicating success), but the output length value will be negative. This could cause applications to behave incorrectly or crash. OpenSSL versions 1.1.1i and below are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1j. OpenSSL versions 1.0.2x and below are affected by this issue. However OpenSSL 1.0.2 is out of support and no longer receiving public updates. Premium support customers of OpenSSL 1.0.2 should upgrade to 1.0.2y. Other users should upgrade to 1.1.1j. Fixed in OpenSSL 1.1.1j (Affected 1.1.1-1.1.1i). Fixed in OpenSSL 1.0.2y (Affected 1.0.2-1.0.2x)."
+                            },
+                            "properties": {
+                                "security-severity": "7.5",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "HIGH"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2021-23841",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2021-23841"
+                            },
+                            "fullDescription": {
+                                "text": "The OpenSSL public API function X509_issuer_and_serial_hash() attempts to create a unique hash value based on the issuer and serial number data contained within an X509 certificate. However it fails to correctly handle any errors that may occur while parsing the issuer field (which might occur if the issuer field is maliciously constructed). This may subsequently result in a NULL pointer deref and a crash leading to a potential denial of service attack. The function X509_issuer_and_serial_hash() is never directly called by OpenSSL itself so applications are only vulnerable if they use this function directly and they use it on certificates that may have been obtained from untrusted sources. OpenSSL versions 1.1.1i and below are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1j. OpenSSL versions 1.0.2x and below are affected by this issue. However OpenSSL 1.0.2 is out of support and no longer receiving public updates. Premium support customers of OpenSSL 1.0.2 should upgrade to 1.0.2y. Other users should upgrade to 1.1.1j. Fixed in OpenSSL 1.1.1j (Affected 1.1.1-1.1.1i). Fixed in OpenSSL 1.0.2y (Affected 1.0.2-1.0.2x)."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2021-23841",
+                            "help": {
+                                "text": "Vulnerability: CVE-2021-23841\nSeverity: MEDIUM\nPackage: * openssl\nFixed Version: 1.1.1j-r0\nLink: [CVE-2021-23841](https://www.mend.io/vulnerability-database/CVE-2021-23841)\nThe OpenSSL public API function X509_issuer_and_serial_hash() attempts to create a unique hash value based on the issuer and serial number data contained within an X509 certificate. However it fails to correctly handle any errors that may occur while parsing the issuer field (which might occur if the issuer field is maliciously constructed). This may subsequently result in a NULL pointer deref and a crash leading to a potential denial of service attack. The function X509_issuer_and_serial_hash() is never directly called by OpenSSL itself so applications are only vulnerable if they use this function directly and they use it on certificates that may have been obtained from untrusted sources. OpenSSL versions 1.1.1i and below are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1j. OpenSSL versions 1.0.2x and below are affected by this issue. However OpenSSL 1.0.2 is out of support and no longer receiving public updates. Premium support customers of OpenSSL 1.0.2 should upgrade to 1.0.2y. Other users should upgrade to 1.1.1j. Fixed in OpenSSL 1.1.1j (Affected 1.1.1-1.1.1i). Fixed in OpenSSL 1.0.2y (Affected 1.0.2-1.0.2x).",
+                                "markdown": "**Vulnerability CVE-2021-23841**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|* openssl|1.1.1j-r0|[CVE-2021-23841](https://www.mend.io/vulnerability-database/CVE-2021-23841)|\n\nThe OpenSSL public API function X509_issuer_and_serial_hash() attempts to create a unique hash value based on the issuer and serial number data contained within an X509 certificate. However it fails to correctly handle any errors that may occur while parsing the issuer field (which might occur if the issuer field is maliciously constructed). This may subsequently result in a NULL pointer deref and a crash leading to a potential denial of service attack. The function X509_issuer_and_serial_hash() is never directly called by OpenSSL itself so applications are only vulnerable if they use this function directly and they use it on certificates that may have been obtained from untrusted sources. OpenSSL versions 1.1.1i and below are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1j. OpenSSL versions 1.0.2x and below are affected by this issue. However OpenSSL 1.0.2 is out of support and no longer receiving public updates. Premium support customers of OpenSSL 1.0.2 should upgrade to 1.0.2y. Other users should upgrade to 1.1.1j. Fixed in OpenSSL 1.1.1j (Affected 1.1.1-1.1.1i). Fixed in OpenSSL 1.0.2y (Affected 1.0.2-1.0.2x)."
+                            },
+                            "properties": {
+                                "security-severity": "5.9",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "MEDIUM"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2021-28831",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2021-28831"
+                            },
+                            "fullDescription": {
+                                "text": "decompress_gunzip.c in BusyBox through 1.32.1 mishandles the error bit on the huft_build result pointer, with a resultant invalid free or segmentation fault, via malformed gzip data."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2021-28831",
+                            "help": {
+                                "text": "Vulnerability: CVE-2021-28831\nSeverity: HIGH\nPackage: * busybox\nFixed Version: 1.30.1-r5\nLink: [CVE-2021-28831](https://www.mend.io/vulnerability-database/CVE-2021-28831)\ndecompress_gunzip.c in BusyBox through 1.32.1 mishandles the error bit on the huft_build result pointer, with a resultant invalid free or segmentation fault, via malformed gzip data.",
+                                "markdown": "**Vulnerability CVE-2021-28831**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|* busybox|1.30.1-r5|[CVE-2021-28831](https://www.mend.io/vulnerability-database/CVE-2021-28831)|\n\ndecompress_gunzip.c in BusyBox through 1.32.1 mishandles the error bit on the huft_build result pointer, with a resultant invalid free or segmentation fault, via malformed gzip data."
+                            },
+                            "properties": {
+                                "security-severity": "7.5",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "HIGH"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2021-30139",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2021-30139"
+                            },
+                            "fullDescription": {
+                                "text": "In Alpine Linux apk-tools before 2.12.5, the tarball parser allows a buffer overflow and crash."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2021-30139",
+                            "help": {
+                                "text": "Vulnerability: CVE-2021-30139\nSeverity: HIGH\nPackage: * apk-tools\nFixed Version: 2.10.6-r0\nLink: [CVE-2021-30139](https://www.mend.io/vulnerability-database/CVE-2021-30139)\nIn Alpine Linux apk-tools before 2.12.5, the tarball parser allows a buffer overflow and crash.",
+                                "markdown": "**Vulnerability CVE-2021-30139**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|* apk-tools|2.10.6-r0|[CVE-2021-30139](https://www.mend.io/vulnerability-database/CVE-2021-30139)|\n\nIn Alpine Linux apk-tools before 2.12.5, the tarball parser allows a buffer overflow and crash."
+                            },
+                            "properties": {
+                                "security-severity": "7.5",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "HIGH"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2021-3449",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2021-3449"
+                            },
+                            "fullDescription": {
+                                "text": "An OpenSSL TLS server may crash if sent a maliciously crafted renegotiation ClientHello message from a client. If a TLSv1.2 renegotiation ClientHello omits the signature_algorithms extension (where it was present in the initial ClientHello), but includes a signature_algorithms_cert extension then a NULL pointer dereference will result, leading to a crash and a denial of service attack. A server is only vulnerable if it has TLSv1.2 and renegotiation enabled (which is the default configuration). OpenSSL TLS clients are not impacted by this issue. All OpenSSL 1.1.1 versions are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1k. OpenSSL 1.0.2 is not impacted by this issue. Fixed in OpenSSL 1.1.1k (Affected 1.1.1-1.1.1j)."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2021-3449",
+                            "help": {
+                                "text": "Vulnerability: CVE-2021-3449\nSeverity: MEDIUM\nPackage: * openssl\nFixed Version: 1.1.1k-r0\nLink: [CVE-2021-3449](https://www.mend.io/vulnerability-database/CVE-2021-3449)\nAn OpenSSL TLS server may crash if sent a maliciously crafted renegotiation ClientHello message from a client. If a TLSv1.2 renegotiation ClientHello omits the signature_algorithms extension (where it was present in the initial ClientHello), but includes a signature_algorithms_cert extension then a NULL pointer dereference will result, leading to a crash and a denial of service attack. A server is only vulnerable if it has TLSv1.2 and renegotiation enabled (which is the default configuration). OpenSSL TLS clients are not impacted by this issue. All OpenSSL 1.1.1 versions are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1k. OpenSSL 1.0.2 is not impacted by this issue. Fixed in OpenSSL 1.1.1k (Affected 1.1.1-1.1.1j).",
+                                "markdown": "**Vulnerability CVE-2021-3449**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|* openssl|1.1.1k-r0|[CVE-2021-3449](https://www.mend.io/vulnerability-database/CVE-2021-3449)|\n\nAn OpenSSL TLS server may crash if sent a maliciously crafted renegotiation ClientHello message from a client. If a TLSv1.2 renegotiation ClientHello omits the signature_algorithms extension (where it was present in the initial ClientHello), but includes a signature_algorithms_cert extension then a NULL pointer dereference will result, leading to a crash and a denial of service attack. A server is only vulnerable if it has TLSv1.2 and renegotiation enabled (which is the default configuration). OpenSSL TLS clients are not impacted by this issue. All OpenSSL 1.1.1 versions are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1k. OpenSSL 1.0.2 is not impacted by this issue. Fixed in OpenSSL 1.1.1k (Affected 1.1.1-1.1.1j)."
+                            },
+                            "properties": {
+                                "security-severity": "5.9",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "MEDIUM"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2021-3450",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2021-3450"
+                            },
+                            "fullDescription": {
+                                "text": "The X509_V_FLAG_X509_STRICT flag enables additional security checks of the certificates present in a certificate chain. It is not set by default. Starting from OpenSSL version 1.1.1h a check to disallow certificates in the chain that have explicitly encoded elliptic curve parameters was added as an additional strict check. An error in the implementation of this check meant that the result of a previous check to confirm that certificates in the chain are valid CA certificates was overwritten. This effectively bypasses the check that non-CA certificates must not be able to issue other certificates. If a \"purpose\" has been configured then there is a subsequent opportunity for checks that the certificate is a valid CA. All of the named \"purpose\" values implemented in libcrypto perform this check. Therefore, where a purpose is set the certificate chain will still be rejected even when the strict flag has been used. A purpose is set by default in libssl client and server certificate verification routines, but it can be overridden or removed by an application. In order to be affected, an application must explicitly set the X509_V_FLAG_X509_STRICT verification flag and either not set a purpose for the certificate verification or, in the case of TLS client or server applications, override the default purpose. OpenSSL versions 1.1.1h and newer are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1k. OpenSSL 1.0.2 is not impacted by this issue. Fixed in OpenSSL 1.1.1k (Affected 1.1.1h-1.1.1j)."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2021-3450",
+                            "help": {
+                                "text": "Vulnerability: CVE-2021-3450\nSeverity: HIGH\nPackage: * openssl\nFixed Version: 1.1.1k-r0\nLink: [CVE-2021-3450](https://www.mend.io/vulnerability-database/CVE-2021-3450)\nThe X509_V_FLAG_X509_STRICT flag enables additional security checks of the certificates present in a certificate chain. It is not set by default. Starting from OpenSSL version 1.1.1h a check to disallow certificates in the chain that have explicitly encoded elliptic curve parameters was added as an additional strict check. An error in the implementation of this check meant that the result of a previous check to confirm that certificates in the chain are valid CA certificates was overwritten. This effectively bypasses the check that non-CA certificates must not be able to issue other certificates. If a \"purpose\" has been configured then there is a subsequent opportunity for checks that the certificate is a valid CA. All of the named \"purpose\" values implemented in libcrypto perform this check. Therefore, where a purpose is set the certificate chain will still be rejected even when the strict flag has been used. A purpose is set by default in libssl client and server certificate verification routines, but it can be overridden or removed by an application. In order to be affected, an application must explicitly set the X509_V_FLAG_X509_STRICT verification flag and either not set a purpose for the certificate verification or, in the case of TLS client or server applications, override the default purpose. OpenSSL versions 1.1.1h and newer are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1k. OpenSSL 1.0.2 is not impacted by this issue. Fixed in OpenSSL 1.1.1k (Affected 1.1.1h-1.1.1j).",
+                                "markdown": "**Vulnerability CVE-2021-3450**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|* openssl|1.1.1k-r0|[CVE-2021-3450](https://www.mend.io/vulnerability-database/CVE-2021-3450)|\n\nThe X509_V_FLAG_X509_STRICT flag enables additional security checks of the certificates present in a certificate chain. It is not set by default. Starting from OpenSSL version 1.1.1h a check to disallow certificates in the chain that have explicitly encoded elliptic curve parameters was added as an additional strict check. An error in the implementation of this check meant that the result of a previous check to confirm that certificates in the chain are valid CA certificates was overwritten. This effectively bypasses the check that non-CA certificates must not be able to issue other certificates. If a \"purpose\" has been configured then there is a subsequent opportunity for checks that the certificate is a valid CA. All of the named \"purpose\" values implemented in libcrypto perform this check. Therefore, where a purpose is set the certificate chain will still be rejected even when the strict flag has been used. A purpose is set by default in libssl client and server certificate verification routines, but it can be overridden or removed by an application. In order to be affected, an application must explicitly set the X509_V_FLAG_X509_STRICT verification flag and either not set a purpose for the certificate verification or, in the case of TLS client or server applications, override the default purpose. OpenSSL versions 1.1.1h and newer are affected by this issue. Users of these versions should upgrade to OpenSSL 1.1.1k. OpenSSL 1.0.2 is not impacted by this issue. Fixed in OpenSSL 1.1.1k (Affected 1.1.1h-1.1.1j)."
+                            },
+                            "properties": {
+                                "security-severity": "7.4",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "HIGH"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2021-36159",
+                            "name": "OsPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2021-36159"
+                            },
+                            "fullDescription": {
+                                "text": "libfetch before 2021-07-26, as used in apk-tools, xbps, and other products, mishandles numeric strings for the FTP and HTTP protocols. The FTP passive mode implementation allows an out-of-bounds read because strtol is used to parse the relevant numbers into address bytes. It does not check if the line ends prematurely. If it does, the for-loop condition checks for the '\\0' terminator one byte too late."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2021-36159",
+                            "help": {
+                                "text": "Vulnerability: CVE-2021-36159\nSeverity: CRITICAL\nPackage: * apk-tools\nFixed Version: 2.10.7-r0\nLink: [CVE-2021-36159](https://www.mend.io/vulnerability-database/CVE-2021-36159)\nlibfetch before 2021-07-26, as used in apk-tools, xbps, and other products, mishandles numeric strings for the FTP and HTTP protocols. The FTP passive mode implementation allows an out-of-bounds read because strtol is used to parse the relevant numbers into address bytes. It does not check if the line ends prematurely. If it does, the for-loop condition checks for the '\\0' terminator one byte too late.",
+                                "markdown": "**Vulnerability CVE-2021-36159**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|* apk-tools|2.10.7-r0|[CVE-2021-36159](https://www.mend.io/vulnerability-database/CVE-2021-36159)|\n\nlibfetch before 2021-07-26, as used in apk-tools, xbps, and other products, mishandles numeric strings for the FTP and HTTP protocols. The FTP passive mode implementation allows an out-of-bounds read because strtol is used to parse the relevant numbers into address bytes. It does not check if the line ends prematurely. If it does, the for-loop condition checks for the '\\0' terminator one byte too late."
+                            },
+                            "properties": {
+                                "security-severity": "9.1",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "CRITICAL"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "OpenSSL",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "OpenSSL"
                             },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
                             "help": {
-                                "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n",
-                                "markdown": "**File modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|Dockerfile|general|HIGH|Specify at least 1 USER command in Dockerfile with non-root user as argument|"
+                                "text": "PackageName: libssl1.1\nLicense: OpenSSL\n",
+                                "markdown": "**PackageName libssl1.1**\n| PackageName | License |\n| --- | --- |\n|libssl1.1|OpenSSL|"
                             },
                             "properties": {
                                 "tags": [
-                                    "IaC",
-                                    "misconfiguration"
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Zlib",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "Zlib"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName: zlib\nLicense: Zlib\n",
+                                "markdown": "**PackageName zlib**\n| PackageName | License |\n| --- | --- |\n|zlib|Zlib|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MPL-2.0",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "MPL-2.0"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName: ca-certificates-cacert\nLicense: MPL-2.0\n",
+                                "markdown": "**PackageName ca-certificates-cacert**\n| PackageName | License |\n| --- | --- |\n|ca-certificates-cacert|MPL-2.0|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "GPL-2.0+",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "GPL-2.0+"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName: ca-certificates-cacert\nLicense: GPL-2.0+\n",
+                                "markdown": "**PackageName ca-certificates-cacert**\n| PackageName | License |\n| --- | --- |\n|ca-certificates-cacert|GPL-2.0+|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MIT",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "MIT"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName: alpine-keys\nLicense: MIT\n",
+                                "markdown": "**PackageName alpine-keys**\n| PackageName | License |\n| --- | --- |\n|alpine-keys|MIT|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "GPL-2.0",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "GPL-2.0"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName: busybox\nLicense: GPL-2.0\n",
+                                "markdown": "**PackageName busybox**\n| PackageName | License |\n| --- | --- |\n|busybox|GPL-2.0|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "BSD",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "BSD"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName: libc-utils\nLicense: BSD\n",
+                                "markdown": "**PackageName libc-utils**\n| PackageName | License |\n| --- | --- |\n|libc-utils|BSD|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "ISC",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "ISC"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName: libtls-standalone\nLicense: ISC\n",
+                                "markdown": "**PackageName libtls-standalone**\n| PackageName | License |\n| --- | --- |\n|libtls-standalone|ISC|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "license",
+                                    "security"
                                 ]
                             }
                         }
@@ -103,36 +591,871 @@
             },
             "results": [
                 {
-                    "ruleId": "AVD-AWS-0124",
+                    "ruleId": "CVE-2019-14697",
                     "ruleIndex": 0,
                     "level": "error",
                     "message": {
-                        "text": "File: modules/scanner/usecase/iac/testfiles/dummy.tf\nProvider: AWS\nService: ec2\nSeverity: LOW\nDetails: Security group rule does not have a description.\n"
-                    }
+                        "text": "Package: musl-utils\nInstalled Version: 1.1.22-r2\nVulnerability CVE-2019-14697\nSeverity: CRITICAL\nFixed Version: 1.1.22-r3\nLink: [CVE-2019-14697](https://www.mend.io/vulnerability-database/CVE-2019-14697)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
                 },
                 {
-                    "ruleId": "AVD-AWS-0107",
+                    "ruleId": "CVE-2019-14697",
+                    "ruleIndex": 0,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl\nInstalled Version: 1.1.22-r2\nVulnerability CVE-2019-14697\nSeverity: CRITICAL\nFixed Version: 1.1.22-r3\nLink: [CVE-2019-14697](https://www.mend.io/vulnerability-database/CVE-2019-14697)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2019-1547",
                     "ruleIndex": 1,
                     "level": "error",
                     "message": {
-                        "text": "File: modules/scanner/usecase/iac/testfiles/dummy.tf\nProvider: AWS\nService: ec2\nSeverity: CRITICAL\nDetails: Security group rule allows ingress from public internet.\n"
-                    }
+                        "text": "Package: libssl1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2019-1547\nSeverity: MEDIUM\nFixed Version: 1.1.1d-r0\nLink: [CVE-2019-1547](https://www.mend.io/vulnerability-database/CVE-2019-1547)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
                 },
                 {
-                    "ruleId": "AVD-DS-0026",
+                    "ruleId": "CVE-2019-1547",
+                    "ruleIndex": 1,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2019-1547\nSeverity: MEDIUM\nFixed Version: 1.1.1d-r0\nLink: [CVE-2019-1547](https://www.mend.io/vulnerability-database/CVE-2019-1547)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2019-1549",
                     "ruleIndex": 2,
                     "level": "error",
                     "message": {
-                        "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: LOW\nDetails: Add HEALTHCHECK instruction in your Dockerfile\n"
-                    }
+                        "text": "Package: libcrypto1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2019-1549\nSeverity: MEDIUM\nFixed Version: 1.1.1d-r0\nLink: [CVE-2019-1549](https://www.mend.io/vulnerability-database/CVE-2019-1549)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
                 },
                 {
-                    "ruleId": "AVD-DS-0002",
+                    "ruleId": "CVE-2019-1549",
+                    "ruleIndex": 2,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2019-1549\nSeverity: MEDIUM\nFixed Version: 1.1.1d-r0\nLink: [CVE-2019-1549](https://www.mend.io/vulnerability-database/CVE-2019-1549)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2019-1551",
                     "ruleIndex": 3,
                     "level": "error",
                     "message": {
-                        "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n"
-                    }
+                        "text": "Package: libcrypto1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2019-1551\nSeverity: MEDIUM\nFixed Version: 1.1.1d-r2\nLink: [CVE-2019-1551](https://www.mend.io/vulnerability-database/CVE-2019-1551)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2019-1551",
+                    "ruleIndex": 3,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2019-1551\nSeverity: MEDIUM\nFixed Version: 1.1.1d-r2\nLink: [CVE-2019-1551](https://www.mend.io/vulnerability-database/CVE-2019-1551)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2019-1563",
+                    "ruleIndex": 4,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2019-1563\nSeverity: LOW\nFixed Version: 1.1.1d-r0\nLink: [CVE-2019-1563](https://www.mend.io/vulnerability-database/CVE-2019-1563)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2019-1563",
+                    "ruleIndex": 4,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2019-1563\nSeverity: LOW\nFixed Version: 1.1.1d-r0\nLink: [CVE-2019-1563](https://www.mend.io/vulnerability-database/CVE-2019-1563)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2020-1967",
+                    "ruleIndex": 5,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2020-1967\nSeverity: HIGH\nFixed Version: 1.1.1g-r0\nLink: [CVE-2020-1967](https://www.mend.io/vulnerability-database/CVE-2020-1967)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2020-1967",
+                    "ruleIndex": 5,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2020-1967\nSeverity: HIGH\nFixed Version: 1.1.1g-r0\nLink: [CVE-2020-1967](https://www.mend.io/vulnerability-database/CVE-2020-1967)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2020-1971",
+                    "ruleIndex": 6,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2020-1971\nSeverity: MEDIUM\nFixed Version: 1.1.1i-r0\nLink: [CVE-2020-1971](https://www.mend.io/vulnerability-database/CVE-2020-1971)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2020-1971",
+                    "ruleIndex": 6,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2020-1971\nSeverity: MEDIUM\nFixed Version: 1.1.1i-r0\nLink: [CVE-2020-1971](https://www.mend.io/vulnerability-database/CVE-2020-1971)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2020-28928",
+                    "ruleIndex": 7,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl-utils\nInstalled Version: 1.1.22-r2\nVulnerability CVE-2020-28928\nSeverity: MEDIUM\nFixed Version: 1.1.22-r4\nLink: [CVE-2020-28928](https://www.mend.io/vulnerability-database/CVE-2020-28928)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2020-28928",
+                    "ruleIndex": 7,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl\nInstalled Version: 1.1.22-r2\nVulnerability CVE-2020-28928\nSeverity: MEDIUM\nFixed Version: 1.1.22-r4\nLink: [CVE-2020-28928](https://www.mend.io/vulnerability-database/CVE-2020-28928)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2021-23839",
+                    "ruleIndex": 8,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2021-23839\nSeverity: LOW\nFixed Version: 1.1.1j-r0\nLink: [CVE-2021-23839](https://www.mend.io/vulnerability-database/CVE-2021-23839)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2021-23839",
+                    "ruleIndex": 8,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2021-23839\nSeverity: LOW\nFixed Version: 1.1.1j-r0\nLink: [CVE-2021-23839](https://www.mend.io/vulnerability-database/CVE-2021-23839)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2021-23840",
+                    "ruleIndex": 9,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2021-23840\nSeverity: HIGH\nFixed Version: 1.1.1j-r0\nLink: [CVE-2021-23840](https://www.mend.io/vulnerability-database/CVE-2021-23840)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2021-23840",
+                    "ruleIndex": 9,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2021-23840\nSeverity: HIGH\nFixed Version: 1.1.1j-r0\nLink: [CVE-2021-23840](https://www.mend.io/vulnerability-database/CVE-2021-23840)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2021-23841",
+                    "ruleIndex": 10,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2021-23841\nSeverity: MEDIUM\nFixed Version: 1.1.1j-r0\nLink: [CVE-2021-23841](https://www.mend.io/vulnerability-database/CVE-2021-23841)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2021-23841",
+                    "ruleIndex": 10,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2021-23841\nSeverity: MEDIUM\nFixed Version: 1.1.1j-r0\nLink: [CVE-2021-23841](https://www.mend.io/vulnerability-database/CVE-2021-23841)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2021-28831",
+                    "ruleIndex": 11,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: ssl_client\nInstalled Version: 1.30.1-r2\nVulnerability CVE-2021-28831\nSeverity: HIGH\nFixed Version: 1.30.1-r5\nLink: [CVE-2021-28831](https://www.mend.io/vulnerability-database/CVE-2021-28831)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2021-28831",
+                    "ruleIndex": 11,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: busybox\nInstalled Version: 1.30.1-r2\nVulnerability CVE-2021-28831\nSeverity: HIGH\nFixed Version: 1.30.1-r5\nLink: [CVE-2021-28831](https://www.mend.io/vulnerability-database/CVE-2021-28831)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2021-30139",
+                    "ruleIndex": 12,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: apk-tools\nInstalled Version: 2.10.4-r1\nVulnerability CVE-2021-30139\nSeverity: HIGH\nFixed Version: 2.10.6-r0\nLink: [CVE-2021-30139](https://www.mend.io/vulnerability-database/CVE-2021-30139)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2021-3449",
+                    "ruleIndex": 13,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2021-3449\nSeverity: MEDIUM\nFixed Version: 1.1.1k-r0\nLink: [CVE-2021-3449](https://www.mend.io/vulnerability-database/CVE-2021-3449)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2021-3449",
+                    "ruleIndex": 13,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2021-3449\nSeverity: MEDIUM\nFixed Version: 1.1.1k-r0\nLink: [CVE-2021-3449](https://www.mend.io/vulnerability-database/CVE-2021-3449)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2021-3450",
+                    "ruleIndex": 14,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2021-3450\nSeverity: HIGH\nFixed Version: 1.1.1k-r0\nLink: [CVE-2021-3450](https://www.mend.io/vulnerability-database/CVE-2021-3450)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2021-3450",
+                    "ruleIndex": 14,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto1.1\nInstalled Version: 1.1.1c-r0\nVulnerability CVE-2021-3450\nSeverity: HIGH\nFixed Version: 1.1.1k-r0\nLink: [CVE-2021-3450](https://www.mend.io/vulnerability-database/CVE-2021-3450)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2021-36159",
+                    "ruleIndex": 15,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: apk-tools\nInstalled Version: 2.10.4-r1\nVulnerability CVE-2021-36159\nSeverity: CRITICAL\nFixed Version: 2.10.7-r0\nLink: [CVE-2021-36159](https://www.mend.io/vulnerability-database/CVE-2021-36159)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "OpenSSL",
+                    "ruleIndex": 16,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl1.1\nLicense: OpenSSL\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "Zlib",
+                    "ruleIndex": 17,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: zlib\nLicense: Zlib\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MPL-2.0",
+                    "ruleIndex": 18,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: ca-certificates-cacert\nLicense: MPL-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0+",
+                    "ruleIndex": 19,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: ca-certificates-cacert\nLicense: GPL-2.0+\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "OpenSSL",
+                    "ruleIndex": 16,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto1.1\nLicense: OpenSSL\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 20,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: alpine-keys\nLicense: MIT\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 21,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: busybox\nLicense: GPL-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "BSD",
+                    "ruleIndex": 22,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libc-utils\nLicense: BSD\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 21,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: ssl_client\nLicense: GPL-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 20,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl\nLicense: MIT\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 20,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl-utils\nLicense: MIT\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "BSD",
+                    "ruleIndex": 22,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl-utils\nLicense: BSD\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0+",
+                    "ruleIndex": 19,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl-utils\nLicense: GPL-2.0+\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "ISC",
+                    "ruleIndex": 23,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libtls-standalone\nLicense: ISC\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 21,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: apk-tools\nLicense: GPL-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 21,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: scanelf\nLicense: GPL-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 21,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: alpine-baselayout\nLicense: GPL-2.0\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "alpine",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
                 }
             ]
         }
