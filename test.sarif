@@ -56,29 +56,6 @@
                             }
                         },
                         {
-                            "id": "Add HEALTHCHECK instruction in your Dockerfile",
-                            "name": "misconfiguration_finding",
-                            "shortDescription": {
-                                "text": "Add HEALTHCHECK instruction in your Dockerfile"
-                            },
-                            "fullDescription": {
-                                "text": "Add HEALTHCHECK instruction in your Dockerfile"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: LOW\nDetails: Add HEALTHCHECK instruction in your Dockerfile\n",
-                                "markdown": "**File modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|Dockerfile|general|LOW|Add HEALTHCHECK instruction in your Dockerfile|"
-                            },
-                            "properties": {
-                                "tags": [
-                                    "IaC",
-                                    "misconfiguration"
-                                ]
-                            }
-                        },
-                        {
                             "id": "Specify at least 1 USER command in Dockerfile with non-root user as argument",
                             "name": "misconfiguration_finding",
                             "shortDescription": {
@@ -100,6 +77,29 @@
                                     "misconfiguration"
                                 ]
                             }
+                        },
+                        {
+                            "id": "Add HEALTHCHECK instruction in your Dockerfile",
+                            "name": "misconfiguration_finding",
+                            "shortDescription": {
+                                "text": "Add HEALTHCHECK instruction in your Dockerfile"
+                            },
+                            "fullDescription": {
+                                "text": "Add HEALTHCHECK instruction in your Dockerfile"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: LOW\nDetails: Add HEALTHCHECK instruction in your Dockerfile\n",
+                                "markdown": "**File modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|Dockerfile|general|LOW|Add HEALTHCHECK instruction in your Dockerfile|"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "IaC",
+                                    "misconfiguration"
+                                ]
+                            }
                         }
                     ],
                     "version": "1.0.0"
@@ -107,7 +107,7 @@
             },
             "results": [
                 {
-                    "ruleId": "AVD-AWS-0124",
+                    "ruleId": "Security group rule does not have a description.",
                     "ruleIndex": 0,
                     "level": "error",
                     "message": {
@@ -128,8 +128,8 @@
                     ]
                 },
                 {
-                    "ruleId": "AVD-AWS-0107",
-                    "ruleIndex": 0,
+                    "ruleId": "Security group rule allows ingress from public internet.",
+                    "ruleIndex": 1,
                     "level": "error",
                     "message": {
                         "text": "File: modules/scanner/usecase/iac/testfiles/dummy.tf\nProvider: AWS\nService: ec2\nSeverity: CRITICAL\nDetails: Security group rule allows ingress from public internet.\n"
@@ -149,11 +149,11 @@
                     ]
                 },
                 {
-                    "ruleId": "AVD-DS-0026",
-                    "ruleIndex": 0,
+                    "ruleId": "Specify at least 1 USER command in Dockerfile with non-root user as argument",
+                    "ruleIndex": 2,
                     "level": "error",
                     "message": {
-                        "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: LOW\nDetails: Add HEALTHCHECK instruction in your Dockerfile\n"
+                        "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n"
                     },
                     "locations": [
                         {
@@ -170,11 +170,11 @@
                     ]
                 },
                 {
-                    "ruleId": "AVD-DS-0002",
-                    "ruleIndex": 0,
+                    "ruleId": "Add HEALTHCHECK instruction in your Dockerfile",
+                    "ruleIndex": 3,
                     "level": "error",
                     "message": {
-                        "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n"
+                        "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: LOW\nDetails: Add HEALTHCHECK instruction in your Dockerfile\n"
                     },
                     "locations": [
                         {
