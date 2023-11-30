@@ -10,10 +10,10 @@
                     "name": "Mend",
                     "rules": [
                         {
-                            "id": "AVD-AWS-0124",
+                            "id": "Security group rule does not have a description.",
                             "name": "misconfiguration_finding",
                             "shortDescription": {
-                                "text": "AVD-AWS-0124"
+                                "text": "Security group rule does not have a description."
                             },
                             "fullDescription": {
                                 "text": "Security group rule does not have a description."
@@ -33,10 +33,10 @@
                             }
                         },
                         {
-                            "id": "AVD-AWS-0107",
+                            "id": "Security group rule allows ingress from public internet.",
                             "name": "misconfiguration_finding",
                             "shortDescription": {
-                                "text": "AVD-AWS-0107"
+                                "text": "Security group rule allows ingress from public internet."
                             },
                             "fullDescription": {
                                 "text": "Security group rule allows ingress from public internet."
@@ -56,10 +56,10 @@
                             }
                         },
                         {
-                            "id": "AVD-DS-0026",
+                            "id": "Add HEALTHCHECK instruction in your Dockerfile",
                             "name": "misconfiguration_finding",
                             "shortDescription": {
-                                "text": "AVD-DS-0026"
+                                "text": "Add HEALTHCHECK instruction in your Dockerfile"
                             },
                             "fullDescription": {
                                 "text": "Add HEALTHCHECK instruction in your Dockerfile"
@@ -79,10 +79,10 @@
                             }
                         },
                         {
-                            "id": "AVD-DS-0002",
+                            "id": "Specify at least 1 USER command in Dockerfile with non-root user as argument",
                             "name": "misconfiguration_finding",
                             "shortDescription": {
-                                "text": "AVD-DS-0002"
+                                "text": "Specify at least 1 USER command in Dockerfile with non-root user as argument"
                             },
                             "fullDescription": {
                                 "text": "Specify at least 1 USER command in Dockerfile with non-root user as argument"
@@ -129,7 +129,7 @@
                 },
                 {
                     "ruleId": "AVD-AWS-0107",
-                    "ruleIndex": 1,
+                    "ruleIndex": 0,
                     "level": "error",
                     "message": {
                         "text": "File: modules/scanner/usecase/iac/testfiles/dummy.tf\nProvider: AWS\nService: ec2\nSeverity: CRITICAL\nDetails: Security group rule allows ingress from public internet.\n"
@@ -150,7 +150,7 @@
                 },
                 {
                     "ruleId": "AVD-DS-0026",
-                    "ruleIndex": 2,
+                    "ruleIndex": 0,
                     "level": "error",
                     "message": {
                         "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: LOW\nDetails: Add HEALTHCHECK instruction in your Dockerfile\n"
@@ -171,7 +171,7 @@
                 },
                 {
                     "ruleId": "AVD-DS-0002",
-                    "ruleIndex": 3,
+                    "ruleIndex": 0,
                     "level": "error",
                     "message": {
                         "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n"
