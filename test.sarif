@@ -10,94 +10,330 @@
                     "name": "Mend",
                     "rules": [
                         {
-                            "id": "Security group rule does not have a description.testfiles/dummy.tf",
-                            "name": "misconfiguration_finding",
+                            "id": "CVE-2019-17571",
+                            "name": "LangPackageVulnerability",
                             "shortDescription": {
-                                "text": "Security group rule does not have a description.testfiles/dummy.tf"
+                                "text": "CVE-2019-17571"
                             },
                             "fullDescription": {
-                                "text": "Security group rule does not have a description."
+                                "text": "Included in Log4j 1.2 is a SocketServer class that is vulnerable to deserialization of untrusted data which can be exploited to remotely execute arbitrary code when combined with a deserialization gadget when listening to untrusted network traffic for log data. This affects Log4j versions up to 1.2 up to 1.2.17."
                             },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2019-17571",
                             "help": {
-                                "text": "File: modules/scanner/usecase/iac/testfiles/dummy.tf\nProvider: AWS\nService: ec2\nSeverity: LOW\nDetails: Security group rule does not have a description.\n",
-                                "markdown": "**File modules/scanner/usecase/iac/testfiles/dummy.tf**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|AWS|ec2|LOW|Security group rule does not have a description.|"
+                                "text": "Vulnerability: CVE-2019-17571\nSeverity: CRITICAL\nPackage: log4j:log4j\nFixed Version: \nLink: [CVE-2019-17571](https://www.mend.io/vulnerability-database/CVE-2019-17571)\nIncluded in Log4j 1.2 is a SocketServer class that is vulnerable to deserialization of untrusted data which can be exploited to remotely execute arbitrary code when combined with a deserialization gadget when listening to untrusted network traffic for log data. This affects Log4j versions up to 1.2 up to 1.2.17.",
+                                "markdown": "**Vulnerability CVE-2019-17571**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|log4j:log4j||[CVE-2019-17571](https://www.mend.io/vulnerability-database/CVE-2019-17571)|\n\nIncluded in Log4j 1.2 is a SocketServer class that is vulnerable to deserialization of untrusted data which can be exploited to remotely execute arbitrary code when combined with a deserialization gadget when listening to untrusted network traffic for log data. This affects Log4j versions up to 1.2 up to 1.2.17."
                             },
                             "properties": {
+                                "security-severity": "9.8",
                                 "tags": [
-                                    "iac",
-                                    "misconfiguration"
+                                    "vulnerability",
+                                    "security",
+                                    "CRITICAL"
                                 ]
                             }
                         },
                         {
-                            "id": "Security group rule allows ingress from public internet.testfiles/dummy.tf",
-                            "name": "misconfiguration_finding",
+                            "id": "CVE-2021-4104",
+                            "name": "LangPackageVulnerability",
                             "shortDescription": {
-                                "text": "Security group rule allows ingress from public internet.testfiles/dummy.tf"
+                                "text": "CVE-2021-4104"
                             },
                             "fullDescription": {
-                                "text": "Security group rule allows ingress from public internet."
+                                "text": "JMSAppender in Log4j 1.2 is vulnerable to deserialization of untrusted data when the attacker has write access to the Log4j configuration. The attacker can provide TopicBindingName and TopicConnectionFactoryBindingName configurations causing JMSAppender to perform JNDI requests that result in remote code execution in a similar fashion to CVE-2021-44228. Note this issue only affects Log4j 1.2 when specifically configured to use JMSAppender, which is not the default. Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log4j 2 as it addresses numerous other issues from the previous versions."
                             },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2021-4104",
                             "help": {
-                                "text": "File: modules/scanner/usecase/iac/testfiles/dummy.tf\nProvider: AWS\nService: ec2\nSeverity: CRITICAL\nDetails: Security group rule allows ingress from public internet.\n",
-                                "markdown": "**File modules/scanner/usecase/iac/testfiles/dummy.tf**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|AWS|ec2|CRITICAL|Security group rule allows ingress from public internet.|"
+                                "text": "Vulnerability: CVE-2021-4104\nSeverity: HIGH\nPackage: log4j:log4j\nFixed Version: \nLink: [CVE-2021-4104](https://www.mend.io/vulnerability-database/CVE-2021-4104)\nJMSAppender in Log4j 1.2 is vulnerable to deserialization of untrusted data when the attacker has write access to the Log4j configuration. The attacker can provide TopicBindingName and TopicConnectionFactoryBindingName configurations causing JMSAppender to perform JNDI requests that result in remote code execution in a similar fashion to CVE-2021-44228. Note this issue only affects Log4j 1.2 when specifically configured to use JMSAppender, which is not the default. Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log4j 2 as it addresses numerous other issues from the previous versions.",
+                                "markdown": "**Vulnerability CVE-2021-4104**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|log4j:log4j||[CVE-2021-4104](https://www.mend.io/vulnerability-database/CVE-2021-4104)|\n\nJMSAppender in Log4j 1.2 is vulnerable to deserialization of untrusted data when the attacker has write access to the Log4j configuration. The attacker can provide TopicBindingName and TopicConnectionFactoryBindingName configurations causing JMSAppender to perform JNDI requests that result in remote code execution in a similar fashion to CVE-2021-44228. Note this issue only affects Log4j 1.2 when specifically configured to use JMSAppender, which is not the default. Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log4j 2 as it addresses numerous other issues from the previous versions."
                             },
                             "properties": {
+                                "security-severity": "7.5",
                                 "tags": [
-                                    "iac",
-                                    "misconfiguration"
+                                    "vulnerability",
+                                    "security",
+                                    "HIGH"
                                 ]
                             }
                         },
                         {
-                            "id": "Specify at least 1 USER command in Dockerfile with non-root user as argumentexpectedproviders/Dockerfile",
-                            "name": "misconfiguration_finding",
+                            "id": "CVE-2022-23302",
+                            "name": "LangPackageVulnerability",
                             "shortDescription": {
-                                "text": "Specify at least 1 USER command in Dockerfile with non-root user as argumentexpectedproviders/Dockerfile"
+                                "text": "CVE-2022-23302"
                             },
                             "fullDescription": {
-                                "text": "Specify at least 1 USER command in Dockerfile with non-root user as argument"
+                                "text": "JMSSink in all versions of Log4j 1.x is vulnerable to deserialization of untrusted data when the attacker has write access to the Log4j configuration or if the configuration references an LDAP service the attacker has access to. The attacker can provide a TopicConnectionFactoryBindingName configuration causing JMSSink to perform JNDI requests that result in remote code execution in a similar fashion to CVE-2021-4104. Note this issue only affects Log4j 1.x when specifically configured to use JMSSink, which is not the default. Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log4j 2 as it addresses numerous other issues from the previous versions."
                             },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2022-23302",
                             "help": {
-                                "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n",
-                                "markdown": "**File modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|Dockerfile|general|HIGH|Specify at least 1 USER command in Dockerfile with non-root user as argument|"
+                                "text": "Vulnerability: CVE-2022-23302\nSeverity: HIGH\nPackage: log4j:log4j\nFixed Version: \nLink: [CVE-2022-23302](https://www.mend.io/vulnerability-database/CVE-2022-23302)\nJMSSink in all versions of Log4j 1.x is vulnerable to deserialization of untrusted data when the attacker has write access to the Log4j configuration or if the configuration references an LDAP service the attacker has access to. The attacker can provide a TopicConnectionFactoryBindingName configuration causing JMSSink to perform JNDI requests that result in remote code execution in a similar fashion to CVE-2021-4104. Note this issue only affects Log4j 1.x when specifically configured to use JMSSink, which is not the default. Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log4j 2 as it addresses numerous other issues from the previous versions.",
+                                "markdown": "**Vulnerability CVE-2022-23302**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|log4j:log4j||[CVE-2022-23302](https://www.mend.io/vulnerability-database/CVE-2022-23302)|\n\nJMSSink in all versions of Log4j 1.x is vulnerable to deserialization of untrusted data when the attacker has write access to the Log4j configuration or if the configuration references an LDAP service the attacker has access to. The attacker can provide a TopicConnectionFactoryBindingName configuration causing JMSSink to perform JNDI requests that result in remote code execution in a similar fashion to CVE-2021-4104. Note this issue only affects Log4j 1.x when specifically configured to use JMSSink, which is not the default. Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log4j 2 as it addresses numerous other issues from the previous versions."
                             },
                             "properties": {
+                                "security-severity": "8.8",
                                 "tags": [
-                                    "iac",
-                                    "misconfiguration"
+                                    "vulnerability",
+                                    "security",
+                                    "HIGH"
                                 ]
                             }
                         },
                         {
-                            "id": "Add HEALTHCHECK instruction in your Dockerfileexpectedproviders/Dockerfile",
-                            "name": "misconfiguration_finding",
+                            "id": "CVE-2022-23305",
+                            "name": "LangPackageVulnerability",
                             "shortDescription": {
-                                "text": "Add HEALTHCHECK instruction in your Dockerfileexpectedproviders/Dockerfile"
+                                "text": "CVE-2022-23305"
                             },
                             "fullDescription": {
-                                "text": "Add HEALTHCHECK instruction in your Dockerfile"
+                                "text": "By design, the JDBCAppender in Log4j 1.2.x accepts an SQL statement as a configuration parameter where the values to be inserted are converters from PatternLayout. The message converter, %!m(MISSING), is likely to always be included. This allows attackers to manipulate the SQL by entering crafted strings into input fields or headers of an application that are logged allowing unintended SQL queries to be executed. Note this issue only affects Log4j 1.x when specifically configured to use the JDBCAppender, which is not the default. Beginning in version 2.0-beta8, the JDBCAppender was re-introduced with proper support for parameterized SQL queries and further customization over the columns written to in logs. Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log4j 2 as it addresses numerous other issues from the previous versions."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2022-23305",
+                            "help": {
+                                "text": "Vulnerability: CVE-2022-23305\nSeverity: CRITICAL\nPackage: log4j:log4j\nFixed Version: \nLink: [CVE-2022-23305](https://www.mend.io/vulnerability-database/CVE-2022-23305)\nBy design, the JDBCAppender in Log4j 1.2.x accepts an SQL statement as a configuration parameter where the values to be inserted are converters from PatternLayout. The message converter, %!m(MISSING), is likely to always be included. This allows attackers to manipulate the SQL by entering crafted strings into input fields or headers of an application that are logged allowing unintended SQL queries to be executed. Note this issue only affects Log4j 1.x when specifically configured to use the JDBCAppender, which is not the default. Beginning in version 2.0-beta8, the JDBCAppender was re-introduced with proper support for parameterized SQL queries and further customization over the columns written to in logs. Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log4j 2 as it addresses numerous other issues from the previous versions.",
+                                "markdown": "**Vulnerability CVE-2022-23305**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|log4j:log4j||[CVE-2022-23305](https://www.mend.io/vulnerability-database/CVE-2022-23305)|\n\nBy design, the JDBCAppender in Log4j 1.2.x accepts an SQL statement as a configuration parameter where the values to be inserted are converters from PatternLayout. The message converter, %!m(MISSING), is likely to always be included. This allows attackers to manipulate the SQL by entering crafted strings into input fields or headers of an application that are logged allowing unintended SQL queries to be executed. Note this issue only affects Log4j 1.x when specifically configured to use the JDBCAppender, which is not the default. Beginning in version 2.0-beta8, the JDBCAppender was re-introduced with proper support for parameterized SQL queries and further customization over the columns written to in logs. Apache Log4j 1.2 reached end of life in August 2015. Users should upgrade to Log4j 2 as it addresses numerous other issues from the previous versions."
+                            },
+                            "properties": {
+                                "security-severity": "9.8",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "CRITICAL"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CVE-2022-23307",
+                            "name": "LangPackageVulnerability",
+                            "shortDescription": {
+                                "text": "CVE-2022-23307"
+                            },
+                            "fullDescription": {
+                                "text": "CVE-2020-9493 identified a deserialization issue that was present in Apache Chainsaw. Prior to Chainsaw V2.0 Chainsaw was a component of Apache Log4j 1.2.x where the same issue exists."
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "helpUri": "https://www.mend.io/vulnerability-database/CVE-2022-23307",
+                            "help": {
+                                "text": "Vulnerability: CVE-2022-23307\nSeverity: HIGH\nPackage: log4j:log4j\nFixed Version: \nLink: [CVE-2022-23307](https://www.mend.io/vulnerability-database/CVE-2022-23307)\nCVE-2020-9493 identified a deserialization issue that was present in Apache Chainsaw. Prior to Chainsaw V2.0 Chainsaw was a component of Apache Log4j 1.2.x where the same issue exists.",
+                                "markdown": "**Vulnerability CVE-2022-23307**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|log4j:log4j||[CVE-2022-23307](https://www.mend.io/vulnerability-database/CVE-2022-23307)|\n\nCVE-2020-9493 identified a deserialization issue that was present in Apache Chainsaw. Prior to Chainsaw V2.0 Chainsaw was a component of Apache Log4j 1.2.x where the same issue exists."
+                            },
+                            "properties": {
+                                "security-severity": "8.8",
+                                "tags": [
+                                    "vulnerability",
+                                    "security",
+                                    "HIGH"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MIT",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "MIT"
                             },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
                             "help": {
-                                "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: LOW\nDetails: Add HEALTHCHECK instruction in your Dockerfile\n",
-                                "markdown": "**File modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile**\n| Provider | Service | Severity | Details |\n| --- | --- | --- | --- |\n|Dockerfile|general|LOW|Add HEALTHCHECK instruction in your Dockerfile|"
+                                "text": "PackageName LOW\nLicense: MIT\nSeverity: alpine-keys\n",
+                                "markdown": "**PackageName LOW**\n| License | Severity |\n| --- | --- | --- |\n|MIT|alpine-keys|"
                             },
                             "properties": {
+                                "security-severity": "1",
                                 "tags": [
-                                    "iac",
-                                    "misconfiguration"
+                                    "license",
+                                    "security",
+                                    "LOW"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "GPL-2.0",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "GPL-2.0"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName HIGH\nLicense: GPL-2.0\nSeverity: scanelf\n",
+                                "markdown": "**PackageName HIGH**\n| License | Severity |\n| --- | --- | --- |\n|GPL-2.0|scanelf|"
+                            },
+                            "properties": {
+                                "security-severity": "3",
+                                "tags": [
+                                    "license",
+                                    "security",
+                                    "HIGH"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Apache-2.0",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "Apache-2.0"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName LOW\nLicense: Apache-2.0\nSeverity: extprim\n",
+                                "markdown": "**PackageName LOW**\n| License | Severity |\n| --- | --- | --- |\n|Apache-2.0|extprim|"
+                            },
+                            "properties": {
+                                "security-severity": "1",
+                                "tags": [
+                                    "license",
+                                    "security",
+                                    "LOW"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "0BSD",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "0BSD"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName LOW\nLicense: 0BSD\nSeverity: linkmanager\n",
+                                "markdown": "**PackageName LOW**\n| License | Severity |\n| --- | --- | --- |\n|0BSD|linkmanager|"
+                            },
+                            "properties": {
+                                "security-severity": "1",
+                                "tags": [
+                                    "license",
+                                    "security",
+                                    "LOW"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MPL-2.0",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "MPL-2.0"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName MEDIUM\nLicense: MPL-2.0\nSeverity: ca-certificates-bundle\n",
+                                "markdown": "**PackageName MEDIUM**\n| License | Severity |\n| --- | --- | --- |\n|MPL-2.0|ca-certificates-bundle|"
+                            },
+                            "properties": {
+                                "security-severity": "2",
+                                "tags": [
+                                    "license",
+                                    "security",
+                                    "MEDIUM"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "BSD-2-Clause",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "BSD-2-Clause"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName LOW\nLicense: BSD-2-Clause\nSeverity: libc-utils\n",
+                                "markdown": "**PackageName LOW**\n| License | Severity |\n| --- | --- | --- |\n|BSD-2-Clause|libc-utils|"
+                            },
+                            "properties": {
+                                "security-severity": "1",
+                                "tags": [
+                                    "license",
+                                    "security",
+                                    "LOW"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "BSD-3-Clause",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "BSD-3-Clause"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName LOW\nLicense: BSD-3-Clause\nSeverity: libc-utils\n",
+                                "markdown": "**PackageName LOW**\n| License | Severity |\n| --- | --- | --- |\n|BSD-3-Clause|libc-utils|"
+                            },
+                            "properties": {
+                                "security-severity": "1",
+                                "tags": [
+                                    "license",
+                                    "security",
+                                    "LOW"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "GPL-2.0+",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "GPL-2.0+"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName HIGH\nLicense: GPL-2.0+\nSeverity: musl-utils\n",
+                                "markdown": "**PackageName HIGH**\n| License | Severity |\n| --- | --- | --- |\n|GPL-2.0+|musl-utils|"
+                            },
+                            "properties": {
+                                "security-severity": "3",
+                                "tags": [
+                                    "license",
+                                    "security",
+                                    "HIGH"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Zlib",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "Zlib"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName LOW\nLicense: Zlib\nSeverity: zlib\n",
+                                "markdown": "**PackageName LOW**\n| License | Severity |\n| --- | --- | --- |\n|Zlib|zlib|"
+                            },
+                            "properties": {
+                                "security-severity": "1",
+                                "tags": [
+                                    "license",
+                                    "security",
+                                    "LOW"
                                 ]
                             }
                         }
@@ -107,17 +343,17 @@
             },
             "results": [
                 {
-                    "ruleId": "Security group rule does not have a description.",
+                    "ruleId": "CVE-2019-17571",
                     "ruleIndex": 0,
                     "level": "error",
                     "message": {
-                        "text": "File: modules/scanner/usecase/iac/testfiles/dummy.tf\nProvider: AWS\nService: ec2\nSeverity: LOW\nDetails: Security group rule does not have a description.\n"
+                        "text": "Package: log4j:log4j\nInstalled Version: 1.2.9\nVulnerability CVE-2019-17571\nSeverity: CRITICAL\nFixed Version: \nLink: [CVE-2019-17571](https://www.mend.io/vulnerability-database/CVE-2019-17571)"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile",
+                                    "uri": "MAVEN",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
@@ -128,17 +364,17 @@
                     ]
                 },
                 {
-                    "ruleId": "Security group rule allows ingress from public internet.",
-                    "ruleIndex": 0,
+                    "ruleId": "CVE-2021-4104",
+                    "ruleIndex": 1,
                     "level": "error",
                     "message": {
-                        "text": "File: modules/scanner/usecase/iac/testfiles/dummy.tf\nProvider: AWS\nService: ec2\nSeverity: CRITICAL\nDetails: Security group rule allows ingress from public internet.\n"
+                        "text": "Package: log4j:log4j\nInstalled Version: 1.2.9\nVulnerability CVE-2021-4104\nSeverity: HIGH\nFixed Version: \nLink: [CVE-2021-4104](https://www.mend.io/vulnerability-database/CVE-2021-4104)"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile",
+                                    "uri": "MAVEN",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
@@ -149,17 +385,17 @@
                     ]
                 },
                 {
-                    "ruleId": "Specify at least 1 USER command in Dockerfile with non-root user as argument",
-                    "ruleIndex": 0,
+                    "ruleId": "CVE-2022-23302",
+                    "ruleIndex": 2,
                     "level": "error",
                     "message": {
-                        "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: HIGH\nDetails: Specify at least 1 USER command in Dockerfile with non-root user as argument\n"
+                        "text": "Package: log4j:log4j\nInstalled Version: 1.2.9\nVulnerability CVE-2022-23302\nSeverity: HIGH\nFixed Version: \nLink: [CVE-2022-23302](https://www.mend.io/vulnerability-database/CVE-2022-23302)"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile",
+                                    "uri": "MAVEN",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
@@ -170,17 +406,542 @@
                     ]
                 },
                 {
-                    "ruleId": "Add HEALTHCHECK instruction in your Dockerfile",
-                    "ruleIndex": 0,
+                    "ruleId": "CVE-2022-23305",
+                    "ruleIndex": 3,
                     "level": "error",
                     "message": {
-                        "text": "File: modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile\nProvider: Dockerfile\nService: general\nSeverity: LOW\nDetails: Add HEALTHCHECK instruction in your Dockerfile\n"
+                        "text": "Package: log4j:log4j\nInstalled Version: 1.2.9\nVulnerability CVE-2022-23305\nSeverity: CRITICAL\nFixed Version: \nLink: [CVE-2022-23305](https://www.mend.io/vulnerability-database/CVE-2022-23305)"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "modules/scanner/usecase/iac/testfiles/expectedproviders/Dockerfile",
+                                    "uri": "MAVEN",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "CVE-2022-23307",
+                    "ruleIndex": 4,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: log4j:log4j\nInstalled Version: 1.2.9\nVulnerability CVE-2022-23307\nSeverity: HIGH\nFixed Version: \nLink: [CVE-2022-23307](https://www.mend.io/vulnerability-database/CVE-2022-23307)"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "MAVEN",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 5,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: alpine-keys\nLicense: MIT\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 6,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: scanelf\nLicense: GPL-2.0\nSeverity: HIGH\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 5,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: axios\nLicense: MIT\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 5,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: extprim\nLicense: MIT\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "Apache-2.0",
+                    "ruleIndex": 7,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: extprim\nLicense: Apache-2.0\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "0BSD",
+                    "ruleIndex": 8,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: linkmanager\nLicense: 0BSD\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 6,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: busybox\nLicense: GPL-2.0\nSeverity: HIGH\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MPL-2.0",
+                    "ruleIndex": 9,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: ca-certificates-bundle\nLicense: MPL-2.0\nSeverity: MEDIUM\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 5,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: ca-certificates-bundle\nLicense: MIT\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "Apache-2.0",
+                    "ruleIndex": 7,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: log4j:log4j\nLicense: Apache-2.0\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "Apache-2.0",
+                    "ruleIndex": 7,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nLicense: Apache-2.0\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "BSD-2-Clause",
+                    "ruleIndex": 10,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libc-utils\nLicense: BSD-2-Clause\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "BSD-3-Clause",
+                    "ruleIndex": 11,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libc-utils\nLicense: BSD-3-Clause\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 6,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: busybox-binsh\nLicense: GPL-2.0\nSeverity: HIGH\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 6,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: apk-tools\nLicense: GPL-2.0\nSeverity: HIGH\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 5,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl-utils\nLicense: MIT\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "BSD-2-Clause",
+                    "ruleIndex": 10,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl-utils\nLicense: BSD-2-Clause\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0+",
+                    "ruleIndex": 12,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl-utils\nLicense: GPL-2.0+\nSeverity: HIGH\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 6,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: ssl_client\nLicense: GPL-2.0\nSeverity: HIGH\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 5,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: musl\nLicense: MIT\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "Zlib",
+                    "ruleIndex": 13,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: zlib\nLicense: Zlib\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 6,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: alpine-baselayout\nLicense: GPL-2.0\nSeverity: HIGH\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "Apache-2.0",
+                    "ruleIndex": 7,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libssl3\nLicense: Apache-2.0\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 6,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: alpine-baselayout-data\nLicense: GPL-2.0\nSeverity: HIGH\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
                                     "uriBaseId": "ROOTPATH"
                                 },
                                 "region": {
