@@ -149,8 +149,8 @@
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName LOW\nLicense: MIT\nSeverity: alpine-keys\n",
-                                "markdown": "**PackageName LOW**\n| License | Severity |\n| --- | --- | --- |\n|MIT|alpine-keys|"
+                                "text": "PackageName extprim\nLicense: MIT\nSeverity: LOW\n",
+                                "markdown": "**PackageName extprim**\n| License | Severity |\n| --- | --- |\n|MIT|LOW|"
                             },
                             "properties": {
                                 "security-severity": "1",
@@ -158,28 +158,6 @@
                                     "license",
                                     "security",
                                     "LOW"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "GPL-2.0",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "GPL-2.0"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName HIGH\nLicense: GPL-2.0\nSeverity: scanelf\n",
-                                "markdown": "**PackageName HIGH**\n| License | Severity |\n| --- | --- | --- |\n|GPL-2.0|scanelf|"
-                            },
-                            "properties": {
-                                "security-severity": "3",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "HIGH"
                                 ]
                             }
                         },
@@ -193,30 +171,8 @@
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName LOW\nLicense: Apache-2.0\nSeverity: extprim\n",
-                                "markdown": "**PackageName LOW**\n| License | Severity |\n| --- | --- | --- |\n|Apache-2.0|extprim|"
-                            },
-                            "properties": {
-                                "security-severity": "1",
-                                "tags": [
-                                    "license",
-                                    "security",
-                                    "LOW"
-                                ]
-                            }
-                        },
-                        {
-                            "id": "0BSD",
-                            "name": "license_finding",
-                            "shortDescription": {
-                                "text": "0BSD"
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            },
-                            "help": {
-                                "text": "PackageName LOW\nLicense: 0BSD\nSeverity: linkmanager\n",
-                                "markdown": "**PackageName LOW**\n| License | Severity |\n| --- | --- | --- |\n|0BSD|linkmanager|"
+                                "text": "PackageName extprim\nLicense: Apache-2.0\nSeverity: LOW\n",
+                                "markdown": "**PackageName extprim**\n| License | Severity |\n| --- | --- |\n|Apache-2.0|LOW|"
                             },
                             "properties": {
                                 "security-severity": "1",
@@ -237,8 +193,8 @@
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName MEDIUM\nLicense: MPL-2.0\nSeverity: ca-certificates-bundle\n",
-                                "markdown": "**PackageName MEDIUM**\n| License | Severity |\n| --- | --- | --- |\n|MPL-2.0|ca-certificates-bundle|"
+                                "text": "PackageName ca-certificates-bundle\nLicense: MPL-2.0\nSeverity: MEDIUM\n",
+                                "markdown": "**PackageName ca-certificates-bundle**\n| License | Severity |\n| --- | --- |\n|MPL-2.0|MEDIUM|"
                             },
                             "properties": {
                                 "security-severity": "2",
@@ -246,6 +202,50 @@
                                     "license",
                                     "security",
                                     "MEDIUM"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Zlib",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "Zlib"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName zlib\nLicense: Zlib\nSeverity: LOW\n",
+                                "markdown": "**PackageName zlib**\n| License | Severity |\n| --- | --- |\n|Zlib|LOW|"
+                            },
+                            "properties": {
+                                "security-severity": "1",
+                                "tags": [
+                                    "license",
+                                    "security",
+                                    "LOW"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "GPL-2.0",
+                            "name": "license_finding",
+                            "shortDescription": {
+                                "text": "GPL-2.0"
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            },
+                            "help": {
+                                "text": "PackageName scanelf\nLicense: GPL-2.0\nSeverity: HIGH\n",
+                                "markdown": "**PackageName scanelf**\n| License | Severity |\n| --- | --- |\n|GPL-2.0|HIGH|"
+                            },
+                            "properties": {
+                                "security-severity": "3",
+                                "tags": [
+                                    "license",
+                                    "security",
+                                    "HIGH"
                                 ]
                             }
                         },
@@ -259,8 +259,8 @@
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName LOW\nLicense: BSD-2-Clause\nSeverity: libc-utils\n",
-                                "markdown": "**PackageName LOW**\n| License | Severity |\n| --- | --- | --- |\n|BSD-2-Clause|libc-utils|"
+                                "text": "PackageName libc-utils\nLicense: BSD-2-Clause\nSeverity: LOW\n",
+                                "markdown": "**PackageName libc-utils**\n| License | Severity |\n| --- | --- |\n|BSD-2-Clause|LOW|"
                             },
                             "properties": {
                                 "security-severity": "1",
@@ -281,8 +281,8 @@
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName LOW\nLicense: BSD-3-Clause\nSeverity: libc-utils\n",
-                                "markdown": "**PackageName LOW**\n| License | Severity |\n| --- | --- | --- |\n|BSD-3-Clause|libc-utils|"
+                                "text": "PackageName libc-utils\nLicense: BSD-3-Clause\nSeverity: LOW\n",
+                                "markdown": "**PackageName libc-utils**\n| License | Severity |\n| --- | --- |\n|BSD-3-Clause|LOW|"
                             },
                             "properties": {
                                 "security-severity": "1",
@@ -303,8 +303,8 @@
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName HIGH\nLicense: GPL-2.0+\nSeverity: musl-utils\n",
-                                "markdown": "**PackageName HIGH**\n| License | Severity |\n| --- | --- | --- |\n|GPL-2.0+|musl-utils|"
+                                "text": "PackageName musl-utils\nLicense: GPL-2.0+\nSeverity: HIGH\n",
+                                "markdown": "**PackageName musl-utils**\n| License | Severity |\n| --- | --- |\n|GPL-2.0+|HIGH|"
                             },
                             "properties": {
                                 "security-severity": "3",
@@ -316,17 +316,17 @@
                             }
                         },
                         {
-                            "id": "Zlib",
+                            "id": "0BSD",
                             "name": "license_finding",
                             "shortDescription": {
-                                "text": "Zlib"
+                                "text": "0BSD"
                             },
                             "defaultConfiguration": {
                                 "level": "error"
                             },
                             "help": {
-                                "text": "PackageName LOW\nLicense: Zlib\nSeverity: zlib\n",
-                                "markdown": "**PackageName LOW**\n| License | Severity |\n| --- | --- | --- |\n|Zlib|zlib|"
+                                "text": "PackageName linkmanager\nLicense: 0BSD\nSeverity: LOW\n",
+                                "markdown": "**PackageName linkmanager**\n| License | Severity |\n| --- | --- |\n|0BSD|LOW|"
                             },
                             "properties": {
                                 "security-severity": "1",
@@ -452,69 +452,6 @@
                     "ruleIndex": 5,
                     "level": "error",
                     "message": {
-                        "text": "Package: alpine-keys\nLicense: MIT\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dor-alpine-license",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "GPL-2.0",
-                    "ruleIndex": 6,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: scanelf\nLicense: GPL-2.0\nSeverity: HIGH\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dor-alpine-license",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "MIT",
-                    "ruleIndex": 5,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: axios\nLicense: MIT\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dor-alpine-license",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "MIT",
-                    "ruleIndex": 5,
-                    "level": "error",
-                    "message": {
                         "text": "Package: extprim\nLicense: MIT\nSeverity: LOW\n"
                     },
                     "locations": [
@@ -533,7 +470,7 @@
                 },
                 {
                     "ruleId": "Apache-2.0",
-                    "ruleIndex": 7,
+                    "ruleIndex": 6,
                     "level": "error",
                     "message": {
                         "text": "Package: extprim\nLicense: Apache-2.0\nSeverity: LOW\n"
@@ -553,50 +490,8 @@
                     ]
                 },
                 {
-                    "ruleId": "0BSD",
-                    "ruleIndex": 8,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: linkmanager\nLicense: 0BSD\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dor-alpine-license",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "GPL-2.0",
-                    "ruleIndex": 6,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: busybox\nLicense: GPL-2.0\nSeverity: HIGH\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dor-alpine-license",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
                     "ruleId": "MPL-2.0",
-                    "ruleIndex": 9,
+                    "ruleIndex": 7,
                     "level": "error",
                     "message": {
                         "text": "Package: ca-certificates-bundle\nLicense: MPL-2.0\nSeverity: MEDIUM\n"
@@ -637,11 +532,11 @@
                     ]
                 },
                 {
-                    "ruleId": "Apache-2.0",
-                    "ruleIndex": 7,
+                    "ruleId": "MIT",
+                    "ruleIndex": 5,
                     "level": "error",
                     "message": {
-                        "text": "Package: log4j:log4j\nLicense: Apache-2.0\nSeverity: LOW\n"
+                        "text": "Package: musl\nLicense: MIT\nSeverity: LOW\n"
                     },
                     "locations": [
                         {
@@ -658,11 +553,116 @@
                     ]
                 },
                 {
-                    "ruleId": "Apache-2.0",
-                    "ruleIndex": 7,
+                    "ruleId": "Zlib",
+                    "ruleIndex": 8,
                     "level": "error",
                     "message": {
-                        "text": "Package: libcrypto3\nLicense: Apache-2.0\nSeverity: LOW\n"
+                        "text": "Package: zlib\nLicense: Zlib\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 5,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: axios\nLicense: MIT\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 9,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: scanelf\nLicense: GPL-2.0\nSeverity: HIGH\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "MIT",
+                    "ruleIndex": 5,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: alpine-keys\nLicense: MIT\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 9,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: busybox-binsh\nLicense: GPL-2.0\nSeverity: HIGH\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 9,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: apk-tools\nLicense: GPL-2.0\nSeverity: HIGH\n"
                     },
                     "locations": [
                         {
@@ -705,48 +705,6 @@
                     "level": "error",
                     "message": {
                         "text": "Package: libc-utils\nLicense: BSD-3-Clause\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dor-alpine-license",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "GPL-2.0",
-                    "ruleIndex": 6,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: busybox-binsh\nLicense: GPL-2.0\nSeverity: HIGH\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dor-alpine-license",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "GPL-2.0",
-                    "ruleIndex": 6,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: apk-tools\nLicense: GPL-2.0\nSeverity: HIGH\n"
                     },
                     "locations": [
                         {
@@ -827,70 +785,7 @@
                 },
                 {
                     "ruleId": "GPL-2.0",
-                    "ruleIndex": 6,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: ssl_client\nLicense: GPL-2.0\nSeverity: HIGH\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dor-alpine-license",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "MIT",
-                    "ruleIndex": 5,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: musl\nLicense: MIT\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dor-alpine-license",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "Zlib",
-                    "ruleIndex": 13,
-                    "level": "error",
-                    "message": {
-                        "text": "Package: zlib\nLicense: Zlib\nSeverity: LOW\n"
-                    },
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "dor-alpine-license",
-                                    "uriBaseId": "ROOTPATH"
-                                },
-                                "region": {
-                                    "startLine": 1
-                                }
-                            }
-                        }
-                    ]
-                },
-                {
-                    "ruleId": "GPL-2.0",
-                    "ruleIndex": 6,
+                    "ruleIndex": 9,
                     "level": "error",
                     "message": {
                         "text": "Package: alpine-baselayout\nLicense: GPL-2.0\nSeverity: HIGH\n"
@@ -910,8 +805,29 @@
                     ]
                 },
                 {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 9,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: busybox\nLicense: GPL-2.0\nSeverity: HIGH\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
                     "ruleId": "Apache-2.0",
-                    "ruleIndex": 7,
+                    "ruleIndex": 6,
                     "level": "error",
                     "message": {
                         "text": "Package: libssl3\nLicense: Apache-2.0\nSeverity: LOW\n"
@@ -931,11 +847,95 @@
                     ]
                 },
                 {
-                    "ruleId": "GPL-2.0",
+                    "ruleId": "Apache-2.0",
                     "ruleIndex": 6,
                     "level": "error",
                     "message": {
+                        "text": "Package: log4j:log4j\nLicense: Apache-2.0\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "0BSD",
+                    "ruleIndex": 13,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: linkmanager\nLicense: 0BSD\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 9,
+                    "level": "error",
+                    "message": {
                         "text": "Package: alpine-baselayout-data\nLicense: GPL-2.0\nSeverity: HIGH\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "Apache-2.0",
+                    "ruleIndex": 6,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: libcrypto3\nLicense: Apache-2.0\nSeverity: LOW\n"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "dor-alpine-license",
+                                    "uriBaseId": "ROOTPATH"
+                                },
+                                "region": {
+                                    "startLine": 1
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "GPL-2.0",
+                    "ruleIndex": 9,
+                    "level": "error",
+                    "message": {
+                        "text": "Package: ssl_client\nLicense: GPL-2.0\nSeverity: HIGH\n"
                     },
                     "locations": [
                         {
